@@ -542,6 +542,274 @@ public class CollibraRestStrategy implements MetadataFetcher {
 
 ```
 ```java
+package com.example.metadata.collibra;
+
+import com.example.metadata.MetadataFetchException;
+import com.example.metadata.MetadataPersistenceException;
+import com.example.metadata.MetadataFetcher;
+import com.example.metadata.collibra.client.AssetPage;
+import com.example.metadata.collibra.client.CollibraApiClient;
+import com.example.metadata.landing.RawPayloadEntity;
+import com.example.metadata.landing.RawPayloadRepository;
+import com.example.metadata.service.JpaCoreUpsertService;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Component;
+
+/**
+ * Fetches metadata from Collibra via the REST API and caches it in Postgres,
+ * delegating all core upserts to JPA/Hibernate.
+ */
+@Component
+@RequiredArgsConstructor
+public class CollibraRestStrategy implements MetadataFetcher {
+
+    private final CollibraApiClient client;
+    private final RawPayloadRepository rawRepo;
+    private final JpaCoreUpsertService upsertService;
+    private final ObjectMapper mapper;
+
+    private static final String ENDPOINT = "/assets";
+
+    /**
+     * Fetch one page of assets from Collibra.
+     *
+     * @param page zero‑based page index
+     * @param size items per page
+     * @return true if more pages remain
+     */
+    @Override
+    public boolean fetchPage(int page, int size) throws MetadataFetchException {
+        try {
+            AssetPage assetPage = client.getAssets()
+                                        .getAssets(page, size);  // generated client call
+            persistRaw(mapper.valueToTree(assetPage));
+            return assetPage.getTotalPages() > page + 1;
+        } catch (Exception e) {
+            throw new MetadataFetchException(
+                "Failed to fetch page " + page + " from Collibra", e);
+        }
+    }
+
+    /**
+     * Save the raw API response into landing.raw_payload.
+     */
+    @Override
+    public void persistRaw(JsonNode page) throws MetadataPersistenceException {
+        try {
+            RawPayloadEntity entity = RawPayloadEntity.builder()
+                .sourceId(client.getConfig().getSourceId())
+                .endpoint(ENDPOINT)
+                .payload(page)
+                .build();
+            rawRepo.save(entity);
+        } catch (Exception e) {
+            throw new MetadataPersistenceException("Error persisting raw payload", e);
+        }
+    }
+
+    /**
+     * Merge from landing.raw_payload → core.* via JPA/Hibernate.
+     */
+    @Override
+    public void upsertCore() throws MetadataPersistenceException {
+        try {
+            upsertService.upsertCore(
+                client.getConfig().getSourceId(),
+                ENDPOINT
+            );
+        } catch (Exception e) {
+            throw new MetadataPersistenceException("Error upserting core tables", e);
+        }
+    }
+}
+
+```
+```java
+@Service
+@RequiredArgsConstructor
+public class JpaCoreUpsertService {
+
+    private final RawPayloadRepository rawRepo;
+    private final CoreEntityRepository entityRepo;
+    private final CoreAttributeRepository attrRepo;
+    private final CoreRelationRepository relRepo;
+    private final ObjectMapper mapper;
+
+    @Transactional
+    public void upsertCore(int sourceId, String endpoint) {
+        List<RawPayloadEntity> pages = rawRepo
+            .findBySourceIdAndEndpointAndProcessedFalse(sourceId, endpoint);
+
+        for (RawPayloadEntity rp : pages) {
+            JsonNode results = rp.getPayload().get("results");
+            for (JsonNode elem : results) {
+                String extKey = elem.get("id").asText();
+                UUID entityId = entityRepo
+                    .findBySourceIdAndExternalKey(sourceId, extKey)
+                    .map(CoreEntity::getId)
+                    .orElse(UUID.randomUUID());
+
+                CoreEntity entity = CoreEntity.builder()
+                    .id(entityId)
+                    .sourceId(sourceId)
+                    .entityTypeId(/* look up type id by name */)
+                    .externalKey(extKey)
+                    .name(elem.get("name").asText(null))
+                    .status(elem.get("status").asText(null))
+                    .lastSeen(Instant.parse(elem.get("lastModifiedAt").asText()))
+                    .fetchedAt(Instant.now())
+                    .build();
+                entityRepo.save(entity);
+
+                // attributes
+                JsonNode attrs = elem.get("attributes");
+                if (attrs != null && attrs.isObject()) {
+                    for (Iterator<String> it = attrs.fieldNames(); it.hasNext(); ) {
+                        String key = it.next();
+                        String val = attrs.get(key).asText(null);
+                        CoreAttribute attr = CoreAttribute.builder()
+                            .entityId(entityId)
+                            .key(key)
+                            .value(val)
+                            .fetchedAt(Instant.now())
+                            .build();
+                        attrRepo.save(attr);
+                    }
+                }
+
+                // relations
+                JsonNode rels = elem.get("relations");
+                if (rels != null && rels.isArray()) {
+                    for (JsonNode rel : rels) {
+                        CoreRelation cr = CoreRelation.builder()
+                            .id(UUID.randomUUID())
+                            .sourceId(sourceId)
+                            .fromEntity(entityId)
+                            .toEntity(UUID.fromString(rel.get("targetId").asText()))
+                            .relationType(rel.get("type").asText())
+                            .fetchedAt(Instant.now())
+                            .build();
+                        relRepo.save(cr);
+                    }
+                }
+            }
+            // mark processed
+            rp.setProcessed(true);
+            rawRepo.save(rp);
+        }
+    }
+}
+
+```
+```java
+public interface CoreEntityRepository 
+        extends CrudRepository<CoreEntity, UUID> {
+    Optional<CoreEntity> findBySourceIdAndExternalKey(Integer sourceId, String externalKey);
+}
+
+public interface CoreAttributeRepository 
+        extends CrudRepository<CoreAttribute, CoreAttributeId> { }
+
+public interface CoreRelationRepository 
+        extends CrudRepository<CoreRelation, UUID> { }
+
+```
+```java
+// CoreAttributeId.java
+@Data @NoArgsConstructor @AllArgsConstructor
+public class CoreAttributeId implements Serializable {
+    private UUID entityId;
+    private String key;
+}
+
+```
+```java
+// CoreRelation.java
+@Entity
+@Table(name = "entity_relation", schema = "core")
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
+public class CoreRelation {
+    @Id
+    @Column(name = "relation_id", nullable = false)
+    private UUID id;
+
+    @Column(name = "source_id", nullable = false)
+    private Integer sourceId;
+
+    @Column(name = "from_entity", nullable = false)
+    private UUID fromEntity;
+
+    @Column(name = "to_entity", nullable = false)
+    private UUID toEntity;
+
+    @Column(name = "relation_type", nullable = false)
+    private String relationType;
+
+    @Column(name = "fetched_at", nullable = false)
+    private Instant fetchedAt;
+}
+
+```
+```java
+// CoreAttribute.java
+@Entity
+@Table(name = "entity_attribute", schema = "core")
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
+@IdClass(CoreAttributeId.class)
+public class CoreAttribute {
+    @Id
+    @Column(name = "entity_id", nullable = false)
+    private UUID entityId;
+
+    @Id
+    @Column(name = "attr_key", nullable = false)
+    private String key;
+
+    @Column(name = "attr_value")
+    private String value;
+
+    @Column(name = "fetched_at", nullable = false)
+    private Instant fetchedAt;
+}
+
+```
+
+```java
+// CoreEntity.java
+@Entity
+@Table(name = "entity", schema = "core",
+       uniqueConstraints = @UniqueConstraint(
+           columnNames = {"source_id", "external_key"}))
+@Data @NoArgsConstructor @AllArgsConstructor @Builder
+public class CoreEntity {
+    @Id
+    @Column(name = "entity_id", nullable = false)
+    private UUID id;
+
+    @Column(name = "source_id", nullable = false)
+    private Integer sourceId;
+
+    @Column(name = "entity_type_id", nullable = false)
+    private Integer entityTypeId;
+
+    @Column(name = "external_key", nullable = false)
+    private String externalKey;
+
+    private String name;
+    private String status;
+
+    @Column(name = "last_seen", nullable = false)
+    private Instant lastSeen;
+
+    @Column(name = "fetched_at", nullable = false)
+    private Instant fetchedAt;
+}
+
+```
+
+```java
 package com.example.metadata.landing;
 
 import com.fasterxml.jackson.databind.JsonNode;
