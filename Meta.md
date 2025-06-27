@@ -763,11 +763,14 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 }
 
 ```
-```gradle
+```groovy
 plugins {
     id 'java'
     id 'org.springframework.boot' version '3.1.4'
     id 'io.spring.dependency-management' version '1.1.0'
+
+    // Liquibase Gradle plugin
+    id 'org.liquibase.gradle' version '2.1.1'
 }
 
 group = 'com.example'
@@ -776,7 +779,7 @@ sourceCompatibility = '17'
 
 repositories {
     mavenCentral()
-    mavenLocal() // so your locally published import-api-java-client is found
+    mavenLocal() // for your locally published Collibra client
 }
 
 dependencies {
@@ -786,17 +789,20 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
 
-    // Jackson for JSON processing
+    // Jackson
     implementation 'com.fasterxml.jackson.core:jackson-databind'
 
-    // Collibra REST client (generate from OpenAPI and publish to your local repo)
+    // Collibra API client (from your local repo)
     implementation 'com.example:import-api-java-client:0.0.1'
 
     // PostgreSQL driver
     runtimeOnly 'org.postgresql:postgresql'
 
-    // Hibernate Types for JSONB mapping
+    // Hibernate Types for JSONB
     implementation 'com.vladmihalcea:hibernate-types-52:2.20.1'
+
+    // Liquibase Core
+    implementation 'org.liquibase:liquibase-core:4.18.0'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok'
@@ -815,5 +821,22 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
     options.release = 17
 }
+
+liquibase {
+    activities {
+        main {
+            // Path to your master changelog
+            changeLogFile 'src/main/resources/db/changelog/db.changelog-master.xml'
+            // Use the same URL/credentials as Spring Boot
+            url "${project.findProperty('spring.datasource.url')}"
+            username "${project.findProperty('spring.datasource.username')}"
+            password "${project.findProperty('spring.datasource.password')}"
+            driver 'org.postgresql.Driver'
+        }
+    }
+    // Specify which activity to run by default
+    runList = 'main'
+}
+
 ```
 
