@@ -763,5 +763,57 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 }
 
 ```
+```gradle
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.1.4'
+    id 'io.spring.dependency-management' version '1.1.0'
+}
 
+group = 'com.example'
+version = '0.1.0'
+sourceCompatibility = '17'
+
+repositories {
+    mavenCentral()
+    mavenLocal() // so your locally published import-api-java-client is found
+}
+
+dependencies {
+    // Spring Boot starters
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    implementation 'org.springframework.boot:spring-boot-starter-batch'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+
+    // Jackson for JSON processing
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+    // Collibra REST client (generate from OpenAPI and publish to your local repo)
+    implementation 'com.example:import-api-java-client:0.0.1'
+
+    // PostgreSQL driver
+    runtimeOnly 'org.postgresql:postgresql'
+
+    // Hibernate Types for JSONB mapping
+    implementation 'com.vladmihalcea:hibernate-types-52:2.20.1'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Testing
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.batch:spring-batch-test'
+}
+
+springBoot {
+    mainClass = 'com.example.metadata.Application'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.release = 17
+}
+```
 
