@@ -539,3 +539,229 @@ public class CollibraRestStrategy implements MetadataFetcher {
 }
 
 ```
+```java
+package com.example.metadata.landing;
+
+import com.fasterxml.jackson.databind.JsonNode;
+import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
+import jakarta.persistence.*;
+import lombok.*;
+import org.hibernate.annotations.Type;
+import org.hibernate.annotations.TypeDef;
+import org.hibernate.annotations.TypeDefs;
+
+import java.time.Instant;
+
+/**
+ * JPA entity for landing.raw_payload
+ */
+@Entity
+@Table(schema = "landing", name = "raw_payload")
+@TypeDefs({
+    @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class)
+})
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class RawPayloadEntity {
+
+    /** Primary key (BIGSERIAL) */
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "raw_id", updatable = false, nullable = false)
+    private Long rawId;
+
+    /** FK to core.source.source_id */
+    @Column(name = "source_id", nullable = false)
+    private Integer sourceId;
+
+    /** The API endpoint (e.g. "/assets") */
+    @Column(name = "endpoint", nullable = false)
+    private String endpoint;
+
+    /** Raw JSON payload (JSONB) */
+    @Type(type = "jsonb")
+    @Column(name = "payload", columnDefinition = "jsonb", nullable = false)
+    private JsonNode payload;
+
+    /** When we fetched this page */
+    @Column(name = "fetched_at", nullable = false, updatable = false,
+            columnDefinition = "TIMESTAMPTZ DEFAULT NOW()")
+    private Instant fetchedAt;
+
+    /** Has this page been processed into core.* tables? */
+    @Column(name = "processed", nullable = false)
+    private Boolean processed;
+}
+```
+```java
+public interface RawPayloadRepository
+  extends JpaRepository<RawPayloadEntity, Long> { }
+```
+
+```java
+package com.example.metadata.collibra.config;
+
+import com.example.metadata.collibra.client.ApiClient;
+import com.example.metadata.collibra.client.CollibraApiClient;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
+
+/**
+ * Configures the CollibraApiClient generated from the OpenAPI spec.
+ */
+@Configuration
+public class CollibraClientConfig {
+
+    @Value("${collibra.base-url}")
+    private String baseUrl;
+
+    @Value("${collibra.username}")
+    private String username;
+
+    @Value("${collibra.password}")
+    private String password;
+
+    /**
+     * Shared WebClient with basic auth for Collibra.
+     */
+    @Bean
+    public WebClient collibraWebClient() {
+        return WebClient.builder()
+            .baseUrl(baseUrl)
+            .defaultHeaders(headers ->
+                headers.setBasicAuth(username, password))
+            .build();
+    }
+
+    /**
+     * OpenAPI‑generated ApiClient, wired to use our WebClient.
+     */
+    @Bean
+    public ApiClient apiClient(WebClient collibraWebClient) {
+        return new ApiClient()
+            .setBasePath(baseUrl)
+            .setWebClient(collibraWebClient);
+    }
+
+    /**
+     * Convenience CollibraApiClient that groups all endpoints.
+     */
+    @Bean
+    public CollibraApiClient collibraApiClient(ApiClient apiClient) {
+        return new CollibraApiClient(apiClient);
+    }
+}
+```
+
+```yaml
+collibra:
+  base-url: https://my‑tenant.us.cloud.collibra.com
+  username: your‑user
+  password: your‑pass
+```
+
+```java
+package com.example.metadata.batch;
+
+import com.example.metadata.MetadataFetcher;
+import lombok.RequiredArgsConstructor;
+import org.springframework.batch.core.*;
+import org.springframework.batch.core.configuration.annotation.*;
+import org.springframework.batch.repeat.RepeatStatus;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * Defines a Batch job with:
+ * 1) fetchStep: pages through Collibra assets and persists raw JSON
+ * 2) mergeStep: merges landing.raw_payload → core tables
+ */
+@Configuration
+@EnableBatchProcessing
+@RequiredArgsConstructor
+public class BatchConfig {
+
+    private final JobBuilderFactory    jobBuilderFactory;
+    private final StepBuilderFactory   stepBuilderFactory;
+    private final MetadataFetcher      metadataFetcher;
+
+    private static final int PAGE_SIZE = 500;
+
+    @Bean
+    public Job metadataJob(JobCompletionNotificationListener listener,
+                           Step fetchStep,
+                           Step mergeStep) {
+        return jobBuilderFactory.get("metadataJob")
+            .listener(listener)
+            .start(fetchStep)
+            .next(mergeStep)
+            .build();
+    }
+
+    @Bean
+    public Step fetchStep() {
+        return stepBuilderFactory.get("fetchStep")
+            .tasklet((contribution, chunkContext) -> {
+                int page = 0;
+                boolean hasMore;
+                do {
+                    hasMore = metadataFetcher.fetchPage(page++, PAGE_SIZE);
+                } while (hasMore);
+                return RepeatStatus.FINISHED;
+            })
+            .build();
+    }
+
+    @Bean
+    public Step mergeStep() {
+        return stepBuilderFactory.get("mergeStep")
+            .tasklet((contribution, chunkContext) -> {
+                metadataFetcher.upsertCore();
+                return RepeatStatus.FINISHED;
+            })
+            .build();
+    }
+
+    @Bean
+    public JobCompletionNotificationListener listener() {
+        return new JobCompletionNotificationListener();
+    }
+}
+```
+
+```java
+package com.example.metadata.batch;
+
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.batch.core.*;
+import org.springframework.stereotype.Component;
+
+/**
+ * Simple listener to log job start/end.
+ */
+@Component
+@Slf4j
+public class JobCompletionNotificationListener implements JobExecutionListener {
+
+    @Override
+    public void beforeJob(JobExecution jobExecution) {
+        log.info(">>> Starting job: {}", jobExecution.getJobInstance().getJobName());
+    }
+
+    @Override
+    public void afterJob(JobExecution jobExecution) {
+        if (jobExecution.getStatus() == BatchStatus.COMPLETED) {
+            log.info(">>> Job completed successfully");
+        } else {
+            log.warn(">>> Job finished with status: {}", jobExecution.getStatus());
+        }
+    }
+}
+
+```
+
+
