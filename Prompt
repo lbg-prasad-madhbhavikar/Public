@@ -1,0 +1,24 @@
+Analyse this schema structure and provide me a table with the below details 
+1. columns indicate the key name 
+2. rows indicate options    
+
+for instance: in the schema "servers" based on the "type" the details change.    
+so my table would be:
+type | field1 | field2 | ....      
+athena | stagingDir | schema | ...      
+azure | Location | format | ... 
+
+make sure the table also has the column overlap as possible, if the anme and data type is same. 
+for exmple url field could be reused and could overlap. 
+if the field takes a specific input like url for s3 begins with s3:// but for GCS it begins with gcs://, add those explicit regex format where eever applicable, 
+following a pattern: regex (example)
+
+create a new table for each field where there are such options and alternatives, if the field takes only enum add all the enums
+
+we will do it one element at a time. 
+for example in you first response provide me only the servers table. 
+I will say next then you will provide me the next table that you have identified and so on. 
+
+I need a summary table where I can figure out what are the overlapping fields, teir examples with reex, with their names. 
+I will ask for in dept details if I require explicitly.
+
