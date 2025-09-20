@@ -1,0 +1,88 @@
+openapi: 3.0.1
+info:
+  title: DMCP Avatar Gateway API
+  description: API for managing DMCP Avatar Gateway operations.
+  version: 1.0.0
+  contact: 
+    name: some team
+    email: someone@lloydabankking.com
+servers:
+  - url: https://api.example.com/dmcp/avatar/v1
+    description: Production server
+
+paths:
+  /:
+    get:
+      summary: Retrieve a list of resources.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+        '400':
+          description: Bad Request 
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+        '404':
+          description: Not found 
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+        '405':
+          description: Method Not Allowed 
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+        '406':
+          description: Not Acceptable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+        '500':
+          description: Internal Server Error 
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+        '503':
+          description: Service Unavailable
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorData"
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        code:
+          type: string
+          example: CUS_API_ERR_XXX_01
+        reasonCode:
+          type: string
+          example: Reason Code For Error
+        message:
+          type: string
+          example: Error Message
+    ErrorData:
+      type: object
+      properties:
+       errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/Error"
