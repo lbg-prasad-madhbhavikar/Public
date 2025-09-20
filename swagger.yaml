@@ -1,6 +1,6 @@
 openapi: 3.0.1
 info:
-  title: DMCP Avatar Gateway API
+  title: Dmcp Avatar Gateway Api
   description: API for managing DMCP Avatar Gateway operations.
   version: 1.0.0
   contact:
@@ -46,6 +46,7 @@ paths:
               description: CORS header
               schema:
                 type: string
+                pattern:  ^[^*]+$
             X-LBG-TXN-Correlation-Id:
               description: Transaction correlation ID
               schema:
@@ -54,6 +55,7 @@ paths:
               description: Content type options
               schema:
                 type: string
+                pattern: '^nosniff$'
               example: nosniff
             X-LBG-API-Version:
               description: API version header
@@ -69,17 +71,31 @@ paths:
         '400':
           description: Bad Request
           headers:
-            Access-Control-Allow-Origin:
+            ETag:
+              description: Entity tag for the returned resource
               schema:
                 type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
             X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
               schema:
                 type: string
             X-Content-Type-Options:
+              description: Content type options
               schema:
                 type: string
+                pattern: '^nosniff$'
               example: nosniff
             X-LBG-API-Version:
+              description: API version header
               schema:
                 type: string
           content:
@@ -95,17 +111,31 @@ paths:
         '401':
           description: Unauthorized
           headers:
-            Access-Control-Allow-Origin:
+            ETag:
+              description: Entity tag for the returned resource
               schema:
                 type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
             X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
               schema:
                 type: string
             X-Content-Type-Options:
+              description: Content type options
               schema:
                 type: string
+                pattern: '^nosniff$'
               example: nosniff
             X-LBG-API-Version:
+              description: API version header
               schema:
                 type: string
           content:
@@ -120,17 +150,187 @@ paths:
         '404':
           description: Not found
           headers:
-            Access-Control-Allow-Origin:
+            ETag:
+              description: Entity tag for the returned resource
               schema:
                 type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
             X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
               schema:
                 type: string
             X-Content-Type-Options:
+              description: Content type options
               schema:
                 type: string
+                pattern: '^nosniff$'
               example: nosniff
             X-LBG-API-Version:
+              description: API version header
+              schema:
+                type: string
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/errorData'
+              example:
+                errors:
+                  - code: "CUS_API_ERR_401_01"
+                    reasonCode: "AuthFailed"
+                    message: "Authentication failed."
+        '405':
+          description: Not found
+          headers:
+            ETag:
+              description: Entity tag for the returned resource
+              schema:
+                type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
+              schema:
+                type: string
+            X-Content-Type-Options:
+              description: Content type options
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              description: API version header
+              schema:
+                type: string
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/errorData'
+              example:
+                errors:
+                  - code: "CUS_API_ERR_401_01"
+                    reasonCode: "AuthFailed"
+                    message: "Authentication failed."
+        '406':
+          description: Not found
+          headers:
+            ETag:
+              description: Entity tag for the returned resource
+              schema:
+                type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
+              schema:
+                type: string
+            X-Content-Type-Options:
+              description: Content type options
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              description: API version header
+              schema:
+                type: string
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/errorData'
+              example:
+                errors:
+                  - code: "CUS_API_ERR_401_01"
+                    reasonCode: "AuthFailed"
+                    message: "Authentication failed."
+        '500':
+          description: Not found
+          headers:
+            ETag:
+              description: Entity tag for the returned resource
+              schema:
+                type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
+              schema:
+                type: string
+            X-Content-Type-Options:
+              description: Content type options
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              description: API version header
+              schema:
+                type: string
+          content:
+            application/json; charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/errorData'
+              example:
+                errors:
+                  - code: "CUS_API_ERR_401_01"
+                    reasonCode: "AuthFailed"
+                    message: "Authentication failed."
+        '503':
+          description: Not found
+          headers:
+            ETag:
+              description: Entity tag for the returned resource
+              schema:
+                type: string
+            Last-Modified:
+              description: Last modification date of the resource
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              description: CORS header
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              description: Transaction correlation ID
+              schema:
+                type: string
+            X-Content-Type-Options:
+              description: Content type options
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              description: API version header
               schema:
                 type: string
           content:
@@ -159,12 +359,182 @@ paths:
             Access-Control-Allow-Origin:
               schema:
                 type: string
+                pattern:  ^[^*]+$
             X-LBG-TXN-Correlation-Id:
               schema:
                 type: string
             X-Content-Type-Options:
               schema:
                 type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '400':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '401':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '404':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '405':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '406':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '500':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
+              example: nosniff
+            X-LBG-API-Version:
+              schema:
+                type: string
+        '503':
+          description: Successful HEAD response
+          headers:
+            ETag:
+              schema:
+                type: string
+            Last-Modified:
+              schema:
+                type: string
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                pattern:  ^[^*]+$
+            X-LBG-TXN-Correlation-Id:
+              schema:
+                type: string
+            X-Content-Type-Options:
+              schema:
+                type: string
+                pattern: '^nosniff$'
               example: nosniff
             X-LBG-API-Version:
               schema:
