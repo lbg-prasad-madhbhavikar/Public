@@ -1,0 +1,398 @@
+{
+    "version": "0.1.60",
+    "kind": "DataContract",
+    "apiVersion": "v3.0.2",
+    "id": "01935501-c906-7b30-a5f9-48c9e5c62e11",
+    "name": "AL011610.OceanT24LBCMCoreBanking",
+    "tenant": "",
+    "tags": [
+        ""
+    ],
+    "status": "draft",
+    "servers": {
+        "server": "ap-edhcon-prd-01-2cad-10",
+        "type": "bigquery",
+        "project": "ap-edhcon-prd-01-2cad-10",
+        "dataset": "ap_edhcon_prd_01_bqd_euwe2_oceant24stg_010"
+    },
+    "authoritativeDefinitions": [
+        {
+            "type": "jira",
+            "url": "https://jira.devops.lloydsbanking.com/browse/MIGRPRO-1988210"
+        },
+        {
+            "type": "jira align",
+            "url": "https://jira.devops.lloydsbanking.com/browse/MIGRPRO-194310"
+        }
+    ],
+    "dataProduct": "Ocean T24 (LBCM) v10",
+    "description": {
+        "usage": "Intended usage of the dataset",
+        "purpose": "Ocean is the core International markets system of record, and receipt of this granular information is critical for completion of the commercial deposits balance sheet",
+        "limitations": ""
+    },
+    "domain": "DP: Markets",
+    "community": "DP: Corporate & Institutional Banking",
+    "slaDefaultElement": null,
+    "schema": [
+        {
+            "physicalName": "account",
+            "physicalType": "table",
+            "businessName": "ap_edhcon_prd_01_bqd_euwe2_oceant24stg_01",
+            "description": "AP ODP BigQuery Ingestion",
+            "tags": [
+                ""
+            ],
+            "dataGranularityDescription": "One row per transaction",
+            "properties": [
+                {
+                    "name": "customer",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "String",
+                    "required": false,
+                    "description": "customer",
+                    "partitioned": true,
+                    "partitionKeyPosition": 1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "public",
+                    "quality": [
+                        {
+                            "businessImpact": "operational",
+                            "description": "Not null check on all applicable attributes",
+                            "dimension": "completeness",
+                            "name": "notNullAttributeCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {
+                                    "property": "threshold",
+                                    "value": "2%"
+                                },
+                                {
+                                    "property": "thresholdFailureAction",
+                                    "value": "Hold failed records"
+                                },
+                                {
+                                    "property": "failureTicketSeverity",
+                                    "value": "P2"
+                                }
+                            ]
+                        },
+                        {
+                            "businessImpact": "operational",
+                            "description": "Unique key check",
+                            "dimension": "uniqueness",
+                            "name": "UKCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {
+                                    "property": "threshold",
+                                    "value": "1%"
+                                },
+                                {
+                                    "property": "thresholdFailureAction",
+                                    "value": "Hold failed records"
+                                },
+                                {
+                                    "property": "failureTicketSeverity",
+                                    "value": "P2"
+                                }
+                            ]
+                        },
+                        {
+                            "businessImpact": "operational",
+                            "description": "Attribute pattern check using the 'attributePattern' custom property of attributes in the Schema",
+                            "dimension": "consistency",
+                            "name": "patternCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {
+                                    "property": "threshold",
+                                    "value": "5%"
+                                },
+                                {
+                                    "property": "thresholdFailureAction",
+                                    "value": "Hold failed records"
+                                },
+                                {
+                                    "property": "failureTicketSeverity",
+                                    "value": "P2"
+                                }
+                            ]
+                        }
+                    ],
+                    "properties": [
+                        {
+                            "property": "attributeSequence",
+                            "value": "1"
+                        },
+                        {
+                            "property": "anonymizationStrategy",
+                            "value": "none"
+                        },
+                        {
+                            "property": "personalDataIndicator",
+                            "value": "true"
+                        }
+                    ]
+                },
+                {
+                    "name": "Category",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "varchar(15)",
+                    "required": true,
+                    "description": "Category",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": true,
+                    "tags": [],
+                    "classification": "limited"
+                },
+                {
+                    "name": "id",
+                    "primaryKey": true,
+                    "primaryKeyPosition": 1,
+                    "physicalType": "String",
+                    "required": true,
+                    "description": "id",
+                    "partitioned": true,
+                    "partitionKeyPosition": 1,
+                    "criticalDataElement": true,
+                    "tags": [],
+                    "classification": "highly classified"
+                },
+                {
+                    "name": "account_title1",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "String",
+                    "required": false,
+                    "description": "account_title1",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "public"
+                },
+                {
+                    "name": "account_title2",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "String",
+                    "required": false,
+                    "description": "account_title1",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "public"
+                },
+                {
+                    "name": "currency",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "String",
+                    "required": false,
+                    "description": "currency",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "public"
+                },
+                {
+                    "name": "currency_market",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "String",
+                    "required": false,
+                    "description": "currency_market",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "public"
+                },
+                {
+                    "name": "mnemonic",
+                    "primaryKey": false,
+                    "primaryKeyPosition": -1,
+                    "physicalType": "String",
+                    "required": false,
+                    "description": "mnemonic",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "public"
+                }
+            ],
+            "quality": [
+                {
+                    "businessImpact": "operational",
+                    "description": "Not null check on all applicable attributes",
+                    "dimension": "completeness",
+                    "name": "notNullAttributeCheck",
+                    "type": "custom",
+                    "customProperties": [
+                        {
+                            "property": "threshold",
+                            "value": "2%"
+                        },
+                        {
+                            "property": "thresholdFailureAction",
+                            "value": "Hold failed records"
+                        },
+                        {
+                            "property": "failureTicketSeverity",
+                            "value": "P2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Team": [
+        {
+            "username": "sample-producer10@lbg.com",
+            "name": "John Doe 10",
+            "role": "Data Product Owner",
+            "dateIn": "2024-08-02",
+            "dateOut": ""
+        }
+    ],
+    "roles": [
+        {
+            "access": "read",
+            "description": "Read access for consumers",
+            "firstLevelApprovers": [
+                "John Doe"
+            ],
+            "secondLevelApprovers": [
+                "John Doe"
+            ],
+            "role": "data engineer"
+        }
+    ],
+    "customProperties": [
+        {
+            "property": "nameOfTheBusiness",
+            "value": "Ocean T24 (LBCM)"
+        },
+        {
+            "property": "typeOfDataProduct",
+            "value": "Origin"
+        },
+        {
+            "property": "consumerForContract",
+            "value": "Foundation"
+        },
+        {
+            "property": "relatedToGDMDataConcepts",
+            "value": "<asset_name>"
+        },
+        {
+            "property": "dataUpdateFrequency",
+            "value": "Daily"
+        },
+        {
+            "property": "hasConsumingPlatformTeams",
+            "value": "Finance Platform"
+        },
+        {
+            "property": "dataProductChapterApprovalDate",
+            "value": "2025-01-01"
+        },
+        {
+            "property": "expectedBuildStartDate",
+            "value": "2025-01-11"
+        },
+        {
+            "property": "dataProductDataType",
+            "value": "Structured"
+        },
+        {
+            "property": "expectedReleaseDate",
+            "value": "2025-01-11"
+        },
+        {
+            "property": "dataCurationPattern",
+            "value": "NA for ODP"
+        },
+        {
+            "property": "retentionPeriod",
+            "value": "10 yrs"
+        },
+        {
+            "property": "sourceDataApplication",
+            "value": "CBS"
+        },
+        {
+            "property": "externalDataSources",
+            "value": "Office for National Statistics"
+        },
+        {
+            "property": "sourceDataProducts",
+            "value": [
+                "Ocean T24 (LBCM)",
+                "Ocean T23 (LBCM)"
+            ]
+        },
+        {
+            "property": "implementedInApplication",
+            "value": "Analytics Platform - GCP"
+        },
+        {
+            "property": "personalDataIndicator",
+            "value": true
+        },
+        {
+            "property": "personalDataCategory",
+            "value": [
+                "Name",
+                "Date of birth"
+            ]
+        },
+        {
+            "property": "consumptionInterfaceType",
+            "value": "Database access"
+        },
+        {
+            "property": "interoperabilityKeys",
+            "value": [
+                "account_identifier"
+            ]
+        },
+        {
+            "property": "dataProductTechnicalDebt",
+            "value": true
+        },
+        {
+            "property": "dataProductTechnicalDebtDetails",
+            "value": "Technical debt details"
+        },
+        {
+            "property": "dataProductVersion",
+            "value": "v10"
+        },
+        {
+            "property": "securityClassification",
+            "value": "Confidential"
+        },
+        {
+            "property": "ownerOrg",
+            "value": "SOme owner custom org"
+        },
+        {
+            "property": "detailedDescription",
+            "value": "Lloyds Bank Corporate Markets (Crown Dependencies) core banking platform. Temenos' T24 product is a modularised, integrated real time, multi-currency, multi-branch, user-parameterised Banking system serving International Private Banking, Commercial Businesses (Crown Dependencies) and Retail (Crown Dependencies) with Currency Banking needs. The Application supports Multiple Product Types (including Fixed, Current, Savings), Accounting, Payment Processing, Batch Processing, and Real Time Online Interactions via Internet Banking Interface IBX (AL01193). Current Temenos Release Version R22. Former Aliases include: Ocean R16, Ocean G13, Globus. Previously mapped Rulesafe Asset: 5393"
+        },
+        {
+            "property": "signature",
+            "value": "U3rLS+G08cPxaBdaAWs2+EL86VzQYwZIGefUDQ40pNVRBRnsloeFdG2X+5seTp0MDxf1CIEHG4ivsZNAdb6dY0U1rQHx17Vo9dE/FaXGGYmlSJeZjJ8Y1/SABzCTg7C6Ke88DhavHyfwSThgWVwUOftHOYBhTwRxpjKB06D20QM="
+        }
+    ],
+    "contractCreatedTs": "2025-06-11T00:00:00"
+}
