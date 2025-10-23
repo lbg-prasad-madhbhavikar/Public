@@ -1,0 +1,698 @@
+[
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/acc73354-81e3-46e2-9172-8f1c0a5adf99",
+    "Owning Platform 2": "DP: Accumulation",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c9d",
+    "Data Product Name 3": "AL08334.CustomerServicePlatform"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01985593-4409-7be9-9229-443a5f3bc5c7",
+    "Data Product Name 3": "AL02100.SAPClaimsGI"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0196338c-70d3-7f91-a390-fe561c0d8922",
+    "Data Product Name 3": "AL05891.LBGESBCompareTheMarketHomeInsuranceRaw"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0196337b-7ff7-74a8-a5d9-de62e5f512ae",
+    "Data Product Name 3": "AL05891.LBGESBConfusedHomeInsuranceRaw"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0196339d-efd3-7bdc-945c-7f9f8af3bbc8",
+    "Data Product Name 3": "AL05891.LBGESBGoCompareHomeInsuranceRaw"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01963395-dc1d-7541-88d6-a7494c802887",
+    "Data Product Name 3": "AL05891.LBGESBMoneySupermarketHomeInsuranceRaw"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01992dee-9763-7e68-a7f5-dc4ad8f2e54c",
+    "Data Product Name 3": "AL10841.CDLProteus"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019929f1-4e98-72d9-bf96-c6cc85d2ae02",
+    "Data Product Name 3": "AL12782.DuckCreek"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0195b46c-4265-716b-a6ad-3686005df139",
+    "Data Product Name 3": "AL24951.AgriaPetInsurance"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+    "Owning Platform 2": "DP: General Insurance",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0195b460-bb69-75a9-a55e-dbd83b0baf15",
+    "Data Product Name 3": "AL25032.GeneralInsuranceMotorInsurance"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01934053-ecde-7d99-bef8-5b2fb5b533a0",
+    "Owning Platform 2": "DP: Heritage",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189ca1",
+    "Data Product Name 3": "AL08440.BANCSLife&Pensions"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/ee90450b-d517-40a7-ac8d-c427b207335f",
+    "Business Domain 1": "DP: Insurance, Pensions & Investments",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01934053-ecde-7d99-bef8-5b2fb5b533a0",
+    "Owning Platform 2": "DP: Heritage",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019788aa-15fc-7bfb-9db9-a417e0aae892",
+    "Data Product Name 3": "AL08440.BaNCSRDS"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/0196875c-16e7-781f-bf95-5e79943be3dd",
+    "Owning Platform 2": "DP: Credit",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01941763-a44f-7c15-9795-b5e67280e36f",
+    "Data Product Name 3": "AL09237.OMDMCommercial"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/1f487155-5959-4b3b-9855-7a317d2b3946",
+    "Owning Platform 2": "DP: Payments Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c82",
+    "Data Product Name 3": "AL00650.CommonSystem"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/1f487155-5959-4b3b-9855-7a317d2b3946",
+    "Owning Platform 2": "DP: Payments Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019898a5-6e7d-7420-9ae2-c40f509ccf17",
+    "Data Product Name 3": "AL02490.UICM"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019680f0-8676-7dfd-88ac-542c52deec14",
+    "Data Product Name 3": "AL01544.TOPs"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01934a83-3d2b-718a-ac01-74c1ba52ab94",
+    "Data Product Name 3": "AL02627.SAPPayroll"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189ca4",
+    "Data Product Name 3": "AL05829.MiWorld"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019680e7-1e8d-75a4-a489-04f58e29773c",
+    "Data Product Name 3": "AL07782.Beeline"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01934a83-3d2b-718a-ac01-74c1ba52ab90",
+    "Data Product Name 3": "AL08059.Credit360"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0195eb9c-01d5-7424-bd68-8a2167ad6458",
+    "Data Product Name 3": "AL08250.Workday"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c91",
+    "Data Product Name 3": "AL09103.SAPAriba"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c70",
+    "Data Product Name 3": "AL09331.RightCrowd"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193ac9c-99a2-7d2d-908e-aee587445051",
+    "Data Product Name 3": "AL12129.TelebankDES"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019377e4-1012-7a0d-9eee-db2daf943100",
+    "Data Product Name 3": "AL14981.CiscoDNA"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c69",
+    "Data Product Name 3": "AL15289.CondecoSpaceReservation"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c8f",
+    "Data Product Name 3": "AL17908.Metrikus"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c73",
+    "Data Product Name 3": "AL18417.Maximo"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01951ed4-0f2f-7276-8ae1-398aa31c0955",
+    "Data Product Name 3": "Party.Person.NonPermWorkerDetails"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019522c6-9915-7aa4-82c5-cca347aa6153",
+    "Data Product Name 3": "Party.Person.WorkerAbsence"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/dd685ece-bc32-46f2-ab7c-ee99924ce340",
+    "Business Domain 1": "DP: Enterprise Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/15452f46-94f9-4f88-a7aa-ed862120f64a",
+    "Owning Platform 2": "DP: People",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01951f20-bf91-77b7-a813-1794748d4ec8",
+    "Data Product Name 3": "Party.Person.WorkerDetails"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c8e",
+    "Data Product Name 3": "AL00620.CommonDatabaseofOrganisationalStructure"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01992e7a-a467-7a71-b4d7-05ca455feea2",
+    "Data Product Name 3": "AL01742.OCIS"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/fb2a19b9-43db-4029-b835-8c8ec2f6425c",
+    "Data Product Name 3": "Interparty Relationships and Hierarchy"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/67d5ebaa-b913-4bca-b1e0-6114899ad9a3",
+    "Data Product Name 3": "Party Classification"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/438f291a-bb5d-479e-a8e0-9389fc2fa0e9",
+    "Data Product Name 3": "Party Contacts"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/5bb236b6-0367-4ba3-b582-84a46a011be3",
+    "Data Product Name 3": "Party Details"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01935501-c906-7b30-a5f9-48c9e5c62e7b",
+    "Data Product Name 3": "Party.Ethnicity"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193d057-486f-7bea-9162-fa840ea30068",
+    "Data Product Name 3": "Party.Permissions"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/a91b4583-c543-4541-9414-0022727e3589",
+    "Data Product Name 3": "Party Portfolio"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/50e5f07d-ff0b-48a6-b66a-3394def106cf",
+    "Data Product Name 3": "Party Preferences"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193d508-4611-7a28-a612-b6b7716ce3cc",
+    "Data Product Name 3": "Party Reference"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/e63a8470-dc75-4aea-b401-68b6f2c09a55",
+    "Owning Platform 2": "DP: Customer Data Services",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193d4f5-3e8a-7d99-b2cd-673fb722a185",
+    "Data Product Name 3": "Party Status"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/8f41e5a2-2c0a-40e1-bbde-93749a6891a0",
+    "Business Domain 1": "DP: Enabling Platforms",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/dc99edba-4343-47d3-90f9-d5be20675932",
+    "Owning Platform 2": "DP: Enterprise Data Provisioning",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01992e8b-cb7f-76e0-8b3a-fe9257774507",
+    "Data Product Name 3": "AL10169.Fresco"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/816bbf42-caff-4603-a127-1cbf5d555bc0",
+    "Business Domain 1": "DP: Corporate & Institutional Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/37ee5736-f5e1-473c-90c8-9c5b6f6c3cc5",
+    "Owning Platform 2": "DP: Markets",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01935501-c906-7b30-a5f9-48c9e5c62e58",
+    "Data Product Name 3": "AL01163.OceanT24LBCMCore Banking"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/816bbf42-caff-4603-a127-1cbf5d555bc0",
+    "Business Domain 1": "DP: Corporate & Institutional Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/37ee5736-f5e1-473c-90c8-9c5b6f6c3cc5",
+    "Owning Platform 2": "DP: Markets",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01992e05-9566-736f-afc2-67eba15e4ab4",
+    "Data Product Name 3": "AL03698.KAP"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/816bbf42-caff-4603-a127-1cbf5d555bc0",
+    "Business Domain 1": "DP: Corporate & Institutional Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/37ee5736-f5e1-473c-90c8-9c5b6f6c3cc5",
+    "Owning Platform 2": "DP: Markets",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01935501-c906-7b30-a5f9-48c9e5c62e87",
+    "Data Product Name 3": "AL13377.TradeOpenAccount"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+    "Owning Platform 2": "DP: Colleague Channels",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193451f-9762-722e-94fc-28b299af8daf",
+    "Data Product Name 3": "AL00526.ResolveComplaints"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+    "Owning Platform 2": "DP: Colleague Channels",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c6b",
+    "Data Product Name 3": "AL12200.NucleusComplaints"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+    "Owning Platform 2": "DP: Colleague Channels",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b14c-fe43-77f5-99ef-7fb52d4627da",
+    "Data Product Name 3": "AL16664.CrossTelephonyDatamart"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+    "Owning Platform 2": "DP: Colleague Channels",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01934518-afd7-74ed-8ac2-9886a94bd631",
+    "Data Product Name 3": "AL20828.AccountClosure"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+    "Owning Platform 2": "DP: Colleague Channels",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019850f2-1026-70d2-973f-db3ee5f4ca85",
+    "Data Product Name 3": "AL27252.CACIMarketBranchDatabase"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+    "Owning Platform 2": "DP: Colleague Channels",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019850f6-a049-7aa3-a7f5-0faa3bfcb9d6",
+    "Data Product Name 3": "AL27253.PostOffice"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/1e085f26-b0ac-41eb-92ca-ceb59afd03f7",
+    "Owning Platform 2": "DP: Economic Crime Prevention",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0195c8f3-a65e-7090-a53f-fa8751efd24f",
+    "Data Product Name 3": "AL23651.ECPExitOutcome"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/3c677fff-dd21-4fe4-9cfe-e3c0cc868443",
+    "Business Domain 1": "DP: Consumer Relationships",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/b10c51aa-496f-4091-9cda-e175604e0268",
+    "Owning Platform 2": "DP: Personalised Experiences & Communications",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/69dfd48c-f2e0-4506-a02e-5d2cc39c4203",
+    "Data Product Name 3": "Party.Person.Perso.Core"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189cab",
+    "Data Product Name 3": "AL02540.VisionPlusCMS"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c8b",
+    "Data Product Name 3": "AL02540.VisionPlusMCWE"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c79",
+    "Data Product Name 3": "AL02540.VisionPlusPersistentDebt"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cface",
+    "Data Product Name 3": "Event.Transaction.PersonalCreditCard"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cfacb",
+    "Data Product Name 3": "Portfolio.Account.PersonalCreditCard"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cfad1",
+    "Data Product Name 3": "Portfolio.Application.PersonalCreditCard"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+    "Owning Platform 2": "DP: Credit Cards",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cfacc",
+    "Data Product Name 3": "Reference.Product.PersonalCreditCard"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01902a8b-f3d3-7ba4-9a9d-fd6d2a303cec",
+    "Owning Platform 2": "DP: Financial Wellbeing",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c6e",
+    "Data Product Name 3": "AL05902.DebtManagerRetail"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01902a8b-f3d3-7ba4-9a9d-fd6d2a303cee",
+    "Owning Platform 2": "DP: Loans and Affordability",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189ca9",
+    "Data Product Name 3": "AL00812.DataCollectionAndDistributionArea"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01902a8b-f3d3-7ba4-9a9d-fd6d2a303cee",
+    "Owning Platform 2": "DP: Loans and Affordability",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c88",
+    "Data Product Name 3": "AL20028.LoansPricingSystem"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01902a8b-f3d3-7ba4-9a9d-fd6d2a303cee",
+    "Owning Platform 2": "DP: Loans and Affordability",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cfacf",
+    "Data Product Name 3": "Event.Transaction.Loan"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01902a8b-f3d3-7ba4-9a9d-fd6d2a303cee",
+    "Owning Platform 2": "DP: Loans and Affordability",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cfadd",
+    "Data Product Name 3": "Portfolio.Account.Loan"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/33b44992-0795-43ec-9d24-1046c9278456",
+    "Business Domain 1": "DP: Consumer Lending",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/01902a8b-f3d3-7ba4-9a9d-fd6d2a303cee",
+    "Owning Platform 2": "DP: Loans and Affordability",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0193b21c-d1f1-7042-b87d-ef2b085cfadc",
+    "Data Product Name 3": "Portfolio.Application.Loan"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/99605668-d5c0-4b49-b1dc-c992de399337",
+    "Owning Platform 2": "DP: Business Transaction Banking",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c81",
+    "Data Product Name 3": "AL00426.CentralisedAccountingProject"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/99605668-d5c0-4b49-b1dc-c992de399337",
+    "Owning Platform 2": "DP: Business Transaction Banking",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c84",
+    "Data Product Name 3": "AL00475.Corporate&BusinessBankingProduct&TransactionsSystem"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/99605668-d5c0-4b49-b1dc-c992de399337",
+    "Owning Platform 2": "DP: Business Transaction Banking",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c6d",
+    "Data Product Name 3": "AL08082.CommercialandCoreBankingSystem"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01941752-746f-7949-9176-c1bff6d83590",
+    "Data Product Name 3": "AL27223.DepartmentForEnergySecurity&NetZero"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0194175a-02ae-7980-a088-6eae74e4752b",
+    "Data Product Name 3": "AL27224.OfficeForNationalStatisticsEconomicActivityandAtmosphericEmissions"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01941734-27e4-7cd2-a834-8a1b9dfbca8e",
+    "Data Product Name 3": "AL27225.PartnershipForCarbonAccountingFinancials"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/0191fa70-fd02-7204-9f77-a368ca88efaa",
+    "Data Product Name 3": "External Accounting Invoice"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/39866732-376e-4d47-a1c1-c790017543e4",
+    "Data Product Name 3": "External Bill"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/9c13a7da-f98e-4124-ad00-d89154c8d507",
+    "Data Product Name 3": "External Invoice"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/018fe30f-5ad4-7f43-b356-d560751afe5c",
+    "Data Product Name 3": "External Journal Entry"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/bcb255d3-f267-4746-ae56-c2431ee12435",
+    "Data Product Name 3": "External Ledger Account"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01905a1c-2ed5-701f-b0a5-15801cd4c303",
+    "Data Product Name 3": "External Payment"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01948843-0cce-7113-9738-54bd5fd5b987",
+    "Data Product Name 3": "Green Building Tool"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01903b7b-48fd-7d93-afc6-85c865be5544",
+    "Data Product Name 3": "OversightReference.ESGMarket.Emission"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01903b33-bde1-781a-a14e-c0d603695a83",
+    "Data Product Name 3": "Reference.Location.Region.Metric"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+    "Owning Platform 2": "DP: Client Data & Analytics",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01939ba1-689f-7ba1-88bb-9b9e0cdbcde4",
+    "Data Product Name 3": "Soil Association Exchange"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/c7af256f-d617-4170-97dd-9370b3400eb1",
+    "Owning Platform 2": "DP: Commercial Lending",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01934a83-3d2b-718a-ac01-74c1ba52aba8",
+    "Data Product Name 3": "AL04147.MortgageAccountingSystem"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/c7af256f-d617-4170-97dd-9370b3400eb1",
+    "Owning Platform 2": "DP: Commercial Lending",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/019340b4-b7a7-7cf3-a46a-281b4e189c8d",
+    "Data Product Name 3": "AL08904.AdvancedCommercialBankingSystem"
+  },
+  {
+    "Business Domain 1 Link": "https://lloyds.collibra.com/community/5c63250a-c6bc-41cd-bde4-74dc3c4d2883",
+    "Business Domain 1": "DP: Business & Commercial Banking",
+    "Owning Platform 2 Link": "https://lloyds.collibra.com/domain/c7af256f-d617-4170-97dd-9370b3400eb1",
+    "Owning Platform 2": "DP: Commercial Lending",
+    "Data Product Name 3 Link": "https://lloyds.collibra.com/asset/01935501-c906-7b30-a5f9-48c9e5c62e75",
+    "Data Product Name 3": "AL15757.Asset&LeaseFinancing"
+  }
+]
