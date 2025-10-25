@@ -1,0 +1,842 @@
+{
+    "version": "0.1.0",
+    "kind": "DataContract",
+    "apiVersion": "v3.0.2",
+    "id": "{{ data['id'] }}",
+    "name": "{{ data['data product display name'] }}",
+    "tenant": "",
+    "tags": [
+        ""
+    ],
+    "status": "{{ data['Data Product Lifecycle'].value }}",
+    "servers": [{
+        "server": "ap-edhcon-prd-01-2cad-10",
+        "type": "bigquery",
+        "project": "ap-edhcon-prd-01-2cad-10",
+        "dataset": "ap_edhcon_prd_01_bqd_euwe2_oceant24stg_010"
+    }],
+    "authoritativeDefinitions": [
+        {
+            "type": "JIRA or JIRA Align Link",
+            "url": "{{ data['JIRA or JIRA Align Link'].value | extract_href }}"
+        }
+    ],
+    "dataProduct": "{{ data['Data Product Business Name'].name if data['Data Product Business Name'] is defined and data['Data Product Business Name'].name is not none else ''}}",
+    "description": {
+        "usage": "Intended usage of the dataset",
+        "purpose": "{{ data['Consumer Use Case & Business Value'].value }}",
+        "limitations": "",
+        "customProperties" : [
+            {
+                "property": "detailedDescription",
+                "value": "{{ data['Description'].value }}"
+            }
+        ]
+    },
+    "domain": "{{ data['owning platform'] }}",
+    "community": "{{ data['business domain'] }}",
+    "slaDefaultElement": null,
+    "schema": [
+        {% for i in range(data['Data Product contains Table'] | length) %}
+        {
+            {#"logicalType": "",#}
+            "physicalName": "{{ data['Data Product contains Table'][i]['table'] | extract_last_value }}",
+            "physicalType": "table",
+            "businessName": "{{ data['Data Product contains Schema'][0].value | extract_last_value if data['Data Product contains Schema'][0] is defined else '' }}",
+            "description": "{{ data['Data Product contains Table'][i]['Description'] if data['Data Product contains Table'][i]['Description'] is defined else '' }}",
+            "tags": [],
+            {% if 'Data Product contains Table' in data and data['Data Product contains Table'][i]['DataGranularityDescription'] is not none %}
+            "dataGranularityDescription": "{{ data['Data Product contains Table'][i]['DataGranularityDescription'] }}",
+            {% endif %}
+            "properties": [
+                {% for j in range(data['Data Product contains Table'][i]['columns'] | length) %}
+                {
+                    "name": "{{ data['Data Product contains Table'][i]['columns'][j]['name'] | extract_last_value }}",
+                    "primaryKey": {{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Is Primary Key')  | map(attribute='value') | list | first}},
+                    {% set is_primary_key = data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Is Primary Key') | map(attribute='value') | list | first | default(false, true)%}
+                    "primaryKeyPosition": {% if is_primary_key %} {{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Column Position') | map(attribute='value') | list | first }}{% else %}-1{% endif %},
+                    "logicalType": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'is Logically represented by') | map(attribute='value') | list | first }}",
+                    "logicalTypeOptions": {},
+                    "physicalType": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Technical Data Type') | map(attribute='value') | list | first }}",
+                    "physicalName": "{{ data['Data Product contains Table'][i]['columns'][j]['name'] | extract_last_value }}",
+                    "required": {{ not (data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Is Nullable') | map(attribute='value') | list | first) }},
+                    "description": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Description') | map(attribute='value') | list | first }}",
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false,
+                    "tags": [],
+                    "classification": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Security Classification') | map(attribute='value') | list | first }}",
+                    "quality": [
+                        {
+                            "businessImpact": "operational",
+                            "description": "Not null check on all applicable attributes",
+                            "dimension": "completeness",
+                            "name": "notNullAttributeCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {
+                                    "property": "threshold",
+                                    "value": "2%"
+                                },
+                                {
+                                    "property": "thresholdFailureAction",
+                                    "value": "Hold failed records"
+                                },
+                                {
+                                    "property": "failureTicketSeverity",
+                                    "value": "P2"
+                                }
+                            ]
+                        },
+                        {
+                            "businessImpact": "operational",
+                            "description": "Unique key check",
+                            "dimension": "uniqueness",
+                            "name": "UKCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {
+                                    "property": "threshold",
+                                    "value": "1%"
+                                },
+                                {
+                                    "property": "thresholdFailureAction",
+                                    "value": "Hold failed records"
+                                },
+                                {
+                                    "property": "failureTicketSeverity",
+                                    "value": "P2"
+                                }
+                            ]
+                        },
+                        {
+                            "businessImpact": "operational",
+                            "description": "Attribute pattern check using the 'attributePattern' custom property of attributes in the Schema",
+                            "dimension": "consistency",
+                            "name": "patternCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {
+                                    "property": "threshold",
+                                    "value": "5%"
+                                },
+                                {
+                                    "property": "thresholdFailureAction",
+                                    "value": "Hold failed records"
+                                },
+                                {
+                                    "property": "failureTicketSeverity",
+                                    "value": "P2"
+                                }
+                            ]
+                        }
+                    ],
+                    "properties": [
+                        {
+                            "property": "schemaName",
+                            "value": "{{ data['Data Product contains Schema'][0].value | extract_last_value }}"
+                        },
+                        {
+                            "property": "name",
+                            "value": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Description from source system') | map(attribute='value') | list | first }}"
+                        },
+                        {
+                            "property": "description",
+                            "value": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Description') | map(attribute='value') | list | first }}"
+                        },
+                        {
+                            "property": "attributeSequence",
+                            "value": "{{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Column Position') | map(attribute='value') | list | first }}"
+                        },
+                        {
+                            "property": "anonymizationStrategy",
+                            "value": "none"
+                        },
+                        {
+                            "property": "personalDataIndicator",
+                            "value": {{ data['Data Product contains Table'][i]['columns'][j]['specs'] | selectattr('name', 'equalto', 'Personal Data?') | map(attribute='value') | list | first }}
+                        }
+                    ]
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ],
+            "quality": [
+                {
+                    "businessImpact": "operational",
+                    "description": "Not null check on all applicable attributes",
+                    "dimension": "completeness",
+                    "name": "notNullAttributeCheck",
+                    "type": "custom",
+                    "customProperties": [
+                        {
+                            "property": "threshold",
+                            "value": "2%"
+                        },
+                        {
+                            "property": "thresholdFailureAction",
+                            "value": "Hold failed records"
+                        },
+                        {
+                            "property": "failureTicketSeverity",
+                            "value": "P2"
+                        }
+                    ]
+                }
+            ]
+
+        }{% if not loop.last %},{% endif %}
+        {% endfor %}
+    ],
+    "Team": [
+        {
+            "username": "sample-producer10@lbg.com",
+            "name": "John Doe 10",
+            "role": "Data Product Owner",
+            "dateIn": "2024-08-02",
+            "dateOut": null
+        },
+        {
+            "username": "sample1-producer10@lbg.com",
+            "name": "John Doe 11",
+            "role": "Ownership Delegated Authority",
+            "dateIn": "2024-06-02",
+            "dateOut": ""
+        }
+    ],
+    "roles": [
+        {
+            "access": "read",
+            "description": "Read access for consumers",
+            "firstLevelApprovers": [
+                "John Doe"
+            ],
+            "secondLevelApprovers": [
+                "John Doe"
+            ],
+            "role": "data engineer"
+        }
+    ],
+    "customProperties": [
+        {% if 'has owning Business Area' in data and data['has owning Business Area'].value is not none %}
+        {
+            "property": "hasowningBusinessArea",
+            "value": "{{ data['has owning Business Area'].value }}"
+        },
+        {% endif %}
+        {% if 'Data Product Lifecycle' in data and data['Data Product Lifecycle'].value is not none %}
+         {
+            "property": "dataProductLifecycle",
+            "value": "{{ data['Data Product Lifecycle'].name }}"
+        },
+        {% endif %}
+        {% if 'Data Product Business Name' in data and data['Data Product Business Name'].value is not none %}
+        {
+            "property": "nameOfTheBusiness",
+            "value": "{{ data['Data Product Business Name'].name }}"
+        },
+        {% endif %}
+        {
+            "property": "consumerForContract",
+            "value": []
+        },
+        {% if 'related to GDM Data Concepts' in data %}
+        {
+            "property": "relatedToGDMDataConcepts",
+            "value": [
+                {% for k in range(data['related to GDM Data Concepts'] | length) %}
+                {
+                    "value" :  "{{data['related to GDM Data Concepts'][k].value }}"
+                }{% if not loop.last %},{% endif %}
+                {% endfor %}
+            ]
+        },
+        {% endif %}
+        {% if 'Collaborating Platforms' in data %}
+        {
+            "property": "collaboratingPlatforms",
+            "value": [
+                {% for k in range(data['Collaborating Platforms'] | length) %}
+                {
+                    "value":"{{data['Collaborating Platforms'][k].value }}"
+                }
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ]
+        },
+        {% endif %}
+        {% if 'has building Platform Team' in data %}
+        {
+            "property": "hasBuildingPlatformTeam",
+            "value": [
+                {% for k in range(data['has building Platform Team'] | length) %}
+                {
+                    "value":"{{data['has building Platform Team'][k].value }}"
+                }
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ]
+        },
+        {% endif %}
+        {% if 'Data Update Frequency' in data and data['Data Update Frequency'].value is not none %}
+        {
+            "property": "dataUpdateFrequency",
+            "value": "{{ data['Data Update Frequency'].value }}"
+        },
+        {% endif %}
+        {% if 'Has Consuming Platform Teams' in data %}
+        {
+            "property": "hasConsumingPlatformTeams",
+            "value": [
+                {% for k in range(data['Has Consuming Platform Teams'] | length) %}
+                {
+                    "value":"{{ data['Has Consuming Platform Teams'][k].value }}"
+                }
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+            ]
+        },
+        {% endif %}
+        {% if 'Logical Model Reference' in data and data['Logical Model Reference'].value is not none %}
+        {
+            "property": "logicalModelReference",
+            "value": "{{ data['Logical Model Reference'].value }}"
+        },
+        {% endif %}
+        {% if 'Declaration of Intent Endorsed Date' in data and data['Declaration of Intent Endorsed Date'].value is not none %}
+        {
+            "property": "dataProductChapterApprovalDate",
+            "value": {{ data['Declaration of Intent Endorsed Date'].value }} 
+        },
+        {% endif %}
+        {% if 'Expected Build Start Date' in data and data['Expected Build Start Date'].value is not none %}
+        {
+            "property": "expectedBuildStartDate",
+            "value": {{ data['Expected Build Start Date'].value }}
+        },
+        {% endif %}
+        {% if 'Data Product Type' in data and data['Data Product Type'].value is not none %}
+        {
+            "property": "dataProductType",
+            "value": "{{ data['Data Product Type'].value }}"
+        },
+        {% endif %}
+        {% if 'Expected release date' in data and data['Expected release date'].value is not none %}
+        {
+            "property": "expectedReleaseDate",
+            "value": {{ data['Expected release date'].value }}
+        },
+        {% endif %}
+        {% if 'Data Curation Pattern' in data and data['Data Curation Pattern'].value is not none %}
+        {
+            "property": "dataCurationPattern",
+            "value": "{{ data['Data Curation Pattern'].value }}"
+        },
+        {% endif %}
+        {% if 'Data Product has Retention Period' in data and data['Data Product has Retention Period'].value is not none %}
+        {
+            "property": "retentionPeriod",
+            "value": "{{ data['Data Product has Retention Period'].value }}"
+        },
+        {% endif %}
+        {% if 'sources data from Application' in data %}
+        {
+            "property": "sourceDataApplication",
+            "value": [
+                {% for k in range(data['sources data from Application'] | length) %}
+                {"value":"{{ data['sources data from Application'][k].value }}"}
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+            ]
+        },
+        {% endif %}
+        {% if 'External Data Sources' in data %}
+        {
+            "property": "externalDataSources",
+            "value": [
+                {% for k in range(data['External Data Sources'] | length) %}
+                {
+                    "value":"{{ data['External Data Sources'][k].value }}"
+                }
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ]
+        },
+        {% endif %}
+        {% if 'Source Data From Data Products' in data %}
+        {
+            "property": "sourceDataProducts",
+            "value": [
+                {% for k in range(data["Source Data From Data Products"] | length) %}
+                {"value":"{{ data['Source Data From Data Products'][k].value }}"}
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+            ]
+        },
+        {% endif %}
+        {% if 'implemented in application' in data %}
+        {
+            "property": "implementedInApplication",
+            "value": [
+                {% for k in range(data['implemented in application'] | length) %}
+                {"value":"{{data['implemented in application'][k].value }}"}
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ]
+        },
+        {% endif %}
+        {% if 'Personal Data Indicator' in data and data['Personal Data Indicator'].value is not none %}
+        {
+            "property": "personalDataIndicator",
+            "value": {{ data['Personal Data Indicator'].value }}
+        },
+        {% endif %}
+        {% if 'Data Product contains Personal Data' in data and data['Data Product contains Personal Data'].value is not none %}
+        {
+            "property": "personalDataCategory",
+            "value": [
+                {% for k in range(data['Data Product contains Personal Data'] | length) %}
+                {"value":"{{ data['Data Product contains Personal Data'][k].value }}"}
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ]
+        },
+        {% endif %}
+        {% if 'Consumption Interface Type' in data %}
+        {
+            "property": "consumptionInterfaceType",
+            "value": [
+                {% for k in range(data['Consumption Interface Type'].value | length) %}
+                {"value":"{{ data['Consumption Interface Type']['value'][k] }}"}
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ]
+        },
+        {% endif %}
+        {% if 'Interoperability Key' in data and data['Interoperability Key'] is not none %}
+        {
+            "property": "interoperabilityKeys",
+            "value":[
+                {% for k in range(data['Interoperability Key'].value | length) %}
+                {"value":"{{ data['Interoperability Key']['value'][k] }}"}
+                {% if not loop.last %},{%endif%}
+                {% endfor %}
+                ] 
+        },
+        {% endif %}
+        {% if 'Access Instructions' in data and data['Access Instructions'].value is not none %}
+        {
+            "property": "accessInstructions",
+            "value": "{{ data['Access Instructions'].value }}"
+        },
+        {% endif %}
+        {% if 'Data Product Technical Debt Details' in data and data['Data Product Technical Debt Details'].value is not none %}
+        {
+            "property": "dataProductTechnicalDebtDetails",
+            "value": "{{ data['Data Product Technical Debt Details'].value }}"
+        },
+        {% endif %}
+        {% if 'Data Product Technical Debt Indicator' in data and data['Data Product Technical Debt Indicator'].value is not none %}
+        {
+            "property": "dataProductTechnicalDebt",
+            "value": "{{ data['Data Product Technical Debt Indicator'].value }}"
+        },
+        {% endif %}
+        {% if 'Data Product Version' in data and data['Data Product Version'].value is not none %}
+        {
+            "property": "dataProductVersion",
+            "value": "{{ data['Data Product Version'].value }}"
+        },
+        {% endif %}
+        {% if 'Security Classification' in data and data['Security Classification'].value is not none %}
+        {
+            "property": "securityClassification",
+            "value": "{{ data['Security Classification'].value }}"
+        },
+        {% endif %}
+        {
+            "property": "ownerOrg",
+            "value": "SOme owner custom org"
+        },
+        // {
+        //     "property": "detailedDescription",
+        //     "value": "{{ data['Description'].value }}"
+        // },
+        {% if 'Funding Position' in data and data['Funding Position'].value is not none %}
+        {
+            "property": "fundingPosition",
+            "value": "{{ data['Funding Position'].value }}"
+        },
+        {% endif %}
+        {% if 'Data Product Data Type(s)' in data and data['Data Product Data Type(s)'].value is not none %}
+        {
+            "property": "dataProductDataType",
+            "value": "{{ data['Data Product Data Type(s)'].value }}"
+        },
+        {% endif %}
+        {% if 'status' in data %}
+        {
+            "property": "assetStatus",
+            "value": "{{ data['status'] }}"
+        },
+        {% endif %}
+        {# has to be handled from the backend
+        {
+            "property": "signature",
+            "value": "U3rLS+G08cPxaBdaAWs2+EL86VzQYwZIGefUDQ40pNVRBRnsloeFdG2X+5seTp0MDxf1CIEHG4ivsZNAdb6dY0U1rQHx17Vo9dE/FaXGGYmlSJeZjJ8Y1/SABzCTg7C6Ke88DhavHyfwSThgWVwUOftHOYBhTwRxpjKB06D20QM="
+        }#}
+    ],
+    "contractCreatedTs": "{{ iso_timestamp }}"
+}
+
+ {# servers needs some additional work #}
+ {#
+    {
+      "server": "string",
+      "type": "api",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "location": "https://api.example.com/v1"
+    },
+    {
+      "server": "string",
+      "type": "athena",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "stagingDir": "s3://my_storage_account_name/my_container/path",
+      "schema": "string",
+      "catalog": "awsdatacatalog",
+      "regionName": "eu-west-1"
+    },
+    {
+      "server": "string",
+      "type": "azure",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "location": "az://my_storage_account_name.blob.core.windows.net/my_container/path/*.parquet",
+      "format": "parquet",
+      "delimiter": "new_line"
+    },
+    {
+      "server": "string",
+      "type": "bigquery",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "project": "string",
+      "dataset": "string"
+    },
+    {
+      "server": "string",
+      "type": "clickhouse",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 9000,
+      "database": "string"
+    },
+    {
+      "server": "string",
+      "type": "databricks",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "dbc-abcdefgh-1234.cloud.databricks.com",
+      "catalog": "string",
+      "schema": "string"
+    },
+    {
+      "server": "string",
+      "type": "denodo",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 9999,
+      "database": "string"
+    },
+    {
+      "server": "string",
+      "type": "dremio",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 9047,
+      "schema": "string"
+    },
+    {
+      "server": "string",
+      "type": "duckdb",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "database": "string",
+      "schema": "string"
+    },
+    {
+      "server": "string",
+      "type": "glue",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "account": "1234-5678-9012",
+      "database": "my_database",
+      "location": "s3://datacontract-example-orders-latest/data/{model}",
+      "format": "parquet"
+    },
+    {
+      "server": "string",
+      "type": "cloudsql",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 5432,
+      "database": "string",
+      "schema": "string"
+    },
+    {
+      "server": "string",
+      "type": "db2",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 50000,
+      "database": "string",
+      "schema": "string"
+    },
+    {
+      "server": "string",
+      "type": "informix",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 9088,
+      "database": "string"
+    },
+    {
+      "server": "string",
+      "type": "custom",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "account": "string",
+      "catalog": "string",
+      "database": "string",
+      "dataset": "string",
+      "delimiter": "string",
+      "endpointUrl": "string",
+      "format": "string",
+      "host": "string",
+      "location": "string",
+      "path": "string",
+      "port": 1234,
+      "project": "string",
+      "region": "string",
+      "regionName": "string",
+      "schema": "string",
+      "serviceName": "string",
+      "stagingDir": "string",
+      "warehouse": "string"
+    },
+    {
+      "server": "string",
+      "type": "kafka",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "format": "json"
+    },
+    {
+      "server": "string",
+      "type": "kinesis",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "region": "string",
+      "format": "json"
+    },
+    {
+      "server": "string",
+      "type": "local",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "path": "./folder/data.parquet",
+      "format": "json"
+    },
+    {
+      "server": "string",
+      "type": "mysql",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 3306,
+      "database": "string"
+    },
+    {
+      "server": "string",
+      "type": "oracle",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "localhost",
+      "port": 1523,
+      "serviceName": "service"
+    },
+    {
+      "server": "string",
+      "type": "postgresql",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 5432,
+      "database": "string",
+      "schema": "string"
+    },
+    {
+      "server": "string",
+      "type": "presto",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "localhost:8080",
+      "catalog": "postgres",
+      "schema": "public"
+    },
+    {
+      "server": "string",
+      "type": "pubsub",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "project": "string"
+    },
+    {
+      "server": "string",
+      "type": "redshift",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "database": "string",
+      "schema": "string",
+      "region": "us-east-1",
+      "account": "string"
+    },
+    {
+      "server": "string",
+      "type": "s3",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "location": "s3://datacontract-example-orders-latest/data/{model}/*.json",
+      "endpointUrl": "https://minio.example.com",
+      "format": "parquet",
+      "delimiter": "new_line"
+    },
+    {
+      "server": "string",
+      "type": "sftp",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "location": "sftp://123.123.12.123/{model}/*.json",
+      "format": "parquet",
+      "delimiter": "new_line"
+    },
+    {
+      "server": "string",
+      "type": "snowflake",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 443,
+      "account": "string",
+      "database": "string",
+      "schema": "string",
+      "warehouse": "string"
+    },
+    {
+      "server": "string",
+      "type": "sqlserver",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "localhost",
+      "port": 1433,
+      "database": "database",
+      "schema": "dbo"
+    },
+    {
+      "server": "string",
+      "type": "synapse",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 1433,
+      "database": "string"
+    },
+    {
+      "server": "string",
+      "type": "trino",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "localhost",
+      "port": 8080,
+      "catalog": "hive",
+      "schema": "my_schema"
+    },
+    {
+      "server": "string",
+      "type": "vertica",
+      "description": "string",
+      "environment": "string",
+      "roles": ["Role"],
+      "customProperties": ["CustomProperty"],
+      "host": "string",
+      "port": 5433,
+      "database": "string",
+      "schema": "string"
+    }
+#}
