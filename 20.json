@@ -636,5 +636,33 @@
         "SysAdmins"
       ]
     }
+  },
+  {
+    "id": "001935501-c906-7b30-a5f9-48c9e5c62e58",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Amanda Butler"
+      ],
+      "Ownership Delegated Authority": [
+        "Christopher Barber-Shaw"
+      ],
+      "Subscriber": [
+        "Christopher Barber-Shaw",
+        "Michael Rose"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
   }
 ]
