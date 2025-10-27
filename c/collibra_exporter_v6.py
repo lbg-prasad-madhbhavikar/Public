@@ -1,6 +1,7 @@
 from enum import Enum
+import os
 import requests
-import json
+import orjson as json
 import base64
 import time
 from tqdm import tqdm
@@ -11,19 +12,32 @@ import re
 import json
 
 def extract_href(data):
-    match = re.search(r'href=([^"]+)"', data)
-    return match.group(1) if match else None
+    if data:
+        match = re.search(r'href="(.*?)"', data)
+        return match.group(1).strip() if match else data.strip()
+    return data.strip()
 
 def extract_last_value(data, separator=">"):
-    parts = data.split(separator)
-    return parts[-1] if parts else data
+    if data:
+        parts = data.split(separator)
+        return parts[-1].strip() if parts else data.strip()
+    return data.strip()
 
-def iso_timestamp():
-    return time.strftime("%Y-%m-%dT%H:%M:%S")
+def iso_timestamp(epoch):
+    if epoch:
+        result = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime(epoch/1000))
+    else:
+        result = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+    return result
 
-user_name = os.getenv('COLLIBRA_USERNAME')
-user_password = os.getenv('COLLIBRA_PASSWORD')
+def toJson(obj, *, indent=None):
+    result = json.dumps(obj, indent=indent, default=str)
+    return result
+# user_name = os.getenv('COLLIBRA_USERNAME')
+# user_password = os.getenv('COLLIBRA_PASSWORD')
 
+user_name = "LcapAvatarServices"
+user_password = "eKsEnSus2j2S"
 
 collibra_config = {
     "url": "https://lloyds.collibra.com",
@@ -548,7 +562,7 @@ def get_columns_for_table(relation_incoming_id, asset_id, limit=10, parallelism_
         with concurrent.futures.ThreadPoolExecutor(max_workers=parallelism_count) as executor:
             for chunk in chunks:
                 for col in chunk:
-                    id = f"{relation_incoming_id}_{col.get('relation_outgoing_id')}"
+                    id = f"{relation_incoming_id}{os.sep}{col.get('relation_outgoing_id')}"
                     future = submit_job_if_not_cached(
                         construct_file_name(
                             asset_id, 
@@ -606,6 +620,8 @@ def get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is
 
 
 class ASSET_TYPE(Enum):
+    ROOT = "root"
+    STATS = "stats"
     ASSET = "asset"
     ASSET_DETAILS = "asset_details"
     ASSET_RELATIONS_SOURCE_QUEUE = "asset_relations_source_queue"
@@ -614,11 +630,14 @@ class ASSET_TYPE(Enum):
     DUMP = "dump"
     DOMAIN = "domain"
     COLUMNS = "columns"
+    RESPONSIBILITIES = "responsibilities"
 
-def construct_file_name(asset_id, type:ASSET_TYPE, id=""):
+def construct_file_name(asset_id=None, type:ASSET_TYPE=ASSET_TYPE.ROOT, id=""):
     if id and " " in id:
         id = id.replace(" ", "_")
     match type:
+        case ASSET_TYPE.ROOT:
+            file_name = ""
         case ASSET_TYPE.ASSET:
             file_name = f"{asset_id}/asset.json"
         case ASSET_TYPE.ASSET_DETAILS:
@@ -635,9 +654,11 @@ def construct_file_name(asset_id, type:ASSET_TYPE, id=""):
             file_name = f"{asset_id}/dump.json"
         case ASSET_TYPE.DOMAIN:
             file_name = f"{asset_id}/domain.json"
+        case ASSET_TYPE.RESPONSIBILITIES:
+            file_name = f"{asset_id}/responsibility.json"
         case _:
             file_name = f"{asset_id}/{id}.json"
-    return f"dump/{file_name}"
+    return f"dump/{file_name}" if len(file_name) > 0 else "dump"
    
 def dump_json(asset_id, type:ASSET_TYPE, data, file_name=""):
     file_path = construct_file_name(asset_id, type, file_name)
@@ -665,15 +686,33 @@ def render_template(asset_id, data_path, template_path):
     with open(data_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    env = Environment(loader=FileSystemLoader('.'),trim_blocks=True, lstrip_blocks=True)
+    env = Environment(
+        loader=FileSystemLoader('.'),
+        autoescape=True,
+        # filters={
+        #     'extract_href': extract_href,
+        #     'extract_last_value': extract_last_value,
+        #     'iso_timestamp': iso_timestamp
+        # },
+        extensions=['jinja2.ext.do'],
+        trim_blocks=True,
+        lstrip_blocks=True
+    )
     # Register custom filters
     env.filters['extract_href'] = extract_href
     env.filters['extract_last_value'] = extract_last_value
     env.filters['iso_timestamp'] = iso_timestamp
+    env.filters['tojson'] = toJson
     
     template = env.get_template(template_path)
     data = template.render(data=data)
-    dump_json(asset_id, ASSET_TYPE.CONTRACT, data)
+    data = data.replace('\n', '').replace('"', '').replace('&#34;', '"')
+    data = re.sub(r'\s\s+', ' ', data)
+    # dump_json(asset_id, ASSET_TYPE.CONTRACT, data)
+    contract_file = construct_file_name(asset_id, ASSET_TYPE.CONTRACT)
+    with open(contract_file, 'w', encoding='utf-8') as f:
+        f.write(data)
+        print(f"Saved rendered contract to {contract_file}")
 
 
 def check_and_invoke(asset_id, type:ASSET_TYPE, fn, id, file_name=""):
@@ -706,7 +745,7 @@ def collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, targ
             result = []
             dir_path = pathlib.Path(file_path).parent
             for item_file in pathlib.Path(dir_path).iterdir():
-                if item_file.name.startswith(f"{asset_id}_") and item_file.name.endswith(".json"):
+                if  item_file.is_dir() or not item_file.name.endswith(".json") or not item_file.name.startswith(f"{asset_id}_"):
                     continue
                 with open(item_file, 'r', encoding='utf-8') as f:
                     item_data = json.load(f)
@@ -757,117 +796,155 @@ def process_relational_data(asset_id, asset_relations_source_queue, asset_relati
                 future,
                 relation_incoming_ids[future]
             )
-            
-            # if is_child_of and table_detail:
-            #     with asset_relations_lock:
-            #         if is_child_of not in asset_relations:
-            #             asset_relations[is_child_of] = []
-            #         asset_relations[is_child_of].append(table_detail)
-            # clear_cache(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, relation_incoming_id) need to implement the append mode else will loose the data
                     
                         
-def save_asset(asset_id, seconds):    
-    output_data = {}
-    asset_file_name = construct_file_name(asset_id, ASSET_TYPE.ASSET)
-    with open(asset_file_name, 'r', encoding='utf-8') as f:
-        asset = json.load(f)
-    output_data.update({k: v for k, v in asset.get(asset_id).items()})    
+def save_asset(asset_id):    
+    print(f"Saving asset: {asset_id}")
+    if not pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.DUMP, "")).exists():
+        output_data = {}
+        
+        asset_details_file_name= construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
+        with open(asset_details_file_name, 'r', encoding='utf-8') as f:
+            asset_details = json.load(f)
+        output_data.update({k: v for k, v in asset_details.items()})
+        asset_details = None
+        
+        domain_file_name = construct_file_name(asset_id, ASSET_TYPE.DOMAIN)
+        with open(domain_file_name, 'r', encoding='utf-8') as f:
+            domain = json.load(f)
+        output_data.update({k:v for k, v in domain.items()})
+        domain = None
+        
+        responsibility_file_name = construct_file_name(asset_id, ASSET_TYPE.RESPONSIBILITIES)
+        if pathlib.Path(responsibility_file_name).exists():
+            with open(responsibility_file_name, 'r', encoding='utf-8') as f:
+                responsibility = json.load(f)
+            output_data.update({"roles": responsibility.get("roles", [])})
+            responsibility = None
 
-    asset_details_file_name= construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
-    with open(asset_details_file_name, 'r', encoding='utf-8') as f:
-        asset_details = json.load(f)
-    output_data.update({k: v for k, v in asset_details.items()})
+        asset_file_name = construct_file_name(asset_id, ASSET_TYPE.ASSET)
+        with open(asset_file_name, 'r', encoding='utf-8') as f:
+            asset = json.load(f)
+        output_data.update({k: v for k, v in asset.get(asset_id).items()})    
+        asset = None
 
-    domain_file_name = construct_file_name(asset_id, ASSET_TYPE.DOMAIN)
-    with open(domain_file_name, 'r', encoding='utf-8') as f:
-        domain = json.load(f)
-    # output_data = asset_relations
-    output_data.update({k:v for k, v in domain.items()})
-    
-    asset_relations_dir = pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.TABLE)).parent
-    for item_file in pathlib.Path(asset_relations_dir).iterdir():
-        with open(item_file, 'r', encoding='utf-8') as f:
-            item_data = json.load(f)
-            k = item_data[0]
-            v = item_data[1]
-            k in output_data
-            if k not in output_data:
-                output_data[k].append(v)
-            else:
-                output_data[k] = [v]
+        asset_relations_dir = pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.TABLE)).parent
+        tables = {}
+        for item_file in pathlib.Path(asset_relations_dir).iterdir():
+            if item_file.is_dir() or not item_file.name.endswith(".json"):
+                continue
+            with open(item_file, 'r', encoding='utf-8') as f:
+                item_data = json.load(f)
+                tables[item_data[0]] = item_data
 
-    dump_json(asset_id, ASSET_TYPE.DUMP, output_data)
-    dump_json(asset_id, None,  {"duration": f"{seconds/60:.2f}m" if seconds > 60 else f"{seconds:.2f}s"}, "runtime.stats")
-    
+        for table_id, table_data in tables.items():
+            if table_id=="Data Product contains Table":
+                column_table_folder = pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.COLUMNS, table_id)).parent
+                if not column_table_folder.exists():
+                    continue
+                for table_folder in pathlib.Path(column_table_folder).iterdir():
+                    if table_folder.is_file():
+                        continue
+                    folder_dir = pathlib.Path(table_folder)
+                    if not folder_dir.exists():
+                        continue
+                    for column_file in folder_dir.iterdir():
+                        if column_file.is_dir() or not column_file.name.endswith(".json"):
+                            continue
+                        with open(column_file, 'r', encoding='utf-8') as f:
+                            column_data = json.load(f)
+                            # tables[table_id][1]["columns"].append(column_data)
+                            table_data[1]["columns"].append(column_data)
+
+        for key, value in tables.items():
+            if key not in output_data:
+                output_data[key] = []
+            output_data[key].append(value[1])
+        
+        dump_json(asset_id, ASSET_TYPE.DUMP, output_data)
+
+    print(f"Skipped asset processing for dump for asset: {asset_id}")
     render_template(
         asset_id=asset_id,
         data_path=construct_file_name(asset_id, ASSET_TYPE.DUMP),
-        template_path='contract.template.json'
+        template_path='contract.template.v6.json'
     )
-    print(f"Done processing the asset {asset_id} in",f"{seconds/60:.2f}m" if seconds > 60 else f"{seconds:.2f}s")
+    print(f"Done processing the asset [{asset_id}], created contract at [{construct_file_name(asset_id, ASSET_TYPE.CONTRACT)}]")
 
 if __name__ == "__main__":
-    parallelism_count=8
-    limit = 1000
-    start_time = time.time()
-    targets = []
+    # action = "scrape"
+    action = "process"
+    if(action == "scrape"):
+        parallelism_count=8
+        limit = 1000
+        start_time = time.time()
+        targets = []
 
-    scraping_targets = {}
-    config_path = pathlib.Path('scraping_targets_config.json')
-    if not config_path.exists():
-        raise FileNotFoundError("scraping_targets_config.json does not exist. Please provide the file before running the script.")
+        scraping_targets = {}
+        config_path = pathlib.Path('scraping_targets_config.json')
+        if not config_path.exists():
+            raise FileNotFoundError("scraping_targets_config.json does not exist. Please provide the file before running the script.")
 
-    with open('scraping_targets_config.json', 'r', encoding='utf-8') as f:
-        scraping_targets = json.load(f)
+        with open('scraping_targets_config.json', 'r', encoding='utf-8') as f:
+            scraping_targets = json.load(f)
 
-    for target in scraping_targets.get("targets", []):
-        targets.append({
-            "asset_id": target.get("Data Product Name 3 Link").split("/")[-1],
-        })
-    
-    for target in targets:
-        asset_id = target.get("asset_id")
-        print(f"Processing asset id: [{asset_id}]")
-
-        asset = {}
-        asset_details = {}
-        asset_relations_source_queue=[]
+        for target in scraping_targets.get("targets", []):
+            targets.append({
+                "asset_id": target.get("Data Product Name 3 Link").split("/")[-1],
+            })
         
-        asset_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET)
-        asset_details_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
-        asset_relations_source_queue_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, id=asset_id)
+        for target in targets:
+            asset_id = target.get("asset_id")
+            print(f"Processing asset id: [{asset_id}]")
 
-        import concurrent.futures
+            asset = {}
+            asset_details = {}
+            asset_relations_source_queue=[]
+            
+            asset_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET)
+            asset_details_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
+            asset_relations_source_queue_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, id=asset_id)
 
-        with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-            future_asset = submit_job_if_not_cached(asset_file_id,ASSET_TYPE.ASSET, executor, get_asset, asset_id)
-            future_asset_details = submit_job_if_not_cached(asset_details_file_id,ASSET_TYPE.ASSET_DETAILS, executor, get_asset_details, asset_id, limit, 0, parallelism_count=parallelism_count)
-            future_asset_relations_source_queue = submit_job_if_not_cached(asset_relations_source_queue_file_id,ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, executor, get_outgoing_relations_for, asset_id, limit, 0, parallelism_count=parallelism_count)
+            import concurrent.futures
 
-            asset = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET, asset_file_id, future_asset)
-            asset_details = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_DETAILS, asset_details_file_id, future_asset_details)
-            asset_relations_source_queue = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, asset_relations_source_queue_file_id, future_asset_relations_source_queue)
+            with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                future_asset = submit_job_if_not_cached(asset_file_id,ASSET_TYPE.ASSET, executor, get_asset, asset_id)
+                future_asset_details = submit_job_if_not_cached(asset_details_file_id,ASSET_TYPE.ASSET_DETAILS, executor, get_asset_details, asset_id, limit, 0, parallelism_count=parallelism_count)
+                future_asset_relations_source_queue = submit_job_if_not_cached(asset_relations_source_queue_file_id,ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, executor, get_outgoing_relations_for, asset_id, limit, 0, parallelism_count=parallelism_count)
 
-        domain_id = asset.get(asset_id).get("domain id")
-        status = asset.get(asset_id).get("status")
-        lifecycle = asset_details.get("Data Product Lifecycle", {}).get("value") 
-        asset = None
-        asset_details = None
-        check_and_invoke(asset_id, ASSET_TYPE.DOMAIN, get_domain, domain_id)
-       
-        # Filtering Criteria
-        # if asset.get(asset_id).get("status") not in ["Live", "In Progress"] and asset_details.get("Data Product Lifecycle", {}).get("value") not in ["Published"]:
-            # print(f"Skipping asset [{asset_id}] due to status [{asset.get('status')}] and lifecycle [{asset_details.get('Data Product Lifecycle', {}).get('name')}]")
-            # continue
+                asset = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET, asset_file_id, future_asset)
+                asset_details = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_DETAILS, asset_details_file_id, future_asset_details)
+                asset_relations_source_queue = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, asset_relations_source_queue_file_id, future_asset_relations_source_queue)
 
-        visited_nodes = {}
-        # remove this line with refactoring
-        asset_relations = {}
-        visited_nodes_lock = threading.Lock()
-        asset_relations_lock = threading.Lock()
+            domain_id = asset.get(asset_id).get("domain id")
+            status = asset.get(asset_id).get("status")
+            lifecycle = asset_details.get("Data Product Lifecycle", {}).get("value") 
+            asset = None
+            asset_details = None
+            check_and_invoke(asset_id, ASSET_TYPE.DOMAIN, get_domain, domain_id)
+        
+            # Filtering Criteria
+            # if asset.get(asset_id).get("status") not in ["Live", "In Progress"] and asset_details.get("Data Product Lifecycle", {}).get("value") not in ["Published"]:
+                # print(f"Skipping asset [{asset_id}] due to status [{asset.get('status')}] and lifecycle [{asset_details.get('Data Product Lifecycle', {}).get('name')}]")
+                # continue
 
-        process_relational_data(asset_id, asset_relations_source_queue, asset_relations,asset_relations_lock, limit=limit, parrallelism_count=parallelism_count)
+            visited_nodes = {}
+            # remove this line with refactoring
+            asset_relations = {}
+            visited_nodes_lock = threading.Lock()
+            asset_relations_lock = threading.Lock()
 
-        seconds = time.time() - start_time
-        save_asset(asset_id, seconds)
-    print("All assets processed.")
+            process_relational_data(asset_id, asset_relations_source_queue, asset_relations,asset_relations_lock, limit=limit, parrallelism_count=parallelism_count)
+
+            seconds = time.time() - start_time
+            dump_json(asset_id, ASSET_TYPE.STATS,  {"duration": f"{seconds/60:.2f}m" if seconds > 60 else f"{seconds:.2f}s"}, "runtime.stats")
+            
+            # save_asset(asset_id, seconds)
+        print("Scrapping all assets Complete.")
+    else:
+        assets_dir = pathlib.Path(construct_file_name())
+        for item_file in assets_dir.iterdir():
+            if item_file.is_dir():
+                asset_id = item_file.name
+                save_asset(asset_id)
+        print("Processing of all assets complete.")

@@ -244,9 +244,8 @@
             "property": "relatedToGDMDataConcepts",
             "value": [
                 {% for k in range(data['related to GDM Data Concepts'] | length) %}
-                {
-                    "value" :  "{{data['related to GDM Data Concepts'][k].value }}"
-                }{% if not loop.last %},{% endif %}
+                {{data['related to GDM Data Concepts'][k].value }}
+                {% if not loop.last %},{% endif %}
                 {% endfor %}
             ]
         },
@@ -256,9 +255,7 @@
             "property": "collaboratingPlatforms",
             "value": [
                 {% for k in range(data['Collaborating Platforms'] | length) %}
-                {
-                    "value":"{{data['Collaborating Platforms'][k].value }}"
-                }
+                {{data['Collaborating Platforms'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
                 ]
@@ -269,9 +266,7 @@
             "property": "hasBuildingPlatformTeam",
             "value": [
                 {% for k in range(data['has building Platform Team'] | length) %}
-                {
-                    "value":"{{data['has building Platform Team'][k].value }}"
-                }
+                {{data['has building Platform Team'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
                 ]
@@ -288,9 +283,7 @@
             "property": "hasConsumingPlatformTeams",
             "value": [
                 {% for k in range(data['Has Consuming Platform Teams'] | length) %}
-                {
-                    "value":"{{ data['Has Consuming Platform Teams'][k].value }}"
-                }
+                {{ data['Has Consuming Platform Teams'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
             ]
@@ -305,13 +298,13 @@
         {% if 'Declaration of Intent Endorsed Date' in data and data['Declaration of Intent Endorsed Date'].value is not none %}
         {
             "property": "dataProductChapterApprovalDate",
-            "value": {{ data['Declaration of Intent Endorsed Date'].value }} 
+            "value": "{{ data['Declaration of Intent Endorsed Date'].value | iso_timestamp }}"
         },
         {% endif %}
         {% if 'Expected Build Start Date' in data and data['Expected Build Start Date'].value is not none %}
         {
             "property": "expectedBuildStartDate",
-            "value": {{ data['Expected Build Start Date'].value }}
+            "value": "{{ data['Expected Build Start Date'].value | iso_timestamp }}"
         },
         {% endif %}
         {% if 'Data Product Type' in data and data['Data Product Type'].value is not none %}
@@ -323,7 +316,7 @@
         {% if 'Expected release date' in data and data['Expected release date'].value is not none %}
         {
             "property": "expectedReleaseDate",
-            "value": {{ data['Expected release date'].value }}
+            "value": "{{ data['Expected release date'].value | iso_timestamp }}"
         },
         {% endif %}
         {% if 'Data Curation Pattern' in data and data['Data Curation Pattern'].value is not none %}
@@ -343,7 +336,7 @@
             "property": "sourceDataApplication",
             "value": [
                 {% for k in range(data['sources data from Application'] | length) %}
-                {"value":"{{ data['sources data from Application'][k].value }}"}
+                {{ data['sources data from Application'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
             ]
@@ -354,9 +347,7 @@
             "property": "externalDataSources",
             "value": [
                 {% for k in range(data['External Data Sources'] | length) %}
-                {
-                    "value":"{{ data['External Data Sources'][k].value }}"
-                }
+                {{ data['External Data Sources'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
                 ]
@@ -367,7 +358,7 @@
             "property": "sourceDataProducts",
             "value": [
                 {% for k in range(data["Source Data From Data Products"] | length) %}
-                {"value":"{{ data['Source Data From Data Products'][k].value }}"}
+                {{ data['Source Data From Data Products'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
             ]
@@ -395,7 +386,7 @@
             "property": "personalDataCategory",
             "value": [
                 {% for k in range(data['Data Product contains Personal Data'] | length) %}
-                {"value":"{{ data['Data Product contains Personal Data'][k].value }}"}
+                {{ data['Data Product contains Personal Data'][k].value }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
                 ]
@@ -406,7 +397,7 @@
             "property": "consumptionInterfaceType",
             "value": [
                 {% for k in range(data['Consumption Interface Type'].value | length) %}
-                {"value":"{{ data['Consumption Interface Type']['value'][k] }}"}
+                {{ data['Consumption Interface Type']['value'][k] }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
                 ]
@@ -417,7 +408,7 @@
             "property": "interoperabilityKeys",
             "value":[
                 {% for k in range(data['Interoperability Key'].value | length) %}
-                {"value":"{{ data['Interoperability Key']['value'][k] }}"}
+                {{ data['Interoperability Key']['value'][k] }}
                 {% if not loop.last %},{%endif%}
                 {% endfor %}
                 ] 
@@ -485,7 +476,7 @@
             "value": "U3rLS+G08cPxaBdaAWs2+EL86VzQYwZIGefUDQ40pNVRBRnsloeFdG2X+5seTp0MDxf1CIEHG4ivsZNAdb6dY0U1rQHx17Vo9dE/FaXGGYmlSJeZjJ8Y1/SABzCTg7C6Ke88DhavHyfwSThgWVwUOftHOYBhTwRxpjKB06D20QM="
         }#}
     ],
-    "contractCreatedTs": "{{ iso_timestamp }}"
+    "contractCreatedTs": "{{ none | iso_timestamp }}"
 }
 
  {# servers needs some additional work #}
