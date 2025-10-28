@@ -11,13 +11,88 @@
 {% do contract.update({
     "version": "0.1.0",
     "kind": "DataContract",
-    "apiVersion": "v3.0.2"
+    "apiVersion": "v3.0.2",
+    "roles": [
+        {
+            "access": "write",
+            "description": "Data Product Owner",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Product Owner"
+        },
+        {
+            "access": "write",
+            "description": "Read access for consumers",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Owner"
+        },
+        {
+            "access": "write",
+            "description": "Data Producer/Publisher",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Producer/Publisher"
+        },
+        {
+            "access": "wite",
+            "description": "Data Scientist ",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Scientist "
+        },{
+            "access": "write",
+            "description": "Machine Learning Engineer",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Product Machine Learning Engineer"
+        },
+        {
+            "access": "write",
+            "description": "Data Engineer",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Engineer"
+        },
+        {
+            "access": "read",
+            "description": "Product Data Analyst",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Product Data Analyst"
+        },
+        {
+            "access": "read",
+            "description": "Customer Data Agent",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Customer Data Agent"
+        },
+        {
+            "access": "read",
+            "description": "BI Report Analyst",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "BI Report Analyst"
+        },
+        {
+            "access": "read",
+            "description": "Business Analyst",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Business Analyst"
+        },
+        {
+            "access": "read",
+            "description": "Application Support Engineer",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Application Support Engineer"
+        }
+    ]
 }) %}
 {#
 {% do contract.update({
-    "version": "0.1.0",
-    "kind": "DataContract",
-    "apiVersion": "v3.0.2",
     "tenant": "",
     "tags": [""],
     "servers": [{
@@ -27,31 +102,7 @@
         "dataset": "ap_edhcon_prd_01_bqd_euwe2_oceant24stg_010"
     }],
     "slaDefaultElement": null,
-    "Team": [
-        {
-            "username": "sample-producer10@lbg.com",
-            "name": "John Doe 10",
-            "role": "Data Product Owner",
-            "dateIn": "2024-08-02",
-            "dateOut": null
-        },
-        {
-            "username": "sample1-producer10@lbg.com",
-            "name": "John Doe 11",
-            "role": "Ownership Delegated Authority",
-            "dateIn": "2024-06-02",
-            "dateOut": ""
-        }
-    ],
-    "roles": [
-        {
-            "access": "read",
-            "description": "Read access for consumers",
-            "firstLevelApprovers": ["John Doe"],
-            "secondLevelApprovers": ["John Doe"],
-            "role": "data engineer"
-        }
-    ]
+
 }) %} #}
 
 
