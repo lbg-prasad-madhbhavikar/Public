@@ -12,6 +12,7 @@
     "version": "0.1.0",
     "kind": "DataContract",
     "apiVersion": "v3.0.2",
+    "tenant": "",
     "roles": [
         {
             "access": "write",
@@ -129,7 +130,7 @@
 {% endif %}
 
 {% if 'Data Product Business Name' in data and data['Data Product Business Name'] is not none and data['Data Product Business Name'].name is not none %}
-    {% do contract.update({'dataProduct': data['Data Product Business Name'].name}) %}
+    {% do contract.update({'dataProduct': data['Data Product Business Name'].value}) %}
 {% endif %}
 
 {% if 'owning platform' in data and data['owning platform'] is not none %}
