@@ -1,0 +1,668 @@
+[
+  {
+    "id": "019340b4-b7a7-7cf3-a46a-281b4e189ca1",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Vinay Kumar Jha"
+      ],
+      "Ownership Delegated Authority": [
+        "Tony Shilling",
+        "Yamini Krishnamoorthy"
+      ],
+      "Subscriber": [
+        "Gopinath Kolli"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "019340b4-b7a7-7cf3-a46a-281b4e189c8d",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Jonathan Wilcox"
+      ],
+      "Ownership Delegated Authority": [
+        "Marie Claire Hunwick"
+      ],
+      "Subject Matter Expert": [
+        "Abdul Moosa",
+        "Abdur Rahman"
+      ],
+      "Subscriber": [
+        "David Tonge",
+        "Maja Paz"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01941752-746f-7949-9176-c1bff6d83590",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Abdul Moosa",
+        "Abdur Rahman",
+        "Alice Dingle",
+        "Oliver Davies",
+        "William Evans"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "0194175a-02ae-7980-a088-6eae74e4752b",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Abdul Moosa",
+        "Abdur Rahman",
+        "Alice Dingle",
+        "Oliver Davies",
+        "William Evans"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01941734-27e4-7cd2-a834-8a1b9dfbca8e",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Abdul Moosa",
+        "Abdur Rahman",
+        "Alice Dingle",
+        "Oliver Davies",
+        "William Evans"
+      ],
+      "Subscriber": [
+        "Andrew Nathan"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "0193b21c-d1f1-7042-b87d-ef2b085cface",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Richard Whatmough"
+      ],
+      "Ownership Delegated Authority": [
+        "NIGEL GRIFFITHS"
+      ],
+      "Subject Matter Expert": [
+        "Paul Ayers"
+      ],
+      "Subscriber": [
+        "Adam Niedojadlo",
+        "Alex Pearson",
+        "Asia Shah-Thornley",
+        "Scott Williams"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "69dfd48c-f2e0-4506-a02e-5d2cc39c4203",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Rachael Backwell"
+      ],
+      "Ownership Delegated Authority": [
+        "Chris Rogers",
+        "Katie Ward",
+        "Scott McCutcheon"
+      ],
+      "Subject Matter Expert": [
+        "Andrew Palfreyman",
+        "Graham Bance",
+        "Neil Butler"
+      ],
+      "Subscriber": [
+        "Adriana Szpisak",
+        "Andrew Nathan",
+        "Fiona Manzoor",
+        "Nathan Vukashin Jones",
+        "Scott McCutcheon"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "0193b21c-d1f1-7042-b87d-ef2b085cfacb",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Richard Whatmough"
+      ],
+      "Ownership Delegated Authority": [
+        "NIGEL GRIFFITHS"
+      ],
+      "Subject Matter Expert": [
+        "Paul Ayers"
+      ],
+      "Subscriber": [
+        "Adam Niedojadlo",
+        "Asia Shah-Thornley",
+        "Scott Williams"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "0193b21c-d1f1-7042-b87d-ef2b085cfad1",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Richard Whatmough"
+      ],
+      "Ownership Delegated Authority": [
+        "NIGEL GRIFFITHS"
+      ],
+      "Subject Matter Expert": [
+        "Paul Ayers"
+      ],
+      "Subscriber": [
+        "Adam Niedojadlo",
+        "Asia Shah-Thornley",
+        "Fiona Manzoor",
+        "Johnathon Willis",
+        "Scott Williams"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "39866732-376e-4d47-a1c1-c790017543e4",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Abdul Moosa"
+      ],
+      "Subject Matter Expert": [
+        "Paul Santaana"
+      ],
+      "Subscriber": [
+        "Abdul Moosa",
+        "Abdur Rahman",
+        "Asia Shah-Thornley",
+        "Rakesh Sen"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "018fe30f-5ad4-7f43-b356-d560751afe5c",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Abdul Moosa"
+      ],
+      "Subject Matter Expert": [
+        "Paul Santaana"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "019345a6-fe1b-71aa-a4dc-d532fb4dc120",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Alex Winward"
+      ],
+      "Ownership Delegated Authority": [
+        "George Constantinou",
+        "Masi Parhizkar",
+        "Michael Rose"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01935501-c906-7b30-a5f9-48c9e5c62e62",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Tom Martin"
+      ],
+      "Ownership Delegated Authority": [
+        "Joseph Gordon",
+        "Saithejitha Koluguri",
+        "Thor Gabrielsen"
+      ],
+      "Stakeholder": [
+        "Kate McIntosh",
+        "Michael Duffy",
+        "Weronika Makowska"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01935501-c906-7b30-a5f9-48c9e5c62e5e",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Tom Martin"
+      ],
+      "Ownership Delegated Authority": [
+        "Joseph Gordon",
+        "Saithejitha Koluguri",
+        "Thor Gabrielsen"
+      ],
+      "Stakeholder": [
+        "Kate McIntosh",
+        "Michael Duffy",
+        "Weronika Makowska"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "c3027e84-056d-42d8-87de-76317702e270",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Alex Winward"
+      ],
+      "Ownership Delegated Authority": [
+        "George Constantinou",
+        "Masi Parhizkar",
+        "Michael Rose"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01961fa5-4b12-7cc4-8f27-42d6a838172e",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Jaideep Mann"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01961fd3-33c8-7321-b9ee-6057eacac462",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "David Cunningham"
+      ],
+      "Ownership Delegated Authority": [
+        "Jaideep Mann"
+      ],
+      "Subscriber": [
+        "Asia Shah-Thornley"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "019680d9-98a2-741c-b527-c6210cd7c33b",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Rachael Backwell"
+      ],
+      "Ownership Delegated Authority": [
+        "Katie Ward",
+        "Nathan Vukashin Jones",
+        "Scott McCutcheon"
+      ],
+      "Subject Matter Expert": [
+        "Braja Sundar Das",
+        "Jordan Keating",
+        "Naveenkumar Swaminathan"
+      ],
+      "Subscriber": [
+        "Adriana Szpisak",
+        "Jordan Keating",
+        "Mateen Oyewole"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01934f8e-aa8e-737e-8b29-97f323c882ed",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "James Knight"
+      ],
+      "Ownership Delegated Authority": [
+        "ANDREW PHILIP",
+        "Diomidis Psyllas",
+        "Michael Duffy"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01985695-9908-793f-b0e5-911d9dc62026",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins",
+        "Community Manager"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Kristina Marriott"
+      ],
+      "Ownership Delegated Authority": [
+        "Gary Levitt",
+        "Julie Robertson",
+        "Tellis George"
+      ],
+      "Subscriber": [
+        "Gary Levitt"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  },
+  {
+    "id": "01935501-c906-7b30-a5f9-48c9e5c62e58",
+    "roles": {
+      "Admin": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ],
+      "Community Manager": [
+        "Andrew Nathan",
+        "Hana Ahmed",
+        "Vaibhav Pande"
+      ],
+      "Data Product Owner": [
+        "Amanda Butler"
+      ],
+      "Ownership Delegated Authority": [
+        "Christopher Barber-Shaw"
+      ],
+      "Subscriber": [
+        "Christopher Barber-Shaw",
+        "Michael Rose"
+      ],
+      "Technical Steward": [
+        "CDAO Metadata Admins",
+        "SysAdmins"
+      ]
+    }
+  }
+]
