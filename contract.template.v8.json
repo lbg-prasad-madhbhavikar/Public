@@ -1,0 +1,613 @@
+{#
+    This template builds a Python dictionary named 'contract' in memory.
+    Keys are only added to this dictionary if the corresponding data exists and is not null.
+    At the end, the entire dictionary is converted to a JSON string.
+    This ensures that missing data results in the key-value pair being omitted
+    entirely, guaranteeing valid JSON output without comma-handling issues.
+#}
+{% set contract = {} %}
+
+{# 1. Add static values that are always present #}
+{% do contract.update({
+    "version": "0.1.0",
+    "kind": "DataContract",
+    "apiVersion": "v3.0.2",
+    "tenant": "",
+    "roles": [
+        {
+            "access": "write",
+            "description": "Data Product Owner",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Product Owner"
+        },
+        {
+            "access": "write",
+            "description": "Read access for consumers",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Owner"
+        },
+        {
+            "access": "write",
+            "description": "Data Producer/Publisher",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Producer/Publisher"
+        },
+        {
+            "access": "wite",
+            "description": "Data Scientist ",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Scientist "
+        },{
+            "access": "write",
+            "description": "Machine Learning Engineer",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Product Machine Learning Engineer"
+        },
+        {
+            "access": "write",
+            "description": "Data Engineer",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Data Engineer"
+        },
+        {
+            "access": "read",
+            "description": "Product Data Analyst",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Product Data Analyst"
+        },
+        {
+            "access": "read",
+            "description": "Customer Data Agent",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Customer Data Agent"
+        },
+        {
+            "access": "read",
+            "description": "BI Report Analyst",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "BI Report Analyst"
+        },
+        {
+            "access": "read",
+            "description": "Business Analyst",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Business Analyst"
+        },
+        {
+            "access": "read",
+            "description": "Application Support Engineer",
+            "firstLevelApprovers": [],
+            "secondLevelApprovers": [],
+            "role": "Application Support Engineer"
+        }
+    ]
+}) %}
+{#
+{% do contract.update({
+    "tenant": "",
+    "tags": [""],
+    "servers": [{
+        "server": "ap-edhcon-prd-01-2cad-10",
+        "type": "bigquery",
+        "project": "ap-edhcon-prd-01-2cad-10",
+        "dataset": "ap_edhcon_prd_01_bqd_euwe2_oceant24stg_010"
+    }],
+    "slaDefaultElement": null,
+
+}) %} #}
+
+
+{# 2. Add conditional top-level fields #}
+{% if 'id' in data and data['id'] is not none %}
+    {% do contract.update({'id': data['id']}) %}
+{% endif %}
+
+{% if 'data product display name' in data and data['data product display name'] is not none %}
+    {% do contract.update({'name': data['data product display name']}) %}
+{% endif %}
+
+{% if 'Data Product Lifecycle' in data and data['Data Product Lifecycle'].value is not none %}
+    {% do contract.update({'status': data['Data Product Lifecycle'].value}) %}
+{% endif %}
+
+{% if 'JIRA or JIRA Align Link' in data and data['JIRA or JIRA Align Link'].value is not none %}
+    {% do contract.update({'authoritativeDefinitions': [
+        {
+            "type": "JIRA or JIRA Align Link",
+            "url": data['JIRA or JIRA Align Link'].value | extract_href
+        }
+    ]}) %}
+{% endif %}
+
+{% if 'Data Product Business Name' in data and data['Data Product Business Name'] is not none and data['Data Product Business Name'].name is not none %}
+    {% do contract.update({'dataProduct': data['Data Product Business Name'].value}) %}
+{% endif %}
+
+{% if 'owning platform' in data and data['owning platform'] is not none %}
+    {% do contract.update({'domain': data['owning platform']}) %}
+{% endif %}
+
+{% if 'business domain' in data and data['business domain'] is not none %}
+    {% do contract.update({'community': data['business domain']}) %}
+{% endif %}
+
+{# 3. Build 'description' object conditionally #}
+{# This object itself is static, but its internal properties are conditional #}
+{% set description_obj = {
+    'usage': 'Intended usage of the dataset',
+    'limitations': ''
+} %}
+{% if 'Consumer Use Case & Business Value' in data and data['Consumer Use Case & Business Value'].value is not none %}
+    {% do description_obj.update({'purpose': data['Consumer Use Case & Business Value'].value}) %}
+{% endif %}
+{% set desc_custom_props = [] %}
+{% if 'Description' in data and data['Description'].value is not none %}
+    {% do desc_custom_props.append({'property': 'detailedDescription', 'value': data['Description'].value}) %}
+{% endif %}
+{% if desc_custom_props | length > 0 %}
+    {% do description_obj.update({'customProperties': desc_custom_props}) %}
+{% endif %}
+{% do contract.update({'description': description_obj}) %}
+
+
+{# 4. Build 'schema' array conditionally #}
+{#
+"tags": [],
+            "quality": [
+                {
+                    "businessImpact": "operational",
+                    "description": "Not null check on all applicable attributes",
+                    "dimension": "completeness",
+                    "name": "notNullAttributeCheck",
+                    "type": "custom",
+                    "customProperties": [
+                        {"property": "threshold", "value": "2%"},
+                        {"property": "thresholdFailureAction", "value": "Hold failed records"},
+                        {"property": "failureTicketSeverity", "value": "P2"}
+                    ]
+                }
+            ]
+#}
+{% set schema_list = [] %}
+{% if 'Data Product contains Table' in data and data['Data Product contains Table'] is iterable %}
+    {% for table in data['Data Product contains Table'] %}
+        {% set table_obj = {
+            "physicalType": "table"
+        } %}
+
+        {% if table['table'] is not none %}
+            {% do table_obj.update({'physicalName': table['table'] | extract_last_value}) %}
+        {% endif %}
+
+        {% if 'Data Product contains Schema' in data and data['Data Product contains Schema'][0] is defined and data['Data Product contains Schema'][0].value is not none %}
+            {% do table_obj.update({'businessName': data['Data Product contains Schema'][0].value | extract_last_value}) %}
+        {% endif %}
+
+        {% if 'Description' in table and table['Description'] is not none %}
+            {% do table_obj.update({'description': table['Description']}) %}
+        {% endif %}
+
+        {% if 'DataGranularityDescription' in table and table['DataGranularityDescription'] is not none %}
+            {% do table_obj.update({'dataGranularityDescription': table['DataGranularityDescription']}) %}
+        {% endif %}
+
+        {# 4a. Build 'properties' (columns) array conditionally #}
+        {#
+        "tags": [],
+                    "quality": [
+                        {
+                            "businessImpact": "operational",
+                            "description": "Not null check on all applicable attributes",
+                            "dimension": "completeness",
+                            "name": "notNullAttributeCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {"property": "threshold", "value": "2%"},
+                                {"property": "thresholdFailureAction", "value": "Hold failed records"},
+                                {"property": "failureTicketSeverity", "value": "P2"}
+                            ]
+                        },
+                        {
+                            "businessImpact": "operational",
+                            "description": "Unique key check",
+                            "dimension": "uniqueness",
+                            "name": "UKCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {"property": "threshold", "value": "1%"},
+                                {"property": "thresholdFailureAction", "value": "Hold failed records"},
+                                {"property": "failureTicketSeverity", "value": "P2"}
+                            ]
+                        },
+                        {
+                            "businessImpact": "operational",
+                            "description": "Attribute pattern check using the 'attributePattern' custom property of attributes in the Schema",
+                            "dimension": "consistency",
+                            "name": "patternCheck",
+                            "type": "custom",
+                            "customProperties": [
+                                {"property": "threshold", "value": "5%"},
+                                {"property": "thresholdFailureAction", "value": "Hold failed records"},
+                                {"property": "failureTicketSeverity", "value": "P2"}
+                            ]
+                        }
+                    ]
+        #}
+        {% set columns_list = [] %}
+        {% if 'columns' in table and table['columns'] is iterable %}
+            {% for column in table['columns'] %}
+                {% set col_obj = {
+                    "logicalTypeOptions": {},
+                    "partitioned": false,
+                    "partitionKeyPosition": -1,
+                    "criticalDataElement": false
+                } %}
+
+                {% if 'name' in column and column['name'] is not none %}
+                    {% do col_obj.update({'name': column['name'] | extract_last_value}) %}
+                    {# {% do col_obj.update({'physicalName': column['name'] | extract_last_value}) %} #}
+                {% endif %}
+
+                {% set is_primary_key = (column['specs'] | selectattr('name', 'equalto', 'Is Primary Key') | map(attribute='value') | list | first | default(false, true)) %}
+                {% if is_primary_key is defined and is_primary_key is not none and is_primary_key != '' %}
+                {% do col_obj.update({'primaryKey': is_primary_key}) %}
+                {% endif %}
+
+
+                {% set physical_name = (column['specs'] | selectattr('name', 'equalto', 'Original Name') | map(attribute='value') | list | first) %}
+                {% if physical_name is defined and physical_name is not none and physical_name != '' %}
+                    {% do col_obj.update({'physicalName': physical_name}) %}
+                {% endif %}
+
+                {% if is_primary_key %}
+                    {% set col_pos = (column['specs'] | selectattr('name', 'equalto', 'Column Position') | map(attribute='value') | list | first) %}
+                    {% if col_pos is defined and col_pos is not none and col_pos != '' %}
+                         {% do col_obj.update({'primaryKeyPosition': col_pos}) %}
+                    {% else %}
+                         {% do col_obj.update({'primaryKeyPosition': -1}) %}
+                    {% endif %}
+                {% else %}
+                    {% do col_obj.update({'primaryKeyPosition': -1}) %}
+                {% endif %}
+
+                {% set logical_type = (column['specs'] | selectattr('name', 'equalto', 'is Logically represented by') | map(attribute='value') | list | first) %}
+                {% if logical_type is defined and logical_type is not none and logical_type != '' %}
+                {% do col_obj.update({'logicalType': logical_type}) %}
+                {% endif %}
+
+                {% set physical_type = (column['specs'] | selectattr('name', 'equalto', 'Technical Data Type') | map(attribute='value') | list | first) %}
+                {% if physical_type is defined and physical_type is not none and physical_type != '' %}
+                    {% do col_obj.update({'physicalType': physical_type}) %}
+                {% endif %}
+
+                {% set is_nullable = (column['specs'] | selectattr('name', 'equalto', 'Is Nullable') | map(attribute='value') | list | first) %}
+                {% if is_nullable is defined and is_nullable is not none and is_nullable != '' %}
+                    {% do col_obj.update({'required': not is_nullable}) %}
+                {% endif %}
+
+                {% set col_desc = (column['specs'] | selectattr('name', 'equalto', 'Description') | map(attribute='value') | list | first) %}
+                {% if col_desc is defined and col_desc is not none and col_desc != '' %}
+                    {% do col_obj.update({'description': col_desc}) %}
+                {% endif %}
+                
+                {% set classification = (column['specs'] | selectattr('name', 'equalto', 'Security Classification') | map(attribute='value') | list | first) %}
+                {% if classification is defined and classification is not none and classification != '' %}
+                    {% do col_obj.update({'classification': classification}) %}
+                {% endif %}
+
+                {# 4b. Build column 'properties' array conditionally #}
+                {% set col_props_list = [] %}
+                {% if 'Data Product contains Schema' in data and data['Data Product contains Schema'][0].value is not none %}
+                    {% do col_props_list.append({'property': 'schemaName', 'value': data['Data Product contains Schema'][0].value | extract_last_value}) %}
+                {% endif %}
+
+            
+                {% set desc_prop = (column['specs'] | selectattr('name', 'equalto', 'Description from source system') | map(attribute='value') | list | first) %}
+                {% if desc_prop is defined and desc_prop is not none and desc_prop != '' %}
+                    {% do col_props_list.append({'property': 'description', 'value': desc_prop}) %}
+                {% endif %}
+
+                {% set seq_prop = (column['specs'] | selectattr('name', 'equalto', 'Column Position') | map(attribute='value') | list | first) %}
+                {% if seq_prop is defined and seq_prop is not none and seq_prop != '' %}
+                    {% do col_props_list.append({'property': 'attributeSequence', 'value': seq_prop}) %}
+                {% endif %}
+
+                {% do col_props_list.append({'property': 'anonymizationStrategy', 'value': 'none'}) %} {# Static #}
+
+                {% set personal_prop = (column['specs'] | selectattr('name', 'equalto', 'Personal Data?') | map(attribute='value') | list | first) %}
+                {% if personal_prop is defined and personal_prop is not none and personal_prop != '' %}
+                    {% do col_props_list.append({'property': 'personalDataIndicator', 'value': personal_prop}) %}
+                {% endif %}
+
+                {% if col_props_list | length > 0 %}
+                    {% do col_obj.update({'properties': col_props_list}) %}
+                {% endif %}
+
+                {% do columns_list.append(col_obj) %}
+            {% endfor %}
+        {% endif %}
+        {% if columns_list | length > 0 %}
+            {% do table_obj.update({'properties': columns_list}) %}
+        {% endif %}
+
+        {% do schema_list.append(table_obj) %}
+    {% endfor %}
+{% endif %}
+{% if schema_list | length > 0 %}
+    {% do contract.update({'schema': schema_list}) %}
+{% endif %}
+
+
+{# 5. Build 'customProperties' array conditionally #}
+{% set custom_properties_list = [] %}
+
+{% if 'has owning Business Area' in data and data['has owning Business Area'][0].value is not none %}
+    {% do custom_properties_list.append({'property': 'hasowningBusinessArea', 'value': data['has owning Business Area'][0].value}) %}
+{% endif %}
+
+{% if 'Data Product Lifecycle' in data and data['Data Product Lifecycle'].name is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductLifecycle', 'value': data['Data Product Lifecycle'].value}) %}
+{% endif %}
+
+{% if 'Data Product Business Name' in data and data['Data Product Business Name'] is not none and data['Data Product Business Name'].name is not none %}
+    {% do custom_properties_list.append({'property': 'nameOfTheBusiness', 'value': data['Data Product Business Name'].name}) %}
+{% endif %}
+
+{% do custom_properties_list.append({'property': 'consumerForContract', 'value': []}) %} {# Static #}
+
+{% if 'related to GDM Data Concepts' in data and data['related to GDM Data Concepts'] is iterable and data['related to GDM Data Concepts'] | length > 0 %}
+    {% set gdm_concepts = [] %}
+    {% for k in data['related to GDM Data Concepts'] %}
+        {% if k.value is not none %}
+            {% do gdm_concepts.append(k.value | extract_last_value ) %}
+        {% endif %}
+    {% endfor %}
+    {% if gdm_concepts | length > 0 %}
+        {% do custom_properties_list.append({'property': 'relatedToGDMDataConcepts', 'value': gdm_concepts}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Collaborating Platforms' in data and data['Collaborating Platforms'] is iterable and data['Collaborating Platforms'] | length > 0 %}
+    {% set collaborating_platforms = [] %}
+    {% for k in data['Collaborating Platforms'] %}
+        {% if k.value is not none %}
+            {% do collaborating_platforms.append({'value': k.value}) %}
+        {% endif %}
+    {% endfor %}
+    {% if collaborating_platforms | length > 0 %}
+        {% do custom_properties_list.append({'property': 'collaboratingPlatforms', 'value': collaborating_platforms}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'has building Platform Team' in data and data['has building Platform Team'] is iterable and data['has building Platform Team'] | length > 0 %}
+    {% set building_teams = [] %}
+    {% for k in data['has building Platform Team'] %}
+        {% if k.value is not none %}
+            {% do building_teams.append(k) %}
+        {% endif %}
+    {% endfor %}
+    {% if building_teams | length > 0 %}
+        {% do custom_properties_list.append({'property': 'hasBuildingPlatformTeam', 'value': building_teams}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Data Update Frequency' in data and data['Data Update Frequency'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataUpdateFrequency', 'value': data['Data Update Frequency'].value}) %}
+{% endif %}
+
+{% if 'Has Consuming Platform Teams' in data and data['Has Consuming Platform Teams'] is iterable and data['Has Consuming Platform Teams'] | length > 0 %}
+    {% set consuming_teams = [] %}
+    {% for k in data['Has Consuming Platform Teams'] %}
+        {% if k.value is not none %}
+            {% do consuming_teams.append(k.value) %}
+        {% endif %}
+    {% endfor %}
+    {% if consuming_teams | length > 0 %}
+        {% do custom_properties_list.append({'property': 'hasConsumingPlatformTeams', 'value': consuming_teams}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Logical Model Reference' in data and data['Logical Model Reference'].value is not none %}
+    {% do custom_properties_list.append({'property': 'logicalModelReference', 'value': data['Logical Model Reference'].value}) %}
+{% endif %}
+
+{% if 'Declaration of Intent Endorsed Date' in data and data['Declaration of Intent Endorsed Date'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductChapterApprovalDate', 'value': data['Declaration of Intent Endorsed Date'].value | iso_timestamp}) %}
+{% endif %}
+
+{% if 'Expected Build Start Date' in data and data['Expected Build Start Date'].value is not none %}
+    {% do custom_properties_list.append({'property': 'expectedBuildStartDate', 'value': data['Expected Build Start Date'].value | iso_timestamp}) %}
+{% endif %}
+
+{% if 'Data Product Type' in data and data['Data Product Type'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductType', 'value': data['Data Product Type'].value}) %}
+{% endif %}
+
+{% if 'Expected release date' in data and data['Expected release date'].value is not none %}
+    {% do custom_properties_list.append({'property': 'expectedReleaseDate', 'value': data['Expected release date'].value | iso_timestamp}) %}
+{% endif %}
+
+{% if 'Data Curation Pattern' in data and data['Data Curation Pattern'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataCurationPattern', 'value': data['Data Curation Pattern'].value}) %}
+{% endif %}
+
+{% if 'Data Product has Retention Period' in data and data['Data Product has Retention Period'][0].value is not none %}
+    {% do custom_properties_list.append({'property': 'retentionPeriod', 'value': data['Data Product has Retention Period'][0].value}) %}
+{% endif %}
+
+{% if 'sources data from Application' in data and data['sources data from Application'] is iterable and data['sources data from Application'] | length > 0 %}
+    {% set source_apps = [] %}
+    {% for k in data['sources data from Application'] %}
+        {% if k.value is not none %}
+            {% do source_apps.append(k) %}
+        {% endif %}
+    {% endfor %}
+    {% if source_apps | length > 0 %}
+        {% do custom_properties_list.append({'property': 'sourceDataApplication', 'value': source_apps}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'External Data Sources' in data and data['External Data Sources'] is iterable and data['External Data Sources'] | length > 0 %}
+    {% set ext_sources = [] %}
+    {% for k in data['External Data Sources'] %}
+        {% if k.value is not none %}
+            {% do ext_sources.append({'value': k.value}) %}
+        {% endif %}
+    {% endfor %}
+    {% if ext_sources | length > 0 %}
+        {% do custom_properties_list.append({'property': 'externalDataSources', 'value': ext_sources}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Source Data From Data Products' in data and data['Source Data From Data Products'] is iterable and data['Source Data From Data Products'] | length > 0 %}
+    {% set source_dps = [] %}
+    {% for k in data['Source Data From Data Products'] %}
+        {% if k.value is not none %}
+            {% do source_dps.append({'value': k.value}) %}
+        {% endif %}
+    {% endfor %}
+    {% if source_dps | length > 0 %}
+        {% do custom_properties_list.append({'property': 'sourceDataProducts', 'value': source_dps}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'implemented in application' in data and data['implemented in application'] is iterable and data['implemented in application'] | length > 0 %}
+    {% set impl_apps = [] %}
+    {% for k in data['implemented in application'] %}
+        {% if k.value is not none %}
+            {% do impl_apps.append(k.value) %}
+        {% endif %}
+    {% endfor %}
+    {% if impl_apps | length > 0 %}
+        {% do custom_properties_list.append({'property': 'implementedInApplication', 'value': impl_apps}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Personal Data Indicator' in data and data['Personal Data Indicator'].value is not none %}
+    {% do custom_properties_list.append({'property': 'personalDataIndicator', 'value': data['Personal Data Indicator'].value}) %}
+{% endif %}
+
+{% if 'Data Product contains Personal Data' in data and data['Data Product contains Personal Data'].value is iterable and data['Data Product contains Personal Data'].value | length > 0 %}
+    {% set personal_categories = [] %}
+    {% for k in data['Data Product contains Personal Data'] %}
+        {% if k.value is not none %}
+            {% do personal_categories.append(k.value) %}
+        {% endif %}
+    {% endfor %}
+    {% if personal_categories | length > 0 %}
+        {% do custom_properties_list.append({'property': 'personalDataCategory', 'value': personal_categories}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Consumption Interface Type' in data and data['Consumption Interface Type'].value is iterable and data['Consumption Interface Type'].value | length > 0 %}
+    {% set interface_types = [] %}
+    {% for k in data['Consumption Interface Type'].value %}
+        {% if k is not none %}
+            {% do interface_types.append(k) %}
+        {% endif %}
+    {% endfor %}
+    {% if interface_types | length > 0 %}
+        {% do custom_properties_list.append({'property': 'consumptionInterfaceType', 'value': interface_types}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Interoperability Key' in data and data['Interoperability Key'] is not none and data['Interoperability Key'].value is iterable and data['Interoperability Key'].value | length > 0 %}
+    {% set interoperability_keys = [] %}
+    {% for k in data['Interoperability Key'].value %}
+        {% if k is not none %}
+            {% do interoperability_keys.append({'value': k}) %}
+        {% endif %}
+    {% endfor %}
+    {% if interoperability_keys | length > 0 %}
+        {% do custom_properties_list.append({'property': 'interoperabilityKeys', 'value': interoperability_keys}) %}
+    {% endif %}
+{% endif %}
+
+{% if 'Access Instructions' in data and data['Access Instructions'].value is not none %}
+    {% do custom_properties_list.append({'property': 'accessInstructions', 'value': data['Access Instructions'].value}) %}
+{% endif %}
+
+{% if 'Data Product Technical Debt Details' in data and data['Data Product Technical Debt Details'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductTechnicalDebtDetails', 'value': data['Data Product Technical Debt Details'].value}) %}
+{% endif %}
+
+{% if 'Data Product Technical Debt Indicator' in data and data['Data Product Technical Debt Indicator'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductTechnicalDebt', 'value': data['Data Product Technical Debt Indicator'].value}) %}
+{% endif %}
+
+{% if 'Data Product Version' in data and data['Data Product Version'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductVersion', 'value': data['Data Product Version'].value}) %}
+{% endif %}
+
+{% if 'Security Classification' in data and data['Security Classification'].value is not none %}
+    {% do custom_properties_list.append({'property': 'securityClassification', 'value': data['Security Classification'].value}) %}
+{% endif %}
+
+{% do custom_properties_list.append({'property': 'ownerOrg', 'value': 'SOme owner custom org'}) %} {# Static #}
+
+{% if 'Funding Position' in data and data['Funding Position'].value is not none %}
+    {% do custom_properties_list.append({'property': 'fundingPosition', 'value': data['Funding Position'].value}) %}
+{% endif %}
+
+{% if 'Data Product Data Type(s)' in data and data['Data Product Data Type(s)'].value is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductDataType', 'value': data['Data Product Data Type(s)'].value}) %}
+{% endif %}
+
+{% if 'status' in data and data['status'] is not none %}
+    {% do custom_properties_list.append({'property': 'assetStatus', 'value': data['status']}) %}
+{% endif %}
+
+{% if 'Data Product Subtype' in data and data['Data Product Subtype'] is not none %}
+    {% do custom_properties_list.append({'property': 'dataProductSubtype', 'value': data['Data Product Subtype'].value}) %}
+{% endif %}
+
+{% if custom_properties_list | length > 0 %}
+    {% do contract.update({'customProperties': custom_properties_list}) %}
+{% endif %}
+
+
+{# 6. Add final timestamp #}
+{#
+{% set created_ts = "" | iso_timestamp %}
+{% if created_ts is not none %}
+    {% do contract.update({'contractCreatedTs': created_ts}) %}
+{% endif %}
+#}
+
+
+{# 7. Build 'team' array conditionally #}
+{% set team_list = [] %}
+{% if 'roles' in data and 'Data Product Owner' in data['roles'] %}
+    {% for name in data['roles']['Data Product Owner'] %}
+        {% do team_list.append({
+            'name': name,
+            'role': 'Data Product Owner'
+        }) %}
+    {% endfor %}
+{% endif %}
+{% if 'roles' in data and 'Ownership Delegated Authority' in data['roles'] %}
+    {% for name in data['roles']['Ownership Delegated Authority'] %}
+        {% do team_list.append({
+            'name': name,
+            'role': 'Ownership Delegated Authority'
+        }) %}
+    {% endfor %}
+{% endif %}
+
+
+{% if team_list | length > 0 %}
+    {% do contract.update({'team': team_list}) %}
+{% endif %}
+
+{# convert to json #}
+{{ contract | tojson }}
