@@ -1,0 +1,697 @@
+{
+    "TableViewConfig": {
+        "displayLength": 999999,
+        "Resources": {
+            "Asset": {
+                "skipComplexRelationsViewPermissions": true,
+                "Signifier": {
+                    "name": "FullName"
+                },
+                "DisplayName": {
+                    "name": "DisplayName"
+                },
+                "Id": {
+                    "name": "Id"
+                },
+                "CreatedOn": {
+                    "name": "CreatedOn"
+                },
+                "LastModified": {
+                    "name": "LastModifiedOn"
+                },
+                "Domain": {
+                    "Name": {
+                        "name": "Domain_Name"
+                    },
+                    "Id": {
+                        "name": "Domain_Id"
+                    },
+                    "Community": {
+                        "Name": {
+                            "name": "Domain_Community_Name"
+                        },
+                        "HasNonMetaChildren": {
+                            "name": "Domain_Community_HasNonMetaChildren"
+                        },
+                        "Id": {
+                            "name": "Domain_Community_Id"
+                        },
+                        "Order": [
+                            {
+                                "Field": {
+                                    "name": "Domain_Community_Name",
+                                    "order": "DESC"
+                                }
+                            }
+                        ]
+                    },
+                    "Order": [
+                        {
+                            "Field": {
+                                "name": "Domain_Name",
+                                "order": "ASC"
+                            }
+                        }
+                    ]
+                },
+                "Status": {
+                    "Signifier": {
+                        "name": "Status_Name"
+                    },
+                    "Id": {
+                        "name": "Status_Id"
+                    }
+                },
+                "AssetType": {
+                    "Id": {
+                        "name": "AssetType_Id"
+                    },
+                    "Signifier": {
+                        "name": "AssetType_Name"
+                    }
+                },
+                "Relation": [
+                    {
+                        "typeId": "41e60a2b-223c-4630-b3f1-369c72601d02",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "018fcec0-cb65-76be-a836-1730ee3cfc69",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_implemented_in_[Technology_Asset]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_implemented_in_[Technology_Asset]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_implemented_in_[Technology_Asset]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_implemented_in_[Technology_Asset]_Target_Relation_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "948ddf59-450e-4f0d-a31c-21a8a23b8780",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_Id"
+                            }
+                        }
+                    }
+                ],
+                "StringAttribute": [
+                    {
+                        "labelId": "00000000-0000-0000-0000-000000003114",
+                        "LongExpression": {
+                            "name": "Description_Value"
+                        },
+                        "Id": {
+                            "name": "Description_Id"
+                        }
+                    }
+                ],
+                "SingleValueListAttribute": [
+                    {
+                        "Order": [
+                            {
+                                "Field": {
+                                    "name": "Data_Product_Lifecycle_Value",
+                                    "order": "DESC"
+                                }
+                            }
+                        ],
+                        "labelId": "999c16b4-09d3-4ccd-a5d8-45af478f0117",
+                        "Value": {
+                            "name": "Data_Product_Lifecycle_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Lifecycle_Id"
+                        }
+                    },
+                    {
+                        "labelId": "a10a4407-fea8-4fab-83eb-0fc242f3a6ad",
+                        "Value": {
+                            "name": "Data_Product_Type_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Type_Id"
+                        }
+                    },
+                    {
+                        "labelId": "52251975-d9ed-42e2-b862-5430aab1cfef",
+                        "Value": {
+                            "name": "Data_Product_Subtype_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Subtype_Id"
+                        }
+                    },
+                    {
+                        "labelId": "999c16b4-09d3-4ccd-a5d8-45af478f0117",
+                        "Value": {
+                            "name": "Data Product Lifecycle_Value"
+                        }
+                    }
+                ],
+                "DateAttribute": [
+                    {
+                        "labelId": "01944bfb-bf5f-7cb1-bb92-3fa88ce0d074",
+                        "Date": {
+                            "name": "Expected_Release_Date_Value"
+                        },
+                        "Id": {
+                            "name": "Expected_Release_Date_Id"
+                        }
+                    }
+                ],
+                "Responsibility": [
+                    {
+                        "roleId": "5db4f014-0680-45d8-b27c-11580aaf0ca6",
+                        "includeInherited": true,
+                        "ResponsibilitySource": {
+                            "name": "Data_Product_Owner_ResponsibilitySource"
+                        },
+                        "Inherited": {
+                            "name": "Data_Product_Owner_Inherited"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Owner_Id"
+                        },
+                        "User": {
+                            "UserName": {
+                                "name": "Data_Product_Owner_User_UserName"
+                            },
+                            "FirstName": {
+                                "name": "Data_Product_Owner_User_FirstName"
+                            },
+                            "LastName": {
+                                "name": "Data_Product_Owner_User_LastName"
+                            },
+                            "Id": {
+                                "name": "Data_Product_Owner_User_Id"
+                            },
+                            "EmailAddress": {
+                                "name": "Data_Product_Owner_User_Email"
+                            }
+                        },
+                        "Group": {
+                            "GroupName": {
+                                "name": "Data_Product_Owner_UserGroup_Name"
+                            },
+                            "Id": {
+                                "name": "Data_Product_Owner_UserGroup_Id"
+                            }
+                        }
+                    }
+                ],
+                "Filter": {
+                    "AND": [
+                        {
+                            "Field": {
+                                "name": "Domain_Id",
+                                "operator": "IN",
+                                "caseInsensitive": true,
+                                "values": [
+                                    "49f391d5-88f9-45ef-b007-0943d0875d25",
+                                    "99605668-d5c0-4b49-b1dc-c992de399337",
+                                    "15452f46-94f9-4f88-a7aa-ed862120f64a",
+                                    "ecb1818b-f86e-40be-8b2c-e55a9a98ca12",
+                                    "799c7b27-c533-4bd3-b9ee-29dd81234b8f",
+                                    "01934053-ecde-7d99-bef8-5b2fb5b533a0",
+                                    "0196875c-16e7-781f-bf95-5e79943be3dd",
+                                    "1f487155-5959-4b3b-9855-7a317d2b3946",
+                                    "cd1adbbe-ec28-4c90-9d98-89baef9c1bd1",
+                                    "00d45b18-d0d6-4ad4-872b-3355c98d3099",
+                                    "0ae428d9-933d-4f7b-af29-988a24d06ea5",
+                                    "4fcf3ee9-9209-47ca-85df-4b41f5e23d29",
+                                    "dc99edba-4343-47d3-90f9-d5be20675932",
+                                    "c7af256f-d617-4170-97dd-9370b3400eb1",
+                                    "01902a8b-f3d3-7ba4-9a9d-fd6d2a303cee",
+                                    "01902a8b-f3d3-7ba4-9a9d-fd6d2a303cec",
+                                    "e6214a54-7742-45ef-94a4-36b1c5ea7e7b",
+                                    "e9d46424-d2a1-44ae-ac34-17a7a4062eb5",
+                                    "86a86066-a323-4aec-94b1-b42361f404f2",
+                                    "0193405c-e57b-785d-b966-1c0092c4573b",
+                                    "019377ad-e941-7497-baf5-355bede62c32",
+                                    "9b3b2868-6629-47d7-87e1-3f6cfaca1d55",
+                                    "e21faa7c-f82b-48ec-a525-3b5605495f45",
+                                    "9ed999fb-f3f9-4298-8e39-3a2b6e68fac6",
+                                    "5cb4086d-c4c6-4c16-9bb3-ea8d19218cbf",
+                                    "01933f2b-a8cd-7c70-98f0-30c65ad8cff3",
+                                    "546ce408-3e25-44c3-8509-dd40aa0da949",
+                                    "37ee5736-f5e1-473c-90c8-9c5b6f6c3cc5",
+                                    "e5ead372-f304-4c1e-a3e1-196e66a55907",
+                                    "0d6757a2-74bd-4e1b-8ef6-e228559d3a8b",
+                                    "0c90e3a1-14c8-44cb-82cb-5950100f5953",
+                                    "aa50f08a-56b4-4617-ac4e-4f429b7eaa81",
+                                    "5c8a1520-3704-4390-9b1e-faf492de0d49",
+                                    "b10c51aa-496f-4091-9cda-e175604e0268",
+                                    "e9312ce1-ba30-4b6e-8d4c-7723e0500bb4",
+                                    "e63a8470-dc75-4aea-b401-68b6f2c09a55",
+                                    "2c2cedf5-53a2-4600-8675-30fdc44281f2",
+                                    "019720fe-4f50-7c13-824a-49e2f716676f",
+                                    "1e085f26-b0ac-41eb-92ca-ceb59afd03f7",
+                                    "77e32bd7-8b92-493d-9192-8afac7066988",
+                                    "330453c5-b86e-487b-a136-15be151b056b",
+                                    "01934f2a-c00f-7828-861a-5630875e0c6c",
+                                    "b432630f-b0d8-4137-9f6a-f3661d9133e1",
+                                    "0193403a-1267-7210-a560-05a2b61fbb72",
+                                    "edc67d93-1f6f-47ba-b9d5-16910abd7f4a",
+                                    "2f653b7f-9ac2-4c42-8a54-c107ce0458b9",
+                                    "0193406d-7a17-7af7-b00e-128da0d03c7c",
+                                    "751e6b0e-e651-4a52-93af-4ad187f6c716",
+                                    "01912d70-a555-7f6a-ae57-ffe1da36eee7",
+                                    "d25026e6-e2f9-49ab-9d34-da3263210203",
+                                    "018f77e0-fb04-7bf0-a365-973e9dab1d37",
+                                    "acc73354-81e3-46e2-9172-8f1c0a5adf99",
+                                    "4502d5bd-f3cc-4697-ae3e-b11f1b10283f",
+                                    "01909ce2-8f09-7ed9-ba9f-57338b1aad2c",
+                                    "01934057-c318-79f2-b25d-d7ea28e500bd",
+                                    "b644f438-2431-4664-908f-8bca60c73295",
+                                    "01968757-e4cc-7418-91d0-9e040fc3350d",
+                                    "cf3ca1ae-10d2-4fe3-b963-1a9781d0277f"
+                                ]
+                            }
+                        },
+                        {
+                            "Field": {
+                                "name": "Status_Id",
+                                "operator": "IN",
+                                "values": [
+                                    "00000000-0000-0000-0000-000000005019",
+                                    "019247d4-1d8f-7d4e-a0bb-71c22642f427"
+                                ]
+                            }
+                        },
+                        {
+                            "Field": {
+                                "name": "Domain_Id",
+                                "operator": "NOT_EQUALS",
+                                "value": "0191eaae-affb-77cd-8fbb-d30b0262dda7"
+                            }
+                        },
+                        {
+                            "Field": {
+                                "name": "Data Product Lifecycle_Value",
+                                "operator": "EQUALS",
+                                "caseInsensitive": true,
+                                "value": "Published"
+                            }
+                        }
+                    ]
+                },
+                "Order": [
+                    {
+                        "Field": {
+                            "name": "Domain_Community_Name",
+                            "order": "DESC"
+                        }
+                    },
+                    {
+                        "Field": {
+                            "name": "Domain_Name",
+                            "order": "ASC"
+                        }
+                    },
+                    {
+                        "Field": {
+                            "name": "DisplayName",
+                            "order": "ASC"
+                        }
+                    },
+                    {
+                        "Field": {
+                            "name": "Data_Product_Lifecycle_Value",
+                            "order": "DESC"
+                        }
+                    }
+                ]
+            }
+        },
+        "Columns": [
+            {
+                "Column": {
+                    "fieldName": "Domain_Community_Name",
+                    "label": "Community"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Domain_Community_HasNonMetaChildren",
+                    "label": "Community Has non-meta children"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Domain_Community_Id",
+                    "label": "Community Id"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Domain_Name",
+                    "label": "Domain"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Domain_Id",
+                    "label": "Domain Id"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "FullName",
+                    "label": "Full Name"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "DisplayName",
+                    "label": "Name"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Id",
+                    "label": "Asset Id"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "AssetType_Id",
+                    "label": "Asset Type Id"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "AssetType_Name",
+                    "label": "Asset Type Name"
+                }
+            },
+            {
+                "Group": {
+                    "name": "Description",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "Description_Value",
+                                "label": "Description"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Description_Id",
+                                "label": "Description Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Status_Name",
+                    "label": "Status"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "Status_Id",
+                    "label": "Status Id"
+                }
+            },
+            {
+                "Group": {
+                    "name": "Data_Product_Lifecycle",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Lifecycle_Value",
+                                "label": "Data Product Lifecycle"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Lifecycle_Id",
+                                "label": "Data Product Lifecycle Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "Data_Product_Type",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Type_Value",
+                                "label": "Data Product Type"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Type_Id",
+                                "label": "Data Product Type Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "Data_Product_Subtype",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Subtype_Value",
+                                "label": "Data Product Subtype"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Subtype_Id",
+                                "label": "Data Product Subtype Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "Expected_Release_Date",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "Expected_Release_Date_Value",
+                                "label": "Expected Release Date"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Expected_Release_Date_Id",
+                                "label": "Expected Release Date Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "Data_Product_Owner",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_User_UserName",
+                                "label": "Roles > Data Product Owner > User Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_User_FirstName",
+                                "label": "Roles > Data Product Owner > First Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_User_LastName",
+                                "label": "Roles > Data Product Owner > Last Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_User_Email",
+                                "label": "Roles > Data Product Owner > User Email"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_User_Id",
+                                "label": "Roles > Data Product Owner > User Id"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_UserGroup_Name",
+                                "label": "Roles > Data Product Owner > Group Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_UserGroup_Id",
+                                "label": "Roles > Data Product Owner > Group Id"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_Inherited",
+                                "label": "Roles > Data Product Owner > Is Inherited"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "Data_Product_Owner_Id",
+                                "label": "Data_Product_Owner_Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "[Data_Product]_related_Data Domain_[Data_Domain]",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_DisplayName",
+                                "label": "[Data Product] related Data Domain [Data Domain] > Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_FullName",
+                                "label": "[Data Product] related Data Domain [Data Domain] > Full Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_Id",
+                                "label": "[Data Product] related Data Domain [Data Domain] > Asset Id"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_related_Data Domain_[Data_Domain]_Id",
+                                "label": "[Data_Product]_related_Data Domain_[Data_Domain]_Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "[Data_Product]_implemented_in_[Technology_Asset]",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_implemented_in_[Technology_Asset]_Target_DisplayName",
+                                "label": "[Data Product] implemented in application [Technology Asset] > Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_implemented_in_[Technology_Asset]_Target_FullName",
+                                "label": "[Data Product] implemented in application [Technology Asset] > Full Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_implemented_in_[Technology_Asset]_Target_Relation_Id",
+                                "label": "[Data Product] implemented in application [Technology Asset] > Asset Id"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_implemented_in_[Technology_Asset]_Id",
+                                "label": "[Data_Product]_implemented_in_[Technology_Asset]_Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Group": {
+                    "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]",
+                    "Columns": [
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_DisplayName",
+                                "label": "[Data Product] sources data from Application [Technology Asset] > Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_FullName",
+                                "label": "[Data Product] sources data from Application [Technology Asset] > Full Name"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_Id",
+                                "label": "[Data Product] sources data from Application [Technology Asset] > Asset Id"
+                            }
+                        },
+                        {
+                            "Column": {
+                                "fieldName": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Id",
+                                "label": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Id"
+                            }
+                        }
+                    ]
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "CreatedOn",
+                    "label": "CreatedOn"
+                }
+            },
+            {
+                "Column": {
+                    "fieldName": "LastModifiedOn",
+                    "label": "LastModifiedOn"
+                }
+            }
+        ]
+    }
+}
