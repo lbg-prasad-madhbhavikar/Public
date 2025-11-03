@@ -36,7 +36,7 @@
             "role": "Data Producer/Publisher"
         },
         {
-            "access": "wite",
+            "access": "write",
             "description": "Data Scientist ",
             "firstLevelApprovers": [],
             "secondLevelApprovers": [],
@@ -255,15 +255,23 @@
 
                 {% if 'name' in column and column['name'] is not none %}
                     {% do col_obj.update({'name': column['name'] | extract_last_value}) %}
-                    {% do col_obj.update({'physicalName': column['name'] | extract_last_value}) %}
+                    {# {% do col_obj.update({'physicalName': column['name'] | extract_last_value}) %} #}
                 {% endif %}
 
                 {% set is_primary_key = (column['specs'] | selectattr('name', 'equalto', 'Is Primary Key') | map(attribute='value') | list | first | default(false, true)) %}
+                {% if is_primary_key is defined and is_primary_key is not none and is_primary_key != '' %}
                 {% do col_obj.update({'primaryKey': is_primary_key}) %}
-                
+                {% endif %}
+
+
+                {% set physical_name = (column['specs'] | selectattr('name', 'equalto', 'Original Name') | map(attribute='value') | list | first) %}
+                {% if physical_name is defined and physical_name is not none and physical_name != '' %}
+                    {% do col_obj.update({'physicalName': physical_name}) %}
+                {% endif %}
+
                 {% if is_primary_key %}
                     {% set col_pos = (column['specs'] | selectattr('name', 'equalto', 'Column Position') | map(attribute='value') | list | first) %}
-                    {% if col_pos is not none %}
+                    {% if col_pos is defined and col_pos is not none and col_pos != '' %}
                          {% do col_obj.update({'primaryKeyPosition': col_pos}) %}
                     {% else %}
                          {% do col_obj.update({'primaryKeyPosition': -1}) %}
@@ -273,27 +281,27 @@
                 {% endif %}
 
                 {% set logical_type = (column['specs'] | selectattr('name', 'equalto', 'is Logically represented by') | map(attribute='value') | list | first) %}
-                {% if logical_type is not none %}
-                    {% do col_obj.update({'logicalType': logical_type}) %}
+                {% if logical_type is defined and logical_type is not none and logical_type != '' %}
+                {% do col_obj.update({'logicalType': logical_type}) %}
                 {% endif %}
 
                 {% set physical_type = (column['specs'] | selectattr('name', 'equalto', 'Technical Data Type') | map(attribute='value') | list | first) %}
-                {% if physical_type is not none %}
+                {% if physical_type is defined and physical_type is not none and physical_type != '' %}
                     {% do col_obj.update({'physicalType': physical_type}) %}
                 {% endif %}
 
                 {% set is_nullable = (column['specs'] | selectattr('name', 'equalto', 'Is Nullable') | map(attribute='value') | list | first) %}
-                {% if is_nullable is not none %}
+                {% if is_nullable is defined and is_nullable is not none and is_nullable != '' %}
                     {% do col_obj.update({'required': not is_nullable}) %}
                 {% endif %}
 
                 {% set col_desc = (column['specs'] | selectattr('name', 'equalto', 'Description') | map(attribute='value') | list | first) %}
-                {% if col_desc is not none %}
+                {% if col_desc is defined and col_desc is not none and col_desc != '' %}
                     {% do col_obj.update({'description': col_desc}) %}
                 {% endif %}
                 
                 {% set classification = (column['specs'] | selectattr('name', 'equalto', 'Security Classification') | map(attribute='value') | list | first) %}
-                {% if classification is not none %}
+                {% if classification is defined and classification is not none and classification != '' %}
                     {% do col_obj.update({'classification': classification}) %}
                 {% endif %}
 
@@ -303,25 +311,21 @@
                     {% do col_props_list.append({'property': 'schemaName', 'value': data['Data Product contains Schema'][0].value | extract_last_value}) %}
                 {% endif %}
 
-                {% set name_prop = (column['specs'] | selectattr('name', 'equalto', 'Description from source system') | map(attribute='value') | list | first) %}
-                {% if name_prop is not none %}
-                    {% do col_props_list.append({'property': 'name', 'value': name_prop}) %}
-                {% endif %}
-                
-                {% set desc_prop = (column['specs'] | selectattr('name', 'equalto', 'Description') | map(attribute='value') | list | first) %}
-                {% if desc_prop is not none %}
+            
+                {% set desc_prop = (column['specs'] | selectattr('name', 'equalto', 'Description from source system') | map(attribute='value') | list | first) %}
+                {% if desc_prop is defined and desc_prop is not none and desc_prop != '' %}
                     {% do col_props_list.append({'property': 'description', 'value': desc_prop}) %}
                 {% endif %}
 
                 {% set seq_prop = (column['specs'] | selectattr('name', 'equalto', 'Column Position') | map(attribute='value') | list | first) %}
-                {% if seq_prop is not none %}
+                {% if seq_prop is defined and seq_prop is not none and seq_prop != '' %}
                     {% do col_props_list.append({'property': 'attributeSequence', 'value': seq_prop}) %}
                 {% endif %}
 
                 {% do col_props_list.append({'property': 'anonymizationStrategy', 'value': 'none'}) %} {# Static #}
 
                 {% set personal_prop = (column['specs'] | selectattr('name', 'equalto', 'Personal Data?') | map(attribute='value') | list | first) %}
-                {% if personal_prop is not none %}
+                {% if personal_prop is defined and personal_prop is not none and personal_prop != '' %}
                     {% do col_props_list.append({'property': 'personalDataIndicator', 'value': personal_prop}) %}
                 {% endif %}
 
@@ -347,8 +351,8 @@
 {# 5. Build 'customProperties' array conditionally #}
 {% set custom_properties_list = [] %}
 
-{% if 'has owning Business Area' in data and data['has owning Business Area'].value is not none %}
-    {% do custom_properties_list.append({'property': 'hasowningBusinessArea', 'value': data['has owning Business Area'].value}) %}
+{% if 'has owning Business Area' in data and data['has owning Business Area'][0].value is not none %}
+    {% do custom_properties_list.append({'property': 'hasowningBusinessArea', 'value': data['has owning Business Area'][0].value}) %}
 {% endif %}
 
 {% if 'Data Product Lifecycle' in data and data['Data Product Lifecycle'].name is not none %}
@@ -437,8 +441,8 @@
     {% do custom_properties_list.append({'property': 'dataCurationPattern', 'value': data['Data Curation Pattern'].value}) %}
 {% endif %}
 
-{% if 'Data Product has Retention Period' in data and data['Data Product has Retention Period'].value is not none %}
-    {% do custom_properties_list.append({'property': 'retentionPeriod', 'value': data['Data Product has Retention Period'].value}) %}
+{% if 'Data Product has Retention Period' in data and data['Data Product has Retention Period'][0].value is not none %}
+    {% do custom_properties_list.append({'property': 'retentionPeriod', 'value': data['Data Product has Retention Period'][0].value}) %}
 {% endif %}
 
 {% if 'sources data from Application' in data and data['sources data from Application'] is iterable and data['sources data from Application'] | length > 0 %}
@@ -563,6 +567,8 @@
     {% do custom_properties_list.append({'property': 'assetStatus', 'value': data['status']}) %}
 {% endif %}
 
+{% do custom_properties_list.append({'property': 'dataMaturityIndex', 'value': '35%'}) %}
+
 {% if 'Data Product Subtype' in data and data['Data Product Subtype'] is not none %}
     {% do custom_properties_list.append({'property': 'dataProductSubtype', 'value': data['Data Product Subtype'].value}) %}
 {% endif %}
@@ -583,18 +589,22 @@
 
 {# 7. Build 'team' array conditionally #}
 {% set team_list = [] %}
-{% if 'roles' in data and 'Data Product Owner' in data['roles'] %}
-    {% for name in data['roles']['Data Product Owner'] %}
+{% if 'Data Product Owner' in data['roles'] %}
+    {% for user in data['roles']['Data Product Owner'] %}
         {% do team_list.append({
-            'name': name,
+            'name': user['Data_Product_Owner_User_FirstName'],
+            'username': user['Data_Product_Owner_User_Email'],
+            'description': 'Data Product Owne',
             'role': 'Data Product Owner'
         }) %}
     {% endfor %}
 {% endif %}
 {% if 'roles' in data and 'Ownership Delegated Authority' in data['roles'] %}
-    {% for name in data['roles']['Ownership Delegated Authority'] %}
+    {% for user in data['roles']['Ownership Delegated Authority'] %}
         {% do team_list.append({
-            'name': name,
+            'name': user['Data_Product_Owner_User_FirstName'],
+            'username': user['Data_Product_Owner_User_Email'],
+            'description': 'Ownership Delegated Authority',
             'role': 'Ownership Delegated Authority'
         }) %}
     {% endfor %}

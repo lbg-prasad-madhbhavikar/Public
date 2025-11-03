@@ -1,0 +1,483 @@
+{
+  "TableViewConfig": {
+    "displayLength": 999999,
+    "Resources": {
+      "Asset": {
+        "skipComplexRelationsViewPermissions": true,
+        "Signifier": {
+          "name": "FullName"
+        },
+        "DisplayName": {
+          "name": "DisplayName"
+        },
+        "Id": {
+          "name": "Id"
+        },
+        "CreatedOn": {
+          "name": "CreatedOn"
+        },
+        "LastModified": {
+          "name": "LastModifiedOn"
+        },
+        "Domain": {
+          "Name": {
+            "name": "Domain_Name"
+          },
+          "Id": {
+            "name": "Domain_Id"
+          },
+          "Community": {
+            "Name": {
+              "name": "Domain_Community_Name"
+            },
+            "HasNonMetaChildren": {
+              "name": "Domain_Community_HasNonMetaChildren"
+            },
+            "Id": {
+              "name": "Domain_Community_Id"
+            },
+            "Order": [
+              {
+                "Field": {
+                  "name": "Domain_Community_Name",
+                  "order": "DESC"
+                }
+              }
+            ]
+          },
+          "Order": [
+            {
+              "Field": {
+                "name": "Domain_Name",
+                "order": "ASC"
+              }
+            }
+          ]
+        },
+        "Status": {
+          "Signifier": {
+            "name": "Status_Name"
+          },
+          "Id": {
+            "name": "Status_Id"
+          }
+        },
+        "AssetType": {
+          "Id": {
+            "name": "AssetType_Id"
+          },
+          "Signifier": {
+            "name": "AssetType_Name"
+          }
+        },
+        "Relation": [
+          {
+            "typeId": "41e60a2b-223c-4630-b3f1-369c72601d02",
+            "type": "SOURCE",
+            "displayLength": 2147483648,
+            "Id": {
+              "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Id"
+            },
+            "Target": {
+              "DisplayName": {
+                "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_DisplayName"
+              },
+              "Signifier": {
+                "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_FullName"
+              },
+              "Id": {
+                "name": "[Data_Product]_related_Data Domain_[Data_Domain]_Target_Id"
+              }
+            }
+          },
+          {
+            "typeId": "018fcec0-cb65-76be-a836-1730ee3cfc69",
+            "type": "SOURCE",
+            "displayLength": 2147483648,
+            "Id": {
+              "name": "[Data_Product]_implemented_in_[Technology_Asset]_Id"
+            },
+            "Target": {
+              "DisplayName": {
+                "name": "[Data_Product]_implemented_in_[Technology_Asset]_Target_DisplayName"
+              },
+              "Signifier": {
+                "name": "[Data_Product]_implemented_in_[Technology_Asset]_Target_FullName"
+              },
+              "Id": {
+                "name": "[Data_Product]_implemented_in_[Technology_Asset]_Target_Relation_Id"
+              }
+            }
+          },
+          {
+            "typeId": "948ddf59-450e-4f0d-a31c-21a8a23b8780",
+            "type": "SOURCE",
+            "displayLength": 2147483648,
+            "Id": {
+              "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Id"
+            },
+            "Target": {
+              "DisplayName": {
+                "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_DisplayName"
+              },
+              "Signifier": {
+                "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_FullName"
+              },
+              "Id": {
+                "name": "[Data_Product]_sources_data_from_Application_[Technology_Asset]_Target_Id"
+              }
+            }
+          }
+        ],
+        "StringAttribute": [
+          {
+            "labelId": "00000000-0000-0000-0000-000000003114",
+            "LongExpression": {
+              "name": "Description_Value"
+            },
+            "Id": {
+              "name": "Description_Id"
+            }
+          }
+        ],
+        "SingleValueListAttribute": [
+          {
+            "Order": [
+              {
+                "Field": {
+                  "name": "Data_Product_Lifecycle_Value",
+                  "order": "DESC"
+                }
+              }
+            ],
+            "labelId": "999c16b4-09d3-4ccd-a5d8-45af478f0117",
+            "Value": {
+              "name": "Data_Product_Lifecycle_Value"
+            },
+            "Id": {
+              "name": "Data_Product_Lifecycle_Id"
+            }
+          },
+          {
+            "labelId": "a10a4407-fea8-4fab-83eb-0fc242f3a6ad",
+            "Value": {
+              "name": "Data_Product_Type_Value"
+            },
+            "Id": {
+              "name": "Data_Product_Type_Id"
+            }
+          },
+          {
+            "labelId": "52251975-d9ed-42e2-b862-5430aab1cfef",
+            "Value": {
+              "name": "Data_Product_Subtype_Value"
+            },
+            "Id": {
+              "name": "Data_Product_Subtype_Id"
+            }
+          },
+          {
+            "labelId": "999c16b4-09d3-4ccd-a5d8-45af478f0117",
+            "Value": {
+              "name": "Data Product Lifecycle_Value"
+            }
+          }
+        ],
+        "DateAttribute": [
+          {
+            "labelId": "01944bfb-bf5f-7cb1-bb92-3fa88ce0d074",
+            "Date": {
+              "name": "Expected_Release_Date_Value"
+            },
+            "Id": {
+              "name": "Expected_Release_Date_Id"
+            }
+          }
+        ],
+        "Responsibility": [
+          {
+            "roleId": "5db4f014-0680-45d8-b27c-11580aaf0ca6",
+            "includeInherited": true,
+            "ResponsibilitySource": {
+              "name": "Data_Product_Owner_ResponsibilitySource"
+            },
+            "Inherited": {
+              "name": "Data_Product_Owner_Inherited"
+            },
+            "Id": {
+              "name": "Data_Product_Owner_Id"
+            },
+            "User": {
+              "UserName": {
+                "name": "Data_Product_Owner_User_UserName"
+              },
+              "FirstName": {
+                "name": "Data_Product_Owner_User_FirstName"
+              },
+              "LastName": {
+                "name": "Data_Product_Owner_User_LastName"
+              },
+              "Id": {
+                "name": "Data_Product_Owner_User_Id"
+              },
+              "EmailAddress": {
+                "name": "Data_Product_Owner_User_Email"
+              }
+            },
+            "Group": {
+              "GroupName": {
+                "name": "Data_Product_Owner_UserGroup_Name"
+              },
+              "Id": {
+                "name": "Data_Product_Owner_UserGroup_Id"
+              }
+            }
+          },
+          {
+            "roleId": "0a9bdf63-e75f-4d5e-ac89-faad1a1257d1",
+            "includeInherited": true,
+            "ResponsibilitySource": {
+              "name": "Ownership_Delegated_Authority_ResponsibilitySource"
+            },
+            "Inherited": {
+              "name": "Ownership_Delegated_Authority_Inherited"
+            },
+            "Id": {
+              "name": "Ownership_Delegated_Authority_Id"
+            },
+            "User": {
+              "UserName": {
+                "name": "Ownership_Delegated_Authority_User_UserName"
+              },
+              "FirstName": {
+                "name": "Ownership_Delegated_Authority_User_FirstName"
+              },
+              "LastName": {
+                "name": "Ownership_Delegated_Authority_User_LastName"
+              },
+              "Id": {
+                "name": "Ownership_Delegated_Authority_User_Id"
+              },
+              "EmailAddress": {
+                "name": "Ownership_Delegated_Authority_User_Email"
+              }
+            },
+            "Group": {
+              "GroupName": {
+                "name": "Ownership_Delegated_Authority_UserGroup_Name"
+              },
+              "Id": {
+                "name": "Ownership_Delegated_Authority_UserGroup_Id"
+              }
+            }
+          }
+        ],
+        "Filter": {
+          "AND": [
+            {
+              "Field": {
+                "name": "Id",
+                "operator": "IN",
+                "values": [
+                  "{{ data['asset_id'] }}"
+                ]
+              }
+            }
+          ]
+        },
+        "Order": [
+          {
+            "Field": {
+              "name": "Domain_Community_Name",
+              "order": "DESC"
+            }
+          },
+          {
+            "Field": {
+              "name": "Domain_Name",
+              "order": "ASC"
+            }
+          },
+          {
+            "Field": {
+              "name": "DisplayName",
+              "order": "ASC"
+            }
+          },
+          {
+            "Field": {
+              "name": "Data_Product_Lifecycle_Value",
+              "order": "DESC"
+            }
+          }
+        ]
+      }
+    },
+    "Columns": [
+      {
+        "Column": {
+          "fieldName": "Id",
+          "label": "Asset Id"
+        }
+      },
+      {
+        "Column": {
+          "fieldName": "Status_Name",
+          "label": "Status"
+        }
+      },
+      {
+        "Column": {
+          "fieldName": "Data_Product_Lifecycle_Value",
+          "label": "Data Product Lifecycle"
+        }
+      },
+      {
+        "Column": {
+          "fieldName": "Data_Product_Type_Value",
+          "label": "Data Product Type"
+        }
+      },
+      {
+        "Column": {
+          "fieldName": "Data_Product_Subtype_Value",
+          "label": "Data Product Subtype"
+        }
+      },
+      {
+        "Group": {
+          "name": "Data_Product_Owner",
+          "Columns": [
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_User_UserName",
+                "label": "Roles > Data Product Owner > User Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_User_FirstName",
+                "label": "Roles > Data Product Owner > First Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_User_LastName",
+                "label": "Roles > Data Product Owner > Last Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_User_Email",
+                "label": "Roles > Data Product Owner > User Email"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_User_Id",
+                "label": "Roles > Data Product Owner > User Id"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_UserGroup_Name",
+                "label": "Roles > Data Product Owner > Group Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_UserGroup_Id",
+                "label": "Roles > Data Product Owner > Group Id"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_Inherited",
+                "label": "Roles > Data Product Owner > Is Inherited"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Data_Product_Owner_Id",
+                "label": "Data_Product_Owner_Id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Group": {
+          "name": "Ownership_Delegated_Authority",
+          "Columns": [
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_User_UserName",
+                "label": "Roles > Ownership Delegated Authority > User Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_User_FirstName",
+                "label": "Roles > Ownership Delegated Authority > First Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_User_LastName",
+                "label": "Roles > Ownership Delegated Authority > Last Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_User_Email",
+                "label": "Roles > Ownership Delegated Authority > User Email"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_User_Id",
+                "label": "Roles > Ownership Delegated Authority > User Id"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_UserGroup_Name",
+                "label": "Roles > Ownership Delegated Authority > Group Name"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_UserGroup_Id",
+                "label": "Roles >  Ownership Delegated Authority > Group Id"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_Inherited",
+                "label": "Roles > Ownership Delegated Authority > Is Inherited"
+              }
+            },
+            {
+              "Column": {
+                "fieldName": "Ownership_Delegated_Authority_Id",
+                "label": "Ownership_Delegated_Authority_Id"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "Column": {
+          "fieldName": "CreatedOn",
+          "label": "CreatedOn"
+        }
+      },
+      {
+        "Column": {
+          "fieldName": "LastModifiedOn",
+          "label": "LastModifiedOn"
+        }
+      }
+    ]
+  }
+}

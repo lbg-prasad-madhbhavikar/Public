@@ -481,14 +481,14 @@ def process_relation(asset_relation_source, visited_nodes, visited_nodes_lock, l
     if not is_child_of or not relation_incoming_id:
         return None, None, None
 
-    with visited_nodes_lock:
-        if is_child_of not in visited_nodes:    
-            visited_nodes[is_child_of] = set()
+    # with visited_nodes_lock:
+    #     if is_child_of not in visited_nodes:    
+    #         visited_nodes[is_child_of] = set()
         
-        if relation_incoming_id in visited_nodes[is_child_of]:
-            return None, None, None
+    #     if relation_incoming_id in visited_nodes[is_child_of]:
+    #         return None, None, None
 
-        visited_nodes[is_child_of].add(relation_incoming_id)
+    #     visited_nodes[is_child_of].add(relation_incoming_id)
 
     table_detail = get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is_child_of, limit, parallelism_count)
     
@@ -708,10 +708,10 @@ def render_template(asset_id, data_path, template_path):
     data = template.render(data=data)
     data = data.replace('\n', '').replace('"', '').replace('&#34;', '"')
     data = re.sub(r'\s\s+', ' ', data)
-    # dump_json(asset_id, ASSET_TYPE.CONTRACT, data)
     contract_file = construct_file_name(asset_id, ASSET_TYPE.CONTRACT)
     with open(contract_file, 'w', encoding='utf-8') as f:
         f.write(data)
+        # json.dump(json.loads(data), f, indent=2)  FIXME: Can this be simplified?
         print(f"Saved rendered contract to {contract_file}")
 
 
@@ -835,6 +835,9 @@ def save_asset(asset_id):
                 continue
             with open(item_file, 'r', encoding='utf-8') as f:
                 item_data = json.load(f)
+                # if item_data[0] not in tables:
+                #     tables[item_data[0]] = []
+                # tables[item_data[0]].append(item_data)
                 tables[item_data[0]] = item_data
 
         for table_id, table_data in tables.items():

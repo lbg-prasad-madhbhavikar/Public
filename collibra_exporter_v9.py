@@ -51,7 +51,8 @@ collibra_config = {
         "relations_from_source": "rest/2.0/relations?sourceId={asset_id}",
         "relations_from_target": "rest/2.0/relations?targetId={asset_id}",
         "relation_types": "rest/2.0/relationTypes/{relation_type_id}",
-        "domains": "rest/2.0/domains/{domain_id}"
+        "domains": "rest/2.0/domains/{domain_id}", 
+        "output_module" : "rest/2.0/outputModule/export/json"
     },
 }
 
@@ -93,9 +94,8 @@ def collibra_fetcher(
     elif method == "POST":
         response = requests.post(
             url,
-            headers=headers,
-            json=payload,
-            params={"offset": offset, "limit": limit},
+            headers= {"Authorization": get_authorization()},
+            json=payload
         )
     else:
         print(f"Unsupported HTTP method {method}")
@@ -465,6 +465,49 @@ def get_relation_type(relation_type_id):
         is_paginated=False,
         show_progress=True
     )
+    
+def responsibilities_collector(responsibilities):
+    responsibilities = responsibilities.get('aaData')[0]
+    return responsibilities.get("Id"), {
+        "id": responsibilities.get("Id"),
+        "Data Product Lifecycle": responsibilities.get("Data_Product_Lifecycle_Value"),
+        "status": responsibilities.get("Status_Name"),
+        "Data Product Type": responsibilities.get("Data_Product_Type_Value"),
+        "Data Product Owner": responsibilities.get("Data_Product_Owner"),
+        "Ownership Delegated Authority": responsibilities.get("Ownership_Delegated_Authority")
+    }
+
+def get_responsibilities(asset_id):
+    env = Environment(
+        loader=FileSystemLoader('.'),
+        extensions=['jinja2.ext.do'],
+        autoescape=True,trim_blocks=True,
+        lstrip_blocks=True
+    )
+    template = env.get_template(construct_file_name(asset_id, ASSET_TYPE.RESPONSIBILITIES_TEMPLATE))
+    data = template.render(data={'asset_id': asset_id})
+    payload = orjson.loads(data)
+    
+    def fetcher(target_id, limit, offset, is_paginated=False):
+        return collibra_fetcher(
+            f"{collibra_config['url']}/{collibra_config['paths']['output_module']}",
+            get_headers(),
+            limit=limit,
+            offset=offset,
+            description="Responsibilities Target Fetcher",
+            is_paginated=is_paginated,
+            method="POST",
+            payload=payload
+        )
+
+    return extract_collibra_data(
+        asset_id,
+        fetcher,
+        responsibilities_collector,
+        is_paginated=False,
+        show_progress=True
+    )
+
 
 def process_relation(asset_relation_source, limit=10, parallelism_count=8):
     relation_incoming_id = asset_relation_source.get("relation_incoming_id")
@@ -606,6 +649,8 @@ class ASSET_TYPE(Enum):
     DOMAIN = "domain"
     COLUMNS = "columns"
     RESPONSIBILITIES = "responsibilities"
+    RESPONSIBILITIES_TEMPLATE = "responsibilities_template"
+    CONTRACT_TEMPLATE = "contract_template"
     ERROR = "error"
 
 def construct_file_name(asset_id=None, type:ASSET_TYPE=ASSET_TYPE.ROOT, id=""):
@@ -632,6 +677,10 @@ def construct_file_name(asset_id=None, type:ASSET_TYPE=ASSET_TYPE.ROOT, id=""):
             file_name = f"{asset_id}/domain.json"
         case ASSET_TYPE.RESPONSIBILITIES:
             file_name = f"{asset_id}/responsibility.json"
+        case ASSET_TYPE.RESPONSIBILITIES_TEMPLATE:
+            return "responsibilities.request.template.json"
+        case ASSET_TYPE.CONTRACT_TEMPLATE:
+            return "contract.template.v8.json"
         case ASSET_TYPE.ERROR:
             file_name = f"{asset_id}/error.log"
         case _:
@@ -763,9 +812,22 @@ def process_relational_data(asset_id, asset_relations_source_queue, limit=10, pa
                 construct_file_name(asset_id, ASSET_TYPE.TABLE, relation_incoming_ids[future]),
                 future,
                 relation_incoming_ids[future]
-            )
-                    
-                        
+            ) 
+
+# def process_responsibilities(asset_id):
+#     responsibilities = get_responsibilities(asset_id)
+#     result = {}
+#     if len(responsibilities) > 0:
+#         result['id'] = responsibilities.get('id')
+#         result['roles'] =  {}
+#         if "Data Product Owner" in result:
+#             for obj in responsibilities.get("Data Product Owner", []):
+#                 if "Data Product Owner" not in result['roles']:
+#                     result['roles']['Data Product Owner'] = []
+#                 result['roles']['Data Product Owner'].append(obj)
+
+#     return result
+
 def save_asset(asset_id):    
     print(f"Saving asset: {asset_id}")
     if not pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.DUMP, "")).exists():
@@ -787,7 +849,7 @@ def save_asset(asset_id):
         if pathlib.Path(responsibility_file_name).exists():
             with open(responsibility_file_name, 'r', encoding='utf-8') as f:
                 responsibility = orjson.loads(f.read())
-            output_data.update({"roles": responsibility.get("roles", [])})
+            output_data.update({k:v for k, v in responsibility.items()})
             responsibility = None
 
         asset_file_name = construct_file_name(asset_id, ASSET_TYPE.ASSET)
@@ -842,13 +904,13 @@ def save_asset(asset_id):
     render_template(
         asset_id=asset_id,
         data_path=construct_file_name(asset_id, ASSET_TYPE.DUMP),
-        template_path='contract.template.v8.json'
+        template_path='contract.template.v9.json'
     )
     print(f"Done processing the asset [{asset_id}], created contract at [{construct_file_name(asset_id, ASSET_TYPE.CONTRACT)}]")
 
 if __name__ == "__main__":
-    # action = "scrape"
-    action = "process"
+    action = "scrape"
+    # action = "process"
     root = pathlib.Path(construct_file_name())
     root.mkdir(parents=True, exist_ok=True)
     if(action == "scrape"):
@@ -873,23 +935,27 @@ if __name__ == "__main__":
             try:
                 asset_id = target.get("asset_id")
                 print(f"Processing asset id: [{asset_id}]")
-
+                
                 asset = {}
                 asset_details = {}
                 asset_relations_source_queue=[]
+                responsibilities = []
                 
                 asset_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET)
                 asset_details_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
                 asset_relations_source_queue_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, id=asset_id)
-
+                responsibilities_file_id = construct_file_name(asset_id, ASSET_TYPE.RESPONSIBILITIES)
+                
                 import concurrent.futures
 
                 with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
                     future_asset = submit_job_if_not_cached(asset_file_id,ASSET_TYPE.ASSET, executor, get_asset, asset_id)
+                    future_responsibilities = submit_job_if_not_cached(responsibilities_file_id,ASSET_TYPE.RESPONSIBILITIES, executor, get_responsibilities, asset_id)
                     future_asset_details = submit_job_if_not_cached(asset_details_file_id,ASSET_TYPE.ASSET_DETAILS, executor, get_asset_details, asset_id, limit, 0, parallelism_count=parallelism_count)
                     future_asset_relations_source_queue = submit_job_if_not_cached(asset_relations_source_queue_file_id,ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, executor, get_outgoing_relations_for, asset_id, limit, 0, parallelism_count=parallelism_count)
 
                     asset = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET, asset_file_id, future_asset)
+                    responsibilities = collect_and_cache_results(asset_id, ASSET_TYPE.RESPONSIBILITIES, responsibilities_file_id, future_responsibilities)
                     asset_details = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_DETAILS, asset_details_file_id, future_asset_details)
                     asset_relations_source_queue = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, asset_relations_source_queue_file_id, future_asset_relations_source_queue)
 

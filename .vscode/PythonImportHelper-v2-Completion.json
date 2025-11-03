@@ -1,0 +1,1565 @@
+[
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "coloredlogs",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "coloredlogs",
+        "description": "coloredlogs",
+        "detail": "coloredlogs",
+        "documentation": {}
+    },
+    {
+        "label": "logging",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "logging",
+        "description": "logging",
+        "detail": "logging",
+        "documentation": {}
+    },
+    {
+        "label": "creds",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "creds",
+        "description": "creds",
+        "detail": "creds",
+        "documentation": {}
+    },
+    {
+        "label": "pformat",
+        "importPath": "pprint",
+        "description": "pprint",
+        "isExtraImport": true,
+        "detail": "pprint",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "tqdm",
+        "importPath": "tqdm",
+        "description": "tqdm",
+        "isExtraImport": true,
+        "detail": "tqdm",
+        "documentation": {}
+    },
+    {
+        "label": "csv",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "csv",
+        "description": "csv",
+        "detail": "csv",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "Enum",
+        "importPath": "enum",
+        "description": "enum",
+        "isExtraImport": true,
+        "detail": "enum",
+        "documentation": {}
+    },
+    {
+        "label": "orjson",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "orjson",
+        "description": "orjson",
+        "detail": "orjson",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "time",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "time",
+        "description": "time",
+        "detail": "time",
+        "documentation": {}
+    },
+    {
+        "label": "pathlib",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "pathlib",
+        "description": "pathlib",
+        "detail": "pathlib",
+        "documentation": {}
+    },
+    {
+        "label": "threading",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "threading",
+        "description": "threading",
+        "detail": "threading",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "as_completed",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "as_completed",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "ThreadPoolExecutor",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "as_completed",
+        "importPath": "concurrent.futures",
+        "description": "concurrent.futures",
+        "isExtraImport": true,
+        "detail": "concurrent.futures",
+        "documentation": {}
+    },
+    {
+        "label": "re",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "re",
+        "description": "re",
+        "detail": "re",
+        "documentation": {}
+    },
+    {
+        "label": "Environment",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "FileSystemLoader",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "Environment",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "FileSystemLoader",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "Environment",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "FileSystemLoader",
+        "importPath": "jinja2",
+        "description": "jinja2",
+        "isExtraImport": true,
+        "detail": "jinja2",
+        "documentation": {}
+    },
+    {
+        "label": "traceback",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "traceback",
+        "description": "traceback",
+        "detail": "traceback",
+        "documentation": {}
+    },
+    {
+        "label": "cError",
+        "kind": 2,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "def cError(r):\n    if not r.ok: \n        coloredlogs.install(level=\"ERROR\")\n        logging.error(f\"Request Failed:\\n{r.content.decode('utf-8')}\")\n        r.raise_for_status()\ndef login():\n    # collibra login details\n    username = creds.collibra_username\n    password = creds.collibra_pw\n    # windows/proxy login details",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "kind": 2,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "def login():\n    # collibra login details\n    username = creds.collibra_username\n    password = creds.collibra_pw\n    # windows/proxy login details\n    proxy_user = creds.proxy_user\n    proxy_password = creds.proxy_pw\n    proxy_url = f'http://{proxy_user}:{proxy_password}@prodproxyarray.service.group:8080'\n    proxies = {\n        \"http\": proxy_url,",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "base_file_path",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "base_file_path = \"/Users/7604844/Library/CloudStorage/OneDrive-LloydsBankingGroup/Documents/Collibra/Code/Python/OutputModule/X.RESULTS/\"\nview_config_path = \"OutputModule/SCRIPTS/AI Agent Work/View Configs/\"\nconfig = \"published_dps.json\"\ndef cError(r):\n    if not r.ok: \n        coloredlogs.install(level=\"ERROR\")\n        logging.error(f\"Request Failed:\\n{r.content.decode('utf-8')}\")\n        r.raise_for_status()\ndef login():\n    # collibra login details",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "view_config_path",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "view_config_path = \"OutputModule/SCRIPTS/AI Agent Work/View Configs/\"\nconfig = \"published_dps.json\"\ndef cError(r):\n    if not r.ok: \n        coloredlogs.install(level=\"ERROR\")\n        logging.error(f\"Request Failed:\\n{r.content.decode('utf-8')}\")\n        r.raise_for_status()\ndef login():\n    # collibra login details\n    username = creds.collibra_username",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "config = \"published_dps.json\"\ndef cError(r):\n    if not r.ok: \n        coloredlogs.install(level=\"ERROR\")\n        logging.error(f\"Request Failed:\\n{r.content.decode('utf-8')}\")\n        r.raise_for_status()\ndef login():\n    # collibra login details\n    username = creds.collibra_username\n    password = creds.collibra_pw",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "session",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "session = login()\nlogging.debug(\"Login successful\")\n# ------------------------------------------------------------------------------------------------------ #\n# specify view ID to extract from and obtain the view configuration\nlogging.info(\"Getting view configuration\")\nwith open(view_config_path + config, \"r\", encoding=\"utf-8\") as f:\n    view_config = json.load(f)\n# ------------------------------------------------------------------------------------------------------ #\nr = session.post(f\"{dgc_environment_url}/outputModule/export/json\", json=view_config)\ncError(r)",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "r",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "r = session.post(f\"{dgc_environment_url}/outputModule/export/json\", json=view_config)\ncError(r)\ndata = r.json()\nasset_list = data['aaData']\nlogging.debug(f\"Number of assets in view: {len(asset_list)}\")\n# logging.info(f\"Assets:\\n{pformat(asset_list)}\")\nwith open(f\"{base_file_path}dps_{config}\", \"w\", encoding=\"utf-8\") as f:\n    json.dump(asset_list, f, ensure_ascii=False, indent=4)",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "data",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "data = r.json()\nasset_list = data['aaData']\nlogging.debug(f\"Number of assets in view: {len(asset_list)}\")\n# logging.info(f\"Assets:\\n{pformat(asset_list)}\")\nwith open(f\"{base_file_path}dps_{config}\", \"w\", encoding=\"utf-8\") as f:\n    json.dump(asset_list, f, ensure_ascii=False, indent=4)",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "asset_list",
+        "kind": 5,
+        "importPath": "test.publishedDataProductsExtract_v2",
+        "description": "test.publishedDataProductsExtract_v2",
+        "peekOfCode": "asset_list = data['aaData']\nlogging.debug(f\"Number of assets in view: {len(asset_list)}\")\n# logging.info(f\"Assets:\\n{pformat(asset_list)}\")\nwith open(f\"{base_file_path}dps_{config}\", \"w\", encoding=\"utf-8\") as f:\n    json.dump(asset_list, f, ensure_ascii=False, indent=4)",
+        "detail": "test.publishedDataProductsExtract_v2",
+        "documentation": {}
+    },
+    {
+        "label": "responsibilities",
+        "kind": 5,
+        "importPath": "1.csv2Responsibilities",
+        "description": "1.csv2Responsibilities",
+        "peekOfCode": "responsibilities = []\nconfig = { \"targets\":[]}\nwith open('collibra-456-2025-10-28.csv', newline='') as csvfile:\n    reader = csv.reader(csvfile)\n    i = 0\n    for row in reader:\n        i = i+1\n        if i == 1:\n            continue\n        o = set()",
+        "detail": "1.csv2Responsibilities",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "1.csv2Responsibilities",
+        "description": "1.csv2Responsibilities",
+        "peekOfCode": "config = { \"targets\":[]}\nwith open('collibra-456-2025-10-28.csv', newline='') as csvfile:\n    reader = csv.reader(csvfile)\n    i = 0\n    for row in reader:\n        i = i+1\n        if i == 1:\n            continue\n        o = set()\n        o.update(col for col in row[4:] if not col.startswith('http'))",
+        "detail": "1.csv2Responsibilities",
+        "documentation": {}
+    },
+    {
+        "label": "ASSET_TYPE",
+        "kind": 6,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "class ASSET_TYPE(Enum):\n    ROOT = \"root\"\n    STATS = \"stats\"\n    ASSET = \"asset\"\n    ASSET_DETAILS = \"asset_details\"\n    ASSET_RELATIONS_SOURCE_QUEUE = \"asset_relations_source_queue\"\n    TABLE = \"table\"\n    CONTRACT = \"contract\"\n    DUMP = \"dump\"\n    DOMAIN = \"domain\"",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "extract_href",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def extract_href(data):\n    if data:\n        match = re.search(r'href=\"(.*?)\"', data)\n        return match.group(1).strip() if match else data.strip()\n    return data.strip()\ndef extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()\n    return data.strip()",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "extract_last_value",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()\n    return data.strip()\ndef iso_timestamp(epoch):\n    if epoch:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime(epoch/1000))\n    else:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime())",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "iso_timestamp",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def iso_timestamp(epoch):\n    if epoch:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime(epoch/1000))\n    else:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime())\n    return result\ndef toJson(obj, *, indent=None):\n    result = json.dumps(obj, indent=indent, default=str)\n    return result\n# user_name = os.getenv('COLLIBRA_USERNAME')",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "toJson",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def toJson(obj, *, indent=None):\n    result = json.dumps(obj, indent=indent, default=str)\n    return result\n# user_name = os.getenv('COLLIBRA_USERNAME')\n# user_password = os.getenv('COLLIBRA_PASSWORD')\nuser_name = \"LcapAvatarServices\"\nuser_password = \"eKsEnSus2j2S\"\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_authorization",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }\ndef collibra_fetcher(",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_headers",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }\ndef collibra_fetcher(\n    url,\n    headers,\n    limit=100,",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_fetcher",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def collibra_fetcher(\n    url,\n    headers,\n    limit=100,\n    offset=0,\n    description=\"Fetcher\",\n    method=\"GET\",\n    payload=None,\n    is_paginated=True,\n    debug=False",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "extract_collibra_data",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def extract_collibra_data(\n    id,\n    fetcher_function,\n    collector_function,\n    limit=100,\n    offset=0,\n    show_progress=False,\n    is_paginated=True,\n    return_collection=\"DICT\",\n    parallelism_count=1",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "roles_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def roles_collector(role):\n    return role.get(\"name\"), {\n        \"id\": role.get(\"id\"),\n        \"name\": role.get(\"name\"),\n        \"description\": role.get(\"description\"),\n        \"disabled\": role.get(\"disabled\"),\n    }\ndef get_roles(limit=100, offset=0, parallelism_count=5):\n    def fetcher(id, limit, offset, is_paginated=True):\n        return collibra_fetcher(",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_roles",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_roles(limit=100, offset=0, parallelism_count=5):\n    def fetcher(id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['roles']}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Roles Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "asset_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def asset_collector(asset):\n    return asset.get(\"id\"), {\n        \"id\": asset.get(\"id\"),\n        \"data product name\": asset.get(\"name\"),\n        \"data product display name\": asset.get(\"displayName\"),\n        \"domain id\": asset.get(\"domain\").get(\"id\"),\n        \"owning platform\": asset.get(\"domain\").get(\"name\"),\n        \"status\": asset.get(\"status\").get(\"name\"),\n        # \"type id\": asset.get(\"type\").get(\"id\")\n    }",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_asset",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_asset(asset_id):\n    def fetcher(asset_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['assets'].format(asset_id=asset_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "domain_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def domain_collector(domain):\n    return domain.get(\"id\"),{\n        \"id\": domain.get(\"id\"),\n        \"owning platform\": domain.get(\"name\"),\n        \"business domain\": domain.get(\"community\").get(\"name\")\n    }\ndef get_domain(domain_id):\n    def fetcher(domain_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['domains'].format(domain_id=domain_id)}\",",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_domain",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_domain(domain_id):\n    def fetcher(domain_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['domains'].format(domain_id=domain_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Domain Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "asset_details_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def asset_details_collector(detail):\n    return detail.get(\"type\").get(\"name\"), {\n        \"name\": detail.get(\"type\").get(\"name\"),\n        \"value\": detail.get(\"value\"),\n        \"dataType\": detail.get(\"type\").get(\"resourceType\"),\n    }\ndef get_asset_details(asset_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(asset_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['attributes'].format(asset_id=asset_id)}\",",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_asset_details",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_asset_details(asset_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(asset_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['attributes'].format(asset_id=asset_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Details Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "asset_relation_source_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def asset_relation_source_collector(relation):\n    return relation.get(\"type\").get(\"id\"), {\n        \"relation_id\": relation.get(\"id\"),\n        \"relation_type_id\": relation.get(\"type\").get(\"id\"),\n        \"relation_incoming_id\": relation.get(\"target\").get(\"id\"),\n        \"relation_incoming_name\": relation.get(\"target\").get(\"name\"),\n        \"relation_outgoing_name\": relation.get(\"source\").get(\"name\"),\n        \"relation_outgoing_id\": relation.get(\"source\").get(\"id\"),\n    }\ndef get_outgoing_relations_for(source_id, limit=10, offset=0, parallelism_count=5):",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_outgoing_relations_for",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_outgoing_relations_for(source_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(source_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_source'].format(asset_id=source_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Relations Source Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "asset_relation_target_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def asset_relation_target_collector(relation):\n    return relation.get(\"type\").get(\"id\"), {\n        \"relation_outgoing_id\": relation.get(\"source\").get(\"id\"),\n        \"name\": relation.get(\"source\").get(\"name\"),\n        \"spec\": [],\n    }\ndef get_incoming_relations_for(target_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(target_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_target'].format(asset_id=target_id)}\",",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_incoming_relations_for",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_incoming_relations_for(target_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(target_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_target'].format(asset_id=target_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Relations Target Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "relation_type_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def relation_type_collector(type):\n    return type.get(\"id\"), {\n        \"is_child_of\": type.get(\"role\"),\n        \"is_parent_of\": type.get(\"coRole\"),\n        \"type_outgoing_id\": type.get(\"sourceType\").get(\"id\"),\n        \"type_incoming_id\": type.get(\"targetType\").get(\"id\"),\n        # \"description\": type.get(\"description\")\n    }\ndef get_relation_type(relation_type_id):\n    def fetcher(relation_type_id, limit, offset, is_paginated=False):",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_relation_type",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_relation_type(relation_type_id):\n    def fetcher(relation_type_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n                f\"{collibra_config['url']}/{collibra_config['paths']['relation_types'].format(relation_type_id=relation_type_id)}\",\n                get_headers(),\n                limit=limit,\n                offset=offset,\n                description=\"Relation Type Fetcher\",\n                is_paginated=is_paginated\n            )",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "process_relation",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def process_relation(asset_relation_source, visited_nodes, visited_nodes_lock, limit=10, parallelism_count=8):\n    relation_incoming_id = asset_relation_source.get(\"relation_incoming_id\")\n    relation_incoming_name = asset_relation_source.get(\"relation_incoming_name\")\n    relation_type_id = asset_relation_source.get(\"relation_type_id\")\n    relation_type = get_relation_type(relation_type_id)\n    is_child_of = relation_type.get(relation_type_id, {}).get(\"is_child_of\")\n    if not is_child_of or not relation_incoming_id:\n        return None, None, None\n    with visited_nodes_lock:\n        if is_child_of not in visited_nodes:    ",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "process_column",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def process_column(column, asset_id, parallelism_count):\n    if column.get(\"relation_outgoing_id\") == asset_id or (len(column.get(\"name\").split(\">\")) != 5):  # schema has 3 and table has 4 and column has 5\n        return None\n    column_details = get_asset_details(\n        column.get(\"relation_outgoing_id\"), parallelism_count=parallelism_count\n    )\n    detail = {\"name\": column.get(\"name\"), \"specs\": []}\n    for spec, details in column_details.items():\n        detail[\"specs\"].append(\n            {",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_columns_for_table",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_columns_for_table(relation_incoming_id, asset_id, limit=10, parallelism_count=5):\n    columns_queue = get_incoming_relations_for(\n                        relation_incoming_id, limit, 0, parallelism_count=parallelism_count\n                    ) \n    if len(columns_queue) > 0:\n        chunk_size = len(columns_queue) // parallelism_count\n        remainder = len(columns_queue) % parallelism_count\n        chunks = []\n        start = 0\n        for i in range(parallelism_count):",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "get_table_details",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is_child_of, limit, parallelism_count):\n    match is_child_of:\n        case \"Data Product contains Table\":\n            details = get_columns_for_table(relation_incoming_id, asset_id, limit, parallelism_count=parallelism_count)\n            return {\n                    \"id\": relation_incoming_id,\n                    \"table\": relation_incoming_name,\n                    \"columns\": details,\n                }\n        case _:",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "construct_file_name",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def construct_file_name(asset_id=None, type:ASSET_TYPE=ASSET_TYPE.ROOT, id=\"\"):\n    if id and \" \" in id:\n        id = id.replace(\" \", \"_\")\n    match type:\n        case ASSET_TYPE.ROOT:\n            file_name = \"\"\n        case ASSET_TYPE.ASSET:\n            file_name = f\"{asset_id}/asset.json\"\n        case ASSET_TYPE.ASSET_DETAILS:\n            file_name = f\"{asset_id}/asset_details.json\"",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "dump_json",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def dump_json(asset_id, type:ASSET_TYPE, data, file_name=\"\"):\n    file_path = construct_file_name(asset_id, type, file_name)\n    path = pathlib.Path(file_path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    match type:\n        case ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE:\n            for item in data:\n                item_file_path = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, item.get(\"relation_incoming_id\"))\n                with open(item_file_path, \"w\", encoding=\"utf-8\") as f:\n                    json.dump(item, f, indent=2)",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def render_template(asset_id, data_path, template_path):\n    with open(data_path, 'r', encoding='utf-8') as f:\n        data = json.load(f)\n    env = Environment(\n        loader=FileSystemLoader('.'),\n        autoescape=True,\n        # filters={\n        #     'extract_href': extract_href,\n        #     'extract_last_value': extract_last_value,\n        #     'iso_timestamp': iso_timestamp",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "check_and_invoke",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def check_and_invoke(asset_id, type:ASSET_TYPE, fn, id, file_name=\"\"):\n    file_name = construct_file_name(asset_id, type, id)\n    if not pathlib.Path(file_name).exists():\n        results = fn(id)\n        for item in results:\n            result = results.get(item)\n            dump_json(asset_id, type, result, file_name)\n    else:\n        result = json.load(open(file_name, 'r', encoding='utf-8'))\n        print(f\"Loaded cache from file: {file_name}\")",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "submit_job_if_not_cached",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def submit_job_if_not_cached(file_path, type: ASSET_TYPE, executor, fn, /, *args, **kwargs):\n    if type == ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE or type == ASSET_TYPE.TABLE or type == ASSET_TYPE.COLUMNS:\n        dir_path = pathlib.Path(file_path).parent\n        if dir_path.exists() and any(dir_path.iterdir()) and pathlib.Path(file_path).exists():\n            return None\n    else:\n        if pathlib.Path(file_path).exists():\n            return None\n    return executor.submit(fn, *args, **kwargs)\ndef collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, target_file_name=\"\"):",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "collect_and_cache_results",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, target_file_name=\"\"):\n    if future:\n        result = future.result()\n    else:\n        if ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE == type or ASSET_TYPE.TABLE == type and ASSET_TYPE.COLUMNS == type:\n            result = []\n            dir_path = pathlib.Path(file_path).parent\n            for item_file in pathlib.Path(dir_path).iterdir():\n                if  item_file.is_dir() or not item_file.name.endswith(\".json\") or not item_file.name.startswith(f\"{asset_id}_\"):\n                    continue",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "clear_cache",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def clear_cache(asset_id, type: ASSET_TYPE, id=\"\"):\n    file_name = construct_file_name(asset_id, type, id=id)\n    if pathlib.Path(file_name).exists():\n        pathlib.Path(file_name).unlink()\n        print(f\"Cleared cache for {file_name}\")\ndef process_relational_data(asset_id, asset_relations_source_queue, asset_relations, asset_relations_lock, limit=10, parrallelism_count=8):\n    # futures = []\n    relation_incoming_ids = {}\n    with ThreadPoolExecutor(max_workers=parallelism_count) as executor:\n        for asset_relation_source in asset_relations_source_queue:",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "process_relational_data",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def process_relational_data(asset_id, asset_relations_source_queue, asset_relations, asset_relations_lock, limit=10, parrallelism_count=8):\n    # futures = []\n    relation_incoming_ids = {}\n    with ThreadPoolExecutor(max_workers=parallelism_count) as executor:\n        for asset_relation_source in asset_relations_source_queue:\n            if asset_relation_source:\n                relation_incoming_id = asset_relation_source.get(\"relation_incoming_id\")\n                future = submit_job_if_not_cached(\n                    construct_file_name(asset_id, ASSET_TYPE.TABLE,relation_incoming_id), \n                    ASSET_TYPE.TABLE,",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "save_asset",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "def save_asset(asset_id):    \n    print(f\"Saving asset: {asset_id}\")\n    if not pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.DUMP, \"\")).exists():\n        output_data = {}\n        asset_details_file_name= construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)\n        with open(asset_details_file_name, 'r', encoding='utf-8') as f:\n            asset_details = json.load(f)\n        output_data.update({k: v for k, v in asset_details.items()})\n        asset_details = None\n        domain_file_name = construct_file_name(asset_id, ASSET_TYPE.DOMAIN)",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "user_name",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "user_name = \"LcapAvatarServices\"\nuser_password = \"eKsEnSus2j2S\"\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "user_password",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "user_password = \"eKsEnSus2j2S\"\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",\n        \"relations_from_target\": \"rest/2.0/relations?targetId={asset_id}\",",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_config",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "collibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",\n        \"relations_from_target\": \"rest/2.0/relations?targetId={asset_id}\",\n        \"relation_types\": \"rest/2.0/relationTypes/{relation_type_id}\",",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "asset_types_meta",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "asset_types_meta = {}\nasset_types = {}\ncollibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "asset_types",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "asset_types = {}\ncollibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_targetted_roles",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "collibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_roles",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v6",
+        "description": "2.collibra_exporter_v6",
+        "peekOfCode": "collibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }",
+        "detail": "2.collibra_exporter_v6",
+        "documentation": {}
+    },
+    {
+        "label": "ASSET_TYPE",
+        "kind": 6,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "class ASSET_TYPE(Enum):\n    ROOT = \"root\"\n    STATS = \"stats\"\n    ASSET = \"asset\"\n    ASSET_DETAILS = \"asset_details\"\n    ASSET_RELATIONS_SOURCE_QUEUE = \"asset_relations_source_queue\"\n    TABLE = \"table\"\n    CONTRACT = \"contract\"\n    DUMP = \"dump\"\n    DOMAIN = \"domain\"",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "extract_href",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def extract_href(data):\n    if data:\n        match = re.search(r'href=\"(.*?)\"', data)\n        return match.group(1).strip() if match else data.strip()\n    return data.strip()\ndef extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()\n    return data.strip()",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "extract_last_value",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()\n    return data.strip()\ndef iso_timestamp(epoch):\n    if epoch:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime(epoch/1000))\n    else:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime())",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "iso_timestamp",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def iso_timestamp(epoch):\n    if epoch:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime(epoch/1000))\n    else:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime())\n    return result\ndef toJson(obj):\n    result = json.dumps(obj, indent=2)\n    return result\n# user_name = os.getenv('COLLIBRA_USERNAME')",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "toJson",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def toJson(obj):\n    result = json.dumps(obj, indent=2)\n    return result\n# user_name = os.getenv('COLLIBRA_USERNAME')\n# user_password = os.getenv('COLLIBRA_PASSWORD')\nuser_name = \"LcapAvatarServices\"\nuser_password = \"eKsEnSus2j2S\"\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_authorization",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }\ndef collibra_fetcher(",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_headers",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }\ndef collibra_fetcher(\n    url,\n    headers,\n    limit=100,",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_fetcher",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def collibra_fetcher(\n    url,\n    headers,\n    limit=100,\n    offset=0,\n    description=\"Fetcher\",\n    method=\"GET\",\n    payload=None,\n    is_paginated=True,\n    debug=False",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "extract_collibra_data",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def extract_collibra_data(\n    id,\n    fetcher_function,\n    collector_function,\n    limit=100,\n    offset=0,\n    show_progress=False,\n    is_paginated=True,\n    return_collection=\"DICT\",\n    parallelism_count=1",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "roles_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def roles_collector(role):\n    return role.get(\"name\"), {\n        \"id\": role.get(\"id\"),\n        \"name\": role.get(\"name\"),\n        \"description\": role.get(\"description\"),\n        \"disabled\": role.get(\"disabled\"),\n    }\ndef get_roles(limit=100, offset=0, parallelism_count=5):\n    def fetcher(id, limit, offset, is_paginated=True):\n        return collibra_fetcher(",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_roles",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_roles(limit=100, offset=0, parallelism_count=5):\n    def fetcher(id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['roles']}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Roles Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "asset_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def asset_collector(asset):\n    return asset.get(\"id\"), {\n        \"id\": asset.get(\"id\"),\n        \"data product name\": asset.get(\"name\"),\n        \"data product display name\": asset.get(\"displayName\"),\n        \"domain id\": asset.get(\"domain\").get(\"id\"),\n        \"owning platform\": asset.get(\"domain\").get(\"name\"),\n        \"status\": asset.get(\"status\").get(\"name\"),\n        # \"type id\": asset.get(\"type\").get(\"id\")\n    }",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_asset",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_asset(asset_id):\n    def fetcher(asset_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['assets'].format(asset_id=asset_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "domain_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def domain_collector(domain):\n    return domain.get(\"id\"),{\n        \"id\": domain.get(\"id\"),\n        \"owning platform\": domain.get(\"name\"),\n        \"business domain\": domain.get(\"community\").get(\"name\")\n    }\ndef get_domain(domain_id):\n    def fetcher(domain_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['domains'].format(domain_id=domain_id)}\",",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_domain",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_domain(domain_id):\n    def fetcher(domain_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['domains'].format(domain_id=domain_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Domain Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "asset_details_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def asset_details_collector(detail):\n    return detail.get(\"type\").get(\"name\"), {\n        \"name\": detail.get(\"type\").get(\"name\"),\n        \"value\": detail.get(\"value\"),\n        \"dataType\": detail.get(\"type\").get(\"resourceType\"),\n    }\ndef get_asset_details(asset_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(asset_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['attributes'].format(asset_id=asset_id)}\",",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_asset_details",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_asset_details(asset_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(asset_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['attributes'].format(asset_id=asset_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Details Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "asset_relation_source_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def asset_relation_source_collector(relation):\n    return relation.get(\"type\").get(\"id\"), {\n        \"relation_id\": relation.get(\"id\"),\n        \"relation_type_id\": relation.get(\"type\").get(\"id\"),\n        \"relation_incoming_id\": relation.get(\"target\").get(\"id\"),\n        \"relation_incoming_name\": relation.get(\"target\").get(\"name\"),\n        \"relation_outgoing_name\": relation.get(\"source\").get(\"name\"),\n        \"relation_outgoing_id\": relation.get(\"source\").get(\"id\"),\n    }\ndef get_outgoing_relations_for(source_id, limit=10, offset=0, parallelism_count=5):",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_outgoing_relations_for",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_outgoing_relations_for(source_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(source_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_source'].format(asset_id=source_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Relations Source Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "asset_relation_target_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def asset_relation_target_collector(relation):\n    return relation.get(\"type\").get(\"id\"), {\n        \"relation_outgoing_id\": relation.get(\"source\").get(\"id\"),\n        \"name\": relation.get(\"source\").get(\"name\"),\n        \"spec\": [],\n    }\ndef get_incoming_relations_for(target_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(target_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_target'].format(asset_id=target_id)}\",",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_incoming_relations_for",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_incoming_relations_for(target_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(target_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_target'].format(asset_id=target_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Relations Target Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "relation_type_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def relation_type_collector(type):\n    return type.get(\"id\"), {\n        \"is_child_of\": type.get(\"role\"),\n        \"is_parent_of\": type.get(\"coRole\"),\n        \"type_outgoing_id\": type.get(\"sourceType\").get(\"id\"),\n        \"type_incoming_id\": type.get(\"targetType\").get(\"id\"),\n        # \"description\": type.get(\"description\")\n    }\ndef get_relation_type(relation_type_id):\n    def fetcher(relation_type_id, limit, offset, is_paginated=False):",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_relation_type",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_relation_type(relation_type_id):\n    def fetcher(relation_type_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n                f\"{collibra_config['url']}/{collibra_config['paths']['relation_types'].format(relation_type_id=relation_type_id)}\",\n                get_headers(),\n                limit=limit,\n                offset=offset,\n                description=\"Relation Type Fetcher\",\n                is_paginated=is_paginated\n            )",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "process_relation",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def process_relation(asset_relation_source, limit=10, parallelism_count=8):\n    relation_incoming_id = asset_relation_source.get(\"relation_incoming_id\")\n    relation_incoming_name = asset_relation_source.get(\"relation_incoming_name\")\n    relation_type_id = asset_relation_source.get(\"relation_type_id\")\n    relation_type = get_relation_type(relation_type_id)\n    is_child_of = relation_type.get(relation_type_id, {}).get(\"is_child_of\")\n    if not is_child_of or not relation_incoming_id:\n        return None, None, None\n    table_detail = get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is_child_of, limit, parallelism_count)\n    return is_child_of, table_detail, relation_incoming_id",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "process_column",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def process_column(column, asset_id, parallelism_count):\n    if column.get(\"relation_outgoing_id\") == asset_id or (len(column.get(\"name\").split(\">\")) != 5):  # schema has 3 and table has 4 and column has 5\n        return None\n    column_details = get_asset_details(\n        column.get(\"relation_outgoing_id\"), parallelism_count=parallelism_count\n    )\n    detail = {\"name\": column.get(\"name\"), \"specs\": []}\n    for spec, details in column_details.items():\n        detail[\"specs\"].append(\n            {",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_columns_for_table",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_columns_for_table(relation_incoming_id, asset_id, limit=10, parallelism_count=5):\n    columns_queue = get_incoming_relations_for(\n                        relation_incoming_id, limit, 0, parallelism_count=parallelism_count\n                    ) \n    if len(columns_queue) > 0:\n        chunk_size = len(columns_queue) // parallelism_count\n        remainder = len(columns_queue) % parallelism_count\n        chunks = []\n        start = 0\n        for i in range(parallelism_count):",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "get_table_details",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is_child_of, limit, parallelism_count):\n    match is_child_of:\n        case \"Data Product contains Table\":\n            details = get_columns_for_table(relation_incoming_id, asset_id, limit, parallelism_count=parallelism_count)\n            return {\n                    \"id\": relation_incoming_id,\n                    \"table\": relation_incoming_name,\n                    \"columns\": details,\n                }\n        case _:",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "construct_file_name",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def construct_file_name(asset_id=None, type:ASSET_TYPE=ASSET_TYPE.ROOT, id=\"\"):\n    if id and \" \" in id:\n        id = id.replace(\" \", \"_\")\n    match type:\n        case ASSET_TYPE.ROOT:\n            file_name = \"\"\n        case ASSET_TYPE.ASSET:\n            file_name = f\"{asset_id}/asset.json\"\n        case ASSET_TYPE.ASSET_DETAILS:\n            file_name = f\"{asset_id}/asset_details.json\"",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "dump_json",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def dump_json(asset_id, type:ASSET_TYPE, data, file_name=\"\"):\n    file_path = construct_file_name(asset_id, type, file_name)\n    path = pathlib.Path(file_path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    match type:\n        case ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE:\n            for item in data:\n                item_file_path = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, item.get(\"relation_incoming_id\"))\n                with open(item_file_path, \"w\", encoding=\"utf-8\") as f:\n                    f.write(orjson.dumps(item, option=orjson.OPT_INDENT_2).decode())",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def render_template(asset_id, data_path, template_path):\n    with open(data_path, 'r', encoding='utf-8') as f:\n        data = orjson.loads(f.read())\n    env = Environment(\n        loader=FileSystemLoader('.'),\n        autoescape=True,\n        # filters={\n        #     'extract_href': extract_href,\n        #     'extract_last_value': extract_last_value,\n        #     'iso_timestamp': iso_timestamp",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "check_and_invoke",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def check_and_invoke(asset_id, type:ASSET_TYPE, fn, id, file_name=\"\"):\n    file_name = construct_file_name(asset_id, type, id)\n    if not pathlib.Path(file_name).exists():\n        results = fn(id)\n        for item in results:\n            result = results.get(item)\n            dump_json(asset_id, type, result, file_name)\n    else:\n        result = orjson.loads(open(file_name, 'r', encoding='utf-8').read())\n        print(f\"Loaded cache from file: {file_name}\")",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "submit_job_if_not_cached",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def submit_job_if_not_cached(file_path, type: ASSET_TYPE, executor, fn, /, *args, **kwargs):\n    if type == ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE or type == ASSET_TYPE.TABLE or type == ASSET_TYPE.COLUMNS:\n        dir_path = pathlib.Path(file_path).parent\n        if dir_path.exists() and any(dir_path.iterdir()) and pathlib.Path(file_path).exists():\n            return None\n    else:\n        if pathlib.Path(file_path).exists():\n            return None\n    return executor.submit(fn, *args, **kwargs)\ndef collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, target_file_name=\"\"):",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "collect_and_cache_results",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, target_file_name=\"\"):\n    if future:\n        result = future.result()\n    else:\n        if ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE == type or ASSET_TYPE.TABLE == type and ASSET_TYPE.COLUMNS == type:\n            result = []\n            dir_path = pathlib.Path(file_path).parent\n            for item_file in pathlib.Path(dir_path).iterdir():\n                if  item_file.is_dir() or not item_file.name.endswith(\".json\") or not item_file.name.startswith(f\"{asset_id}_\"):\n                    continue",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "clear_cache",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def clear_cache(asset_id, type: ASSET_TYPE, id=\"\"):\n    file_name = construct_file_name(asset_id, type, id=id)\n    if pathlib.Path(file_name).exists():\n        pathlib.Path(file_name).unlink()\n        print(f\"Cleared cache for {file_name}\")\ndef process_relational_data(asset_id, asset_relations_source_queue, limit=10, parrallelism_count=8):\n    relation_incoming_ids = {}\n    with ThreadPoolExecutor(max_workers=parallelism_count) as executor:\n        for asset_relation_source in asset_relations_source_queue:\n            if asset_relation_source:",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "process_relational_data",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def process_relational_data(asset_id, asset_relations_source_queue, limit=10, parrallelism_count=8):\n    relation_incoming_ids = {}\n    with ThreadPoolExecutor(max_workers=parallelism_count) as executor:\n        for asset_relation_source in asset_relations_source_queue:\n            if asset_relation_source:\n                relation_incoming_id = asset_relation_source.get(\"relation_incoming_id\")\n                future = submit_job_if_not_cached(\n                    construct_file_name(asset_id, ASSET_TYPE.TABLE,relation_incoming_id), \n                    ASSET_TYPE.TABLE,\n                    executor,",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "save_asset",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "def save_asset(asset_id):    \n    print(f\"Saving asset: {asset_id}\")\n    if not pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.DUMP, \"\")).exists():\n        output_data = {}\n        asset_details_file_name= construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)\n        with open(asset_details_file_name, 'r', encoding='utf-8') as f:\n            asset_details = orjson.loads(f.read())\n        output_data.update({k: v for k, v in asset_details.items()})\n        asset_details = None\n        domain_file_name = construct_file_name(asset_id, ASSET_TYPE.DOMAIN)",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "user_name",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "user_name = \"LcapAvatarServices\"\nuser_password = \"eKsEnSus2j2S\"\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "user_password",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "user_password = \"eKsEnSus2j2S\"\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",\n        \"relations_from_target\": \"rest/2.0/relations?targetId={asset_id}\",",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_config",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "collibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",\n        \"relations_from_target\": \"rest/2.0/relations?targetId={asset_id}\",\n        \"relation_types\": \"rest/2.0/relationTypes/{relation_type_id}\",",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "asset_types_meta",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "asset_types_meta = {}\nasset_types = {}\ncollibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "asset_types",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "asset_types = {}\ncollibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_targetted_roles",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "collibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_roles",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v7",
+        "description": "2.collibra_exporter_v7",
+        "peekOfCode": "collibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }",
+        "detail": "2.collibra_exporter_v7",
+        "documentation": {}
+    },
+    {
+        "label": "ASSET_TYPE",
+        "kind": 6,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "class ASSET_TYPE(Enum):\n    ROOT = \"root\"\n    STATS = \"stats\"\n    ASSET = \"asset\"\n    ASSET_DETAILS = \"asset_details\"\n    ASSET_RELATIONS_SOURCE_QUEUE = \"asset_relations_source_queue\"\n    TABLE = \"table\"\n    CONTRACT = \"contract\"\n    DUMP = \"dump\"\n    DOMAIN = \"domain\"",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "extract_href",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def extract_href(data):\n    if data:\n        match = re.search(r'href=\"(.*?)\"', data)\n        return match.group(1).strip() if match else data.strip()\n    return data.strip()\ndef extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()\n    return data.strip()",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "extract_last_value",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()\n    return data.strip()\ndef iso_timestamp(epoch):\n    if epoch:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime(epoch/1000))\n    else:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime())",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "iso_timestamp",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def iso_timestamp(epoch):\n    if epoch:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime(epoch/1000))\n    else:\n        result = time.strftime(\"%Y-%m-%d %H:%M:%S\", time.gmtime())\n    return result\ndef toJson(obj):\n    result = json.dumps(obj, indent=2)\n    return result\ncollibra_config = {",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "toJson",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def toJson(obj):\n    result = json.dumps(obj, indent=2)\n    return result\ncollibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_authorization",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }\ndef collibra_fetcher(",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_headers",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }\ndef collibra_fetcher(\n    url,\n    headers,\n    limit=100,",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_fetcher",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def collibra_fetcher(\n    url,\n    headers,\n    limit=100,\n    offset=0,\n    description=\"Fetcher\",\n    method=\"GET\",\n    payload=None,\n    is_paginated=True,\n    debug=False",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "extract_collibra_data",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def extract_collibra_data(\n    id,\n    fetcher_function,\n    collector_function,\n    limit=100,\n    offset=0,\n    show_progress=False,\n    is_paginated=True,\n    return_collection=\"DICT\",\n    parallelism_count=1",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "roles_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def roles_collector(role):\n    return role.get(\"name\"), {\n        \"id\": role.get(\"id\"),\n        \"name\": role.get(\"name\"),\n        \"description\": role.get(\"description\"),\n        \"disabled\": role.get(\"disabled\"),\n    }\ndef get_roles(limit=100, offset=0, parallelism_count=5):\n    def fetcher(id, limit, offset, is_paginated=True):\n        return collibra_fetcher(",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_roles",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_roles(limit=100, offset=0, parallelism_count=5):\n    def fetcher(id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['roles']}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Roles Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "asset_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def asset_collector(asset):\n    return asset.get(\"id\"), {\n        \"id\": asset.get(\"id\"),\n        \"data product name\": asset.get(\"name\"),\n        \"data product display name\": asset.get(\"displayName\"),\n        \"domain id\": asset.get(\"domain\").get(\"id\"),\n        \"owning platform\": asset.get(\"domain\").get(\"name\"),\n        \"status\": asset.get(\"status\").get(\"name\"),\n    }\ndef get_asset(asset_id):",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_asset",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_asset(asset_id):\n    def fetcher(asset_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['assets'].format(asset_id=asset_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "domain_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def domain_collector(domain):\n    return domain.get(\"id\"),{\n        \"id\": domain.get(\"id\"),\n        \"owning platform\": domain.get(\"name\"),\n        \"business domain\": domain.get(\"community\").get(\"name\")\n    }\ndef get_domain(domain_id):\n    def fetcher(domain_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['domains'].format(domain_id=domain_id)}\",",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_domain",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_domain(domain_id):\n    def fetcher(domain_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['domains'].format(domain_id=domain_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Domain Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "asset_details_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def asset_details_collector(detail):\n    return detail.get(\"type\").get(\"name\"), {\n        \"name\": detail.get(\"type\").get(\"name\"),\n        \"value\": detail.get(\"value\"),\n        \"dataType\": detail.get(\"type\").get(\"resourceType\"),\n    }\ndef get_asset_details(asset_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(asset_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['attributes'].format(asset_id=asset_id)}\",",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_asset_details",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_asset_details(asset_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(asset_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['attributes'].format(asset_id=asset_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Details Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "asset_relation_source_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def asset_relation_source_collector(relation):\n    return relation.get(\"type\").get(\"id\"), {\n        \"relation_id\": relation.get(\"id\"),\n        \"relation_type_id\": relation.get(\"type\").get(\"id\"),\n        \"relation_incoming_id\": relation.get(\"target\").get(\"id\"),\n        \"relation_incoming_name\": relation.get(\"target\").get(\"name\"),\n        \"relation_outgoing_name\": relation.get(\"source\").get(\"name\"),\n        \"relation_outgoing_id\": relation.get(\"source\").get(\"id\"),\n    }\ndef get_outgoing_relations_for(source_id, limit=10, offset=0, parallelism_count=5):",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_outgoing_relations_for",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_outgoing_relations_for(source_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(source_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_source'].format(asset_id=source_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Relations Source Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "asset_relation_target_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def asset_relation_target_collector(relation):\n    return relation.get(\"type\").get(\"id\"), {\n        \"relation_outgoing_id\": relation.get(\"source\").get(\"id\"),\n        \"name\": relation.get(\"source\").get(\"name\"),\n        \"spec\": [],\n    }\ndef get_incoming_relations_for(target_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(target_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_target'].format(asset_id=target_id)}\",",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_incoming_relations_for",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_incoming_relations_for(target_id, limit=10, offset=0, parallelism_count=5):\n    def fetcher(target_id, limit, offset, is_paginated=True):\n        return collibra_fetcher(\n            f\"{collibra_config['url']}/{collibra_config['paths']['relations_from_target'].format(asset_id=target_id)}\",\n            get_headers(),\n            limit=limit,\n            offset=offset,\n            description=\"Asset Relations Target Fetcher\",\n            is_paginated=is_paginated\n        )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "relation_type_collector",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def relation_type_collector(type):\n    return type.get(\"id\"), {\n        \"is_child_of\": type.get(\"role\"),\n        \"is_parent_of\": type.get(\"coRole\"),\n        \"type_outgoing_id\": type.get(\"sourceType\").get(\"id\"),\n        \"type_incoming_id\": type.get(\"targetType\").get(\"id\"),\n    }\ndef get_relation_type(relation_type_id):\n    def fetcher(relation_type_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_relation_type",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_relation_type(relation_type_id):\n    def fetcher(relation_type_id, limit, offset, is_paginated=False):\n        return collibra_fetcher(\n                f\"{collibra_config['url']}/{collibra_config['paths']['relation_types'].format(relation_type_id=relation_type_id)}\",\n                get_headers(),\n                limit=limit,\n                offset=offset,\n                description=\"Relation Type Fetcher\",\n                is_paginated=is_paginated\n            )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "process_relation",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def process_relation(asset_relation_source, limit=10, parallelism_count=8):\n    relation_incoming_id = asset_relation_source.get(\"relation_incoming_id\")\n    relation_incoming_name = asset_relation_source.get(\"relation_incoming_name\")\n    relation_type_id = asset_relation_source.get(\"relation_type_id\")\n    relation_type = get_relation_type(relation_type_id)\n    is_child_of = relation_type.get(relation_type_id, {}).get(\"is_child_of\")\n    if not is_child_of or not relation_incoming_id:\n        return None, None, None\n    table_detail = get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is_child_of, limit, parallelism_count)\n    return is_child_of, table_detail, relation_incoming_id",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "process_column",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def process_column(column, asset_id, parallelism_count):\n    if column.get(\"relation_outgoing_id\") == asset_id or (len(column.get(\"name\").split(\">\")) != 5):  # schema has 3 and table has 4 and column has 5\n        return None\n    column_details = get_asset_details(\n        column.get(\"relation_outgoing_id\"), parallelism_count=parallelism_count\n    )\n    detail = {\"name\": column.get(\"name\"), \"specs\": []}\n    for spec, details in column_details.items():\n        detail[\"specs\"].append(\n            {",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_columns_for_table",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_columns_for_table(relation_incoming_id, asset_id, limit=10, parallelism_count=5):\n    columns_queue = get_incoming_relations_for(\n                        relation_incoming_id, limit, 0, parallelism_count=parallelism_count\n                    ) \n    if len(columns_queue) > 0:\n        chunk_size = len(columns_queue) // parallelism_count\n        remainder = len(columns_queue) % parallelism_count\n        chunks = []\n        start = 0\n        for i in range(parallelism_count):",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "get_table_details",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def get_table_details(asset_id, relation_incoming_id, relation_incoming_name, is_child_of, limit, parallelism_count):\n    match is_child_of:\n        case \"Data Product contains Table\":\n            details = get_columns_for_table(relation_incoming_id, asset_id, limit, parallelism_count=parallelism_count)\n            return {\n                    \"id\": relation_incoming_id,\n                    \"table\": relation_incoming_name,\n                    \"columns\": details,\n                }\n        case _:",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "construct_file_name",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def construct_file_name(asset_id=None, type:ASSET_TYPE=ASSET_TYPE.ROOT, id=\"\"):\n    if id and \" \" in id:\n        id = id.replace(\" \", \"_\")\n    match type:\n        case ASSET_TYPE.ROOT:\n            file_name = \"\"\n        case ASSET_TYPE.ASSET:\n            file_name = f\"{asset_id}/asset.json\"\n        case ASSET_TYPE.ASSET_DETAILS:\n            file_name = f\"{asset_id}/asset_details.json\"",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "dump_json",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def dump_json(asset_id, type:ASSET_TYPE, data, file_name=\"\"):\n    file_path = construct_file_name(asset_id, type, file_name)\n    path = pathlib.Path(file_path)\n    path.parent.mkdir(parents=True, exist_ok=True)\n    match type:\n        case ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE:\n            for item in data:\n                item_file_path = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, item.get(\"relation_incoming_id\"))\n                with open(item_file_path, \"w\", encoding=\"utf-8\") as f:\n                    f.write(orjson.dumps(item, option=orjson.OPT_INDENT_2).decode())",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def render_template(asset_id, data_path, template_path):\n    with open(data_path, 'r', encoding='utf-8') as f:\n        data = orjson.loads(f.read())\n    env = Environment(\n        loader=FileSystemLoader('.'),\n        autoescape=True,\n        extensions=['jinja2.ext.do'],\n        trim_blocks=True,\n        lstrip_blocks=True\n    )",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "check_and_invoke",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def check_and_invoke(asset_id, type:ASSET_TYPE, fn, id, file_name=\"\"):\n    file_name = construct_file_name(asset_id, type, id)\n    if not pathlib.Path(file_name).exists():\n        results = fn(id)\n        for item in results:\n            result = results.get(item)\n            dump_json(asset_id, type, result, file_name)\n    else:\n        result = orjson.loads(open(file_name, 'r', encoding='utf-8').read())\n        print(f\"Loaded cache from file: {file_name}\")",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "submit_job_if_not_cached",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def submit_job_if_not_cached(file_path, type: ASSET_TYPE, executor, fn, /, *args, **kwargs):\n    if type == ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE or type == ASSET_TYPE.TABLE or type == ASSET_TYPE.COLUMNS:\n        dir_path = pathlib.Path(file_path).parent\n        if dir_path.exists() and any(dir_path.iterdir()) and pathlib.Path(file_path).exists():\n            return None\n    else:\n        if pathlib.Path(file_path).exists():\n            return None\n    return executor.submit(fn, *args, **kwargs)\ndef collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, target_file_name=\"\"):",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "collect_and_cache_results",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def collect_and_cache_results(asset_id, type:ASSET_TYPE, file_path, future, target_file_name=\"\"):\n    if future:\n        result = future.result()\n    else:\n        if ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE == type or ASSET_TYPE.TABLE == type and ASSET_TYPE.COLUMNS == type:\n            result = []\n            dir_path = pathlib.Path(file_path).parent\n            for item_file in pathlib.Path(dir_path).iterdir():\n                if  item_file.is_dir() or not item_file.name.endswith(\".json\") or not item_file.name.startswith(f\"{asset_id}_\"):\n                    continue",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "clear_cache",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def clear_cache(asset_id, type: ASSET_TYPE, id=\"\"):\n    file_name = construct_file_name(asset_id, type, id=id)\n    if pathlib.Path(file_name).exists():\n        pathlib.Path(file_name).unlink()\n        print(f\"Cleared cache for {file_name}\")\ndef process_relational_data(asset_id, asset_relations_source_queue, limit=10, parrallelism_count=8):\n    relation_incoming_ids = {}\n    with ThreadPoolExecutor(max_workers=parallelism_count) as executor:\n        for asset_relation_source in asset_relations_source_queue:\n            if asset_relation_source:",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "process_relational_data",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def process_relational_data(asset_id, asset_relations_source_queue, limit=10, parrallelism_count=8):\n    relation_incoming_ids = {}\n    with ThreadPoolExecutor(max_workers=parallelism_count) as executor:\n        for asset_relation_source in asset_relations_source_queue:\n            if asset_relation_source:\n                relation_incoming_id = asset_relation_source.get(\"relation_incoming_id\")\n                future = submit_job_if_not_cached(\n                    construct_file_name(asset_id, ASSET_TYPE.TABLE,relation_incoming_id), \n                    ASSET_TYPE.TABLE,\n                    executor,",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "save_asset",
+        "kind": 2,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "def save_asset(asset_id):    \n    print(f\"Saving asset: {asset_id}\")\n    if not pathlib.Path(construct_file_name(asset_id, ASSET_TYPE.DUMP, \"\")).exists():\n        output_data = {}\n        asset_details_file_name= construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)\n        with open(asset_details_file_name, 'r', encoding='utf-8') as f:\n            asset_details = orjson.loads(f.read())\n        output_data.update({k: v for k, v in asset_details.items()})\n        asset_details = None\n        domain_file_name = construct_file_name(asset_id, ASSET_TYPE.DOMAIN)",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "user_name",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "user_name = \"LcapAvatarServices\"\nuser_password = \"eKsEnSus2j2S\"\ndef extract_href(data):\n    if data:\n        match = re.search(r'href=\"(.*?)\"', data)\n        return match.group(1).strip() if match else data.strip()\n    return data.strip()\ndef extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "user_password",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "user_password = \"eKsEnSus2j2S\"\ndef extract_href(data):\n    if data:\n        match = re.search(r'href=\"(.*?)\"', data)\n        return match.group(1).strip() if match else data.strip()\n    return data.strip()\ndef extract_last_value(data, separator=\">\"):\n    if data:\n        parts = data.split(separator)\n        return parts[-1].strip() if parts else data.strip()",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_config",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "collibra_config = {\n    \"url\": \"https://lloyds.collibra.com\",\n    \"paths\": {\n        \"assets\": \"rest/2.0/assets/{asset_id}\",\n        \"attributes\": \"rest/2.0/attributes?assetId={asset_id}\",\n        \"asset_types\": \"rest/2.0/attributeTypes?assetTypeId={asset_type_id}\",\n        \"roles\": \"rest/2.0/roles\",\n        \"relations_from_source\": \"rest/2.0/relations?sourceId={asset_id}\",\n        \"relations_from_target\": \"rest/2.0/relations?targetId={asset_id}\",\n        \"relation_types\": \"rest/2.0/relationTypes/{relation_type_id}\",",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "asset_types_meta",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "asset_types_meta = {}\nasset_types = {}\ncollibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "asset_types",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "asset_types = {}\ncollibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_targetted_roles",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "collibra_targetted_roles = [\n    \"Data Product Owner\",\n    \"Data Steward\",\n    \"Ownership Delegated Authority\",\n]\ncollibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    },
+    {
+        "label": "collibra_roles",
+        "kind": 5,
+        "importPath": "2.collibra_exporter_v8",
+        "description": "2.collibra_exporter_v8",
+        "peekOfCode": "collibra_roles = {}\ndef get_authorization():\n    credentials = f\"{user_name}:{user_password}\"\n    return \"Basic \" + base64.b64encode(credentials.encode()).decode()\ndef get_headers():\n    return {\n        \"Authorization\": get_authorization(),\n        \"Content-Type\": \"application/json\",\n        \"Accept\": \"application/json\",\n    }",
+        "detail": "2.collibra_exporter_v8",
+        "documentation": {}
+    }
+]

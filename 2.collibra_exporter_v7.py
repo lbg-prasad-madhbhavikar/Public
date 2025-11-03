@@ -1,5 +1,6 @@
 from enum import Enum
 import os
+import traceback
 import requests
 import orjson
 import json
@@ -863,12 +864,11 @@ def save_asset(asset_id):
     print(f"Done processing the asset [{asset_id}], created contract at [{construct_file_name(asset_id, ASSET_TYPE.CONTRACT)}]")
 
 if __name__ == "__main__":
-    # action = "scrape"
-    action = "process"
+    action = "scrape"
+    # action = "process"
     if(action == "scrape"):
         parallelism_count=8
         limit = 1000
-        start_time = time.time()
         targets = []
 
         scraping_targets = {}
@@ -885,46 +885,52 @@ if __name__ == "__main__":
             })
         
         for target in targets:
-            asset_id = target.get("asset_id")
-            print(f"Processing asset id: [{asset_id}]")
+            start_time = time.time()
+            try:
+                asset_id = target.get("asset_id")
+                print(f"Processing asset id: [{asset_id}]")
 
-            asset = {}
-            asset_details = {}
-            asset_relations_source_queue=[]
+                asset = {}
+                asset_details = {}
+                asset_relations_source_queue=[]
+                
+                asset_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET)
+                asset_details_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
+                asset_relations_source_queue_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, id=asset_id)
+
+                import concurrent.futures
+
+                with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
+                    future_asset = submit_job_if_not_cached(asset_file_id,ASSET_TYPE.ASSET, executor, get_asset, asset_id)
+                    future_asset_details = submit_job_if_not_cached(asset_details_file_id,ASSET_TYPE.ASSET_DETAILS, executor, get_asset_details, asset_id, limit, 0, parallelism_count=parallelism_count)
+                    future_asset_relations_source_queue = submit_job_if_not_cached(asset_relations_source_queue_file_id,ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, executor, get_outgoing_relations_for, asset_id, limit, 0, parallelism_count=parallelism_count)
+
+                    asset = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET, asset_file_id, future_asset)
+                    asset_details = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_DETAILS, asset_details_file_id, future_asset_details)
+                    asset_relations_source_queue = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, asset_relations_source_queue_file_id, future_asset_relations_source_queue)
+
+                domain_id = asset.get(asset_id).get("domain id")
+                status = asset.get(asset_id).get("status")
+                lifecycle = asset_details.get("Data Product Lifecycle", {}).get("value") 
+                asset = None
+                asset_details = None
+                check_and_invoke(asset_id, ASSET_TYPE.DOMAIN, get_domain, domain_id)
             
-            asset_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET)
-            asset_details_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_DETAILS)
-            asset_relations_source_queue_file_id = construct_file_name(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, id=asset_id)
-
-            import concurrent.futures
-
-            with concurrent.futures.ThreadPoolExecutor(max_workers=3) as executor:
-                future_asset = submit_job_if_not_cached(asset_file_id,ASSET_TYPE.ASSET, executor, get_asset, asset_id)
-                future_asset_details = submit_job_if_not_cached(asset_details_file_id,ASSET_TYPE.ASSET_DETAILS, executor, get_asset_details, asset_id, limit, 0, parallelism_count=parallelism_count)
-                future_asset_relations_source_queue = submit_job_if_not_cached(asset_relations_source_queue_file_id,ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, executor, get_outgoing_relations_for, asset_id, limit, 0, parallelism_count=parallelism_count)
-
-                asset = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET, asset_file_id, future_asset)
-                asset_details = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_DETAILS, asset_details_file_id, future_asset_details)
-                asset_relations_source_queue = collect_and_cache_results(asset_id, ASSET_TYPE.ASSET_RELATIONS_SOURCE_QUEUE, asset_relations_source_queue_file_id, future_asset_relations_source_queue)
-
-            domain_id = asset.get(asset_id).get("domain id")
-            status = asset.get(asset_id).get("status")
-            lifecycle = asset_details.get("Data Product Lifecycle", {}).get("value") 
-            asset = None
-            asset_details = None
-            check_and_invoke(asset_id, ASSET_TYPE.DOMAIN, get_domain, domain_id)
-        
-            # Filtering Criteria
-            # if asset.get(asset_id).get("status") not in ["Live", "In Progress"] and asset_details.get("Data Product Lifecycle", {}).get("value") not in ["Published"]:
-                # print(f"Skipping asset [{asset_id}] due to status [{asset.get('status')}] and lifecycle [{asset_details.get('Data Product Lifecycle', {}).get('name')}]")
-                # continue
+                # Filtering Criteria
+                # if asset.get(asset_id).get("status") not in ["Live", "In Progress"] and asset_details.get("Data Product Lifecycle", {}).get("value") not in ["Published"]:
+                    # print(f"Skipping asset [{asset_id}] due to status [{asset.get('status')}] and lifecycle [{asset_details.get('Data Product Lifecycle', {}).get('name')}]")
+                    # continue
 
 
-            process_relational_data(asset_id, asset_relations_source_queue, limit=limit, parrallelism_count=parallelism_count)
+                process_relational_data(asset_id, asset_relations_source_queue, limit=limit, parrallelism_count=parallelism_count)
 
-            seconds = time.time() - start_time
-            dump_json(asset_id, ASSET_TYPE.STATS,  {"duration": f"{seconds/60:.2f}m" if seconds > 60 else f"{seconds:.2f}s"}, "runtime.stats")
-        
+                seconds = time.time() - start_time
+                dump_json(asset_id, ASSET_TYPE.STATS,  {"duration": f"{seconds/60:.2f}m" if seconds > 60 else f"{seconds:.2f}s"}, "runtime.stats")
+            except:
+                with open(f"dump/{asset_id}.error.log", "w", encoding="utf-8") as error_log:
+                    error_log.write(f"Unknown error processing asset id: [{asset_id}]\n")
+                    error_log.write(traceback.format_exc())
+                print(f"Unknown error processing asset id: [{asset_id}], refer [dump/{asset_id}.error.log] for details.")
         print("Scrapping all assets Complete.")
     else:
         assets_dir = pathlib.Path(construct_file_name())
