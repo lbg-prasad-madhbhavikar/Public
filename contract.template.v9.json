@@ -360,7 +360,7 @@
 {% endif %}
 
 {% if 'Data Product Business Name' in data and data['Data Product Business Name'] is not none and data['Data Product Business Name'].name is not none %}
-    {% do custom_properties_list.append({'property': 'nameOfTheBusiness', 'value': data['Data Product Business Name'].name}) %}
+    {% do custom_properties_list.append({'property': 'nameOfTheBusiness', 'value': data['Data Product Business Name'].value}) %}
 {% endif %}
 
 {% do custom_properties_list.append({'property': 'consumerForContract', 'value': []}) %} {# Static #}

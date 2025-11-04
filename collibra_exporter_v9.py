@@ -470,9 +470,9 @@ def responsibilities_collector(responsibilities):
     responsibilities = responsibilities.get('aaData')[0]
     return responsibilities.get("Id"), {
         "id": responsibilities.get("Id"),
-        "Data Product Lifecycle": responsibilities.get("Data_Product_Lifecycle_Value"),
-        "status": responsibilities.get("Status_Name"),
-        "Data Product Type": responsibilities.get("Data_Product_Type_Value"),
+        # "Data Product Lifecycle": responsibilities.get("Data_Product_Lifecycle_Value"),
+        # "status": responsibilities.get("Status_Name"),
+        # "Data Product Type": responsibilities.get("Data_Product_Type_Value"),
         "Data Product Owner": responsibilities.get("Data_Product_Owner"),
         "Ownership Delegated Authority": responsibilities.get("Ownership_Delegated_Authority")
     }
@@ -848,8 +848,12 @@ def save_asset(asset_id):
         responsibility_file_name = construct_file_name(asset_id, ASSET_TYPE.RESPONSIBILITIES)
         if pathlib.Path(responsibility_file_name).exists():
             with open(responsibility_file_name, 'r', encoding='utf-8') as f:
-                responsibility = orjson.loads(f.read())
-            output_data.update({k:v for k, v in responsibility.items()})
+                responsibility = orjson.loads(f.read()).get(asset_id, {})
+            # output_data.update({k:v for k, v in responsibility.get(asset_id,{}).items()}) # commented due to key : value format conflict
+            if  "Data Product Owner" in  responsibility:
+                output_data["Data Product Owner"] = responsibility["Data Product Owner"]
+            if "Ownership Delegated Authority" in responsibility:
+                output_data["Ownership Delegated Authority"] = responsibility["Ownership Delegated Authority"]
             responsibility = None
 
         asset_file_name = construct_file_name(asset_id, ASSET_TYPE.ASSET)
@@ -909,8 +913,8 @@ def save_asset(asset_id):
     print(f"Done processing the asset [{asset_id}], created contract at [{construct_file_name(asset_id, ASSET_TYPE.CONTRACT)}]")
 
 if __name__ == "__main__":
-    action = "scrape"
-    # action = "process"
+    # action = "scrape"
+    action = "process"
     root = pathlib.Path(construct_file_name())
     root.mkdir(parents=True, exist_ok=True)
     if(action == "scrape"):
@@ -963,6 +967,7 @@ if __name__ == "__main__":
                 status = asset.get(asset_id).get("status")
                 lifecycle = asset_details.get("Data Product Lifecycle", {}).get("value") 
                 asset = None
+                responsibilities = None
                 asset_details = None
                 check_and_invoke(asset_id, ASSET_TYPE.DOMAIN, get_domain, domain_id)
             
