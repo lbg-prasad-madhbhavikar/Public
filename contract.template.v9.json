@@ -393,7 +393,7 @@
     {% set building_teams = [] %}
     {% for k in data['has building Platform Team'] %}
         {% if k.value is not none %}
-            {% do building_teams.append(k) %}
+            {% do building_teams.append(k.value) %}
         {% endif %}
     {% endfor %}
     {% if building_teams | length > 0 %}
@@ -449,7 +449,7 @@
     {% set source_apps = [] %}
     {% for k in data['sources data from Application'] %}
         {% if k.value is not none %}
-            {% do source_apps.append(k) %}
+            {% do source_apps.append(k.value) %}
         {% endif %}
     {% endfor %}
     {% if source_apps | length > 0 %}
@@ -521,16 +521,8 @@
     {% endif %}
 {% endif %}
 
-{% if 'Interoperability Key' in data and data['Interoperability Key'] is not none and data['Interoperability Key'].value is iterable and data['Interoperability Key'].value | length > 0 %}
-    {% set interoperability_keys = [] %}
-    {% for k in data['Interoperability Key'].value %}
-        {% if k is not none %}
-            {% do interoperability_keys.append({'value': k}) %}
-        {% endif %}
-    {% endfor %}
-    {% if interoperability_keys | length > 0 %}
-        {% do custom_properties_list.append({'property': 'interoperabilityKeys', 'value': interoperability_keys}) %}
-    {% endif %}
+{% if 'Interoperability Key' in data and data['Interoperability Key'] is not none %}
+    {% do custom_properties_list.append({'property': 'interoperabilityKey', 'value': data['Interoperability Key'].value }) %}
 {% endif %}
 
 {% if 'Access Instructions' in data and data['Access Instructions'].value is not none %}
@@ -588,28 +580,30 @@
 
 
 {# 7. Build 'team' array conditionally #}
+
 {% set team_list = [] %}
-{% if 'Data Product Owner' in data['roles'] %}
-    {% for user in data['roles']['Data Product Owner'] %}
+{% if 'Data Product Owner' in data and data['Data Product Owner'] is iterable and data['Data Product Owner'] | length > 0 %}
+    {% for k in data['Data Product Owner'] %}
         {% do team_list.append({
-            'name': user['Data_Product_Owner_User_FirstName'],
-            'username': user['Data_Product_Owner_User_Email'],
-            'description': 'Data Product Owne',
-            'role': 'Data Product Owner'
+        'name': k['Data_Product_Owner_User_FirstName'],
+        'username': k['Data_Product_Owner_User_Email'],
+        'description': 'Data Product Owne',
+        'role': 'Data Product Owner'
         }) %}
     {% endfor %}
 {% endif %}
-{% if 'roles' in data and 'Ownership Delegated Authority' in data['roles'] %}
-    {% for user in data['roles']['Ownership Delegated Authority'] %}
-        {% do team_list.append({
-            'name': user['Data_Product_Owner_User_FirstName'],
-            'username': user['Data_Product_Owner_User_Email'],
+
+
+{% if 'Ownership Delegated Authority' in data and data['Ownership Delegated Authority'] is iterable and data['Ownership Delegated Authority'] | length > 0 %}
+    {% for k in data['Ownership Delegated Authority'] %}
+            {% do team_list.append({
+            'name': k['Ownership_Delegated_Authority_User_FirstName'],
+            'username': k['Ownership_Delegated_Authority_User_Email'],
             'description': 'Ownership Delegated Authority',
             'role': 'Ownership Delegated Authority'
         }) %}
     {% endfor %}
 {% endif %}
-
 
 {% if team_list | length > 0 %}
     {% do contract.update({'team': team_list}) %}
