@@ -1,0 +1,631 @@
+{
+    "ViewConfig": {
+        "displayLength": 999999,
+        "Resources": {
+            "Asset": {
+                "Signifier": {
+                    "name": "FullName"
+                },
+                "DisplayName": {
+                    "name": "DisplayName"
+                },
+                "Id": {
+                    "name": "Id"
+                },
+                "Domain": {
+                    "Name": {
+                        "name": "Domain_Name"
+                    },
+                    "Id": {
+                        "name": "Domain_Id"
+                    },
+                    "Community": {
+                        "Name": {
+                            "name": "Community_Name"
+                        },
+                        "Id": {
+                            "name": "Community_Id"
+                        },
+                        "ParentCommunity": {
+                            "Name": {
+                                "name": "Parent_Community_Name"
+                            },
+                            "Id": {
+                                "name": "Parent_Community_Id"
+                            }
+                        }
+                    }
+                },
+                "Status": {
+                    "Signifier": {
+                        "name": "Status_Name"
+                    },
+                    "Id": {
+                        "name": "Status_Id"
+                    }
+                },
+                "AssetType": {
+                    "Id": {
+                        "name": "AssetType_Id"
+                    },
+                    "Signifier": {
+                        "name": "AssetType_Name"
+                    }
+                },
+                "StringAttribute": [
+                    {
+                        "labelId": "00000000-0000-0000-0000-000000003114",
+                        "LongExpression": {
+                            "name": "Description_Value"
+                        },
+                        "Id": {
+                            "name": "Description_Id"
+                        }
+                    },
+                    {
+                        "labelId": "019653dc-c8d5-79f1-8f99-227ac32c0910",
+                        "LongExpression": {
+                            "name": "Data_Product_Business_Name_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Business_Name_Id"
+                        }
+                    },
+                    {
+                        "labelId": "0192527e-85bf-7c2c-8ae5-045597f7636a",
+                        "LongExpression": {
+                            "name": "Consumer_Use_Case_&_Business_Value_Value"
+                        },
+                        "Id": {
+                            "name": "Consumer_Use_Case_&_Business_Value_Id"
+                        }
+                    },
+                    {
+                        "labelId": "00000000-0000-0000-0000-000000000219",
+                        "LongExpression": {
+                            "name": "Technical_Data_Type_Value"
+                        },
+                        "Id": {
+                            "name": "Technical_Data_Type_Id"
+                        }
+                    },
+                    {
+                        "labelId": "019417fa-74fc-7b15-a8a9-bda3b1c7cd91",
+                        "LongExpression": {
+                            "name": "JIRA_or_JIRA_Align_Link_Value"
+                        },
+                        "Id": {
+                            "name": "JIRA_or_JIRA_Align_Link_Id"
+                        }
+                    },
+                    {
+                        "labelId": "0190a618-da67-7ef1-a679-30f151006206",
+                        "LongExpression": {
+                            "name": "External_Data_Source(s)_Value"
+                        },
+                        "Id": {
+                            "name": "External_Data_Source(s)_Id"
+                        }
+                    },
+                    {
+                        "labelId": "c0eee1c3-d7a4-43b7-9679-bcca2aa8ed6d",
+                        "LongExpression": {
+                            "name": "Data_Curation_Pattern_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Curation_Pattern_Id"
+                        }
+                    },
+                    {
+                        "labelId": "da56c8b3-be1a-491b-89c8-6f05f5cab20a",
+                        "LongExpression": {
+                            "name": "Data_Update_Frequency_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Update_Frequency_Id"
+                        }
+                    },
+                    {
+                        "labelId": "0eb3ee37-2bf6-490b-8cd5-79cbc1f458bb",
+                        "LongExpression": {
+                            "name": "Logical_Model_Reference_Value"
+                        },
+                        "Id": {
+                            "name": "Logical_Model_Reference_Id"
+                        }
+                    },
+                    {
+                        "labelId": "0196edda-c033-782b-bd5f-f0dfed7a0823",
+                        "LongExpression": {
+                            "name": "Interoperability_Key(s)_Value"
+                        },
+                        "Id": {
+                            "name": "Interoperability_Key(s)_Id"
+                        }
+                    },
+                    {
+                        "labelId": "00000000-0000-0000-0000-000000050023",
+                        "LongExpression": {
+                            "name": "Access_Instructions_Value"
+                        },
+                        "Id": {
+                            "name": "Access_Instructions_Id"
+                        }
+                    },
+                    {
+                        "labelId": "019653d2-5fc9-798d-a8a4-76ef739884e1",
+                        "LongExpression": {
+                            "name": "Data_Product_Technical_Debt_Details_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Technical_Debt_Details_Id"
+                        }
+                    },
+                    {
+                        "labelId": "7b3e24df-99fb-408f-b124-b1510cb3378a",
+                        "LongExpression": {
+                            "name": "Data_Product_Version_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Version_Id"
+                        }
+                    }
+                ],
+                "SingleValueListAttribute": [
+                    {
+                        "labelId": "999c16b4-09d3-4ccd-a5d8-45af478f0117",
+                        "Value": {
+                            "name": "Data_Product_Lifecycle_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Lifecycle_Id"
+                        }
+                    },
+                    {
+                        "labelId": "a10a4407-fea8-4fab-83eb-0fc242f3a6ad",
+                        "Value": {
+                            "name": "Data_Product_Type_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Type_Id"
+                        }
+                    },
+                    {
+                        "labelId": "00000000-0000-0000-0001-000500000031",
+                        "Value": {
+                            "name": "Security_Classification_Value"
+                        },
+                        "Id": {
+                            "name": "Security Classification_Id"
+                        }
+                    },
+                    {
+                        "labelId": "01902a96-56a5-7193-8b67-fedabf472387",
+                        "Value": {
+                            "name": "Funding_Position_Value"
+                        },
+                        "Id": {
+                            "name": "Funding Position_Id"
+                        }
+                    }
+                ],
+                "Relation": [
+                    {
+                        "typeId": "0196886c-822a-7f97-8016-1073fc965ccd",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_contains_[Table]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_contains_[Table]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_contains_[Table]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_contains_[Table]_Target_Id"
+                            },
+                            "Domain": {
+                                "Name": {
+                                    "name": "TDD_Domain_Name"
+                                },
+                                "Id": {
+                                    "name": "TDD_Domain_Id"
+                                },
+                                "Community": {
+                                    "Name": {
+                                        "name": "TDD_Community_Name"
+                                    },
+                                    "Id": {
+                                        "name": "TDD_Community_Id"
+                                    }
+                                }
+                            },
+                            "StringAttribute": [
+                                {
+                                    "labelId": "00000000-0000-0000-0001-000500000074",
+                                    "LongExpression": {
+                                        "name": "Description_from Source_System_Value"
+                                    },
+                                    "Id": {
+                                        "name": "Description_from Source_System_Id"
+                                    }
+                                }
+                            ],
+                            "Relation": [
+                                {
+                                    "typeId": "00000000-0000-0000-0000-000000007043",
+                                    "type": "TARGET",
+                                    "displayLength": 2147483648,
+                                    "Id": {
+                                        "name": "[Schema]_contains_[Table]_Id"
+                                    },
+                                    "Source": {
+                                        "DisplayName": {
+                                            "name": "[Schema]_contains_[Table]_Source_DisplayName"
+                                        },
+                                        "Signifier": {
+                                            "name": "[Schema]_contains_[Table]_Source_FullName"
+                                        },
+                                        "Id": {
+                                            "name": "[Schema]_contains_[Table]_Source_Id"
+                                        }
+                                    }
+                                },
+                                {
+                                    "typeId": "00000000-0000-0000-0000-000000007042",
+                                    "type": "TARGET",
+                                    "displayLength": 2147483648,
+                                    "Id": {
+                                        "name": "[Column]_is_part_of_[Table]_Id"
+                                    },
+                                    "Source": {
+                                        "DisplayName": {
+                                            "name": "[Column]_is_part_of_[Table]_Source_DisplayName"
+                                        },
+                                        "Signifier": {
+                                            "name": "[Column]_is_part_of_[Table]_Source_FullName"
+                                        },
+                                        "Id": {
+                                            "name": "[Column]_is_part_of_[Table]_Source_Id"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    },
+                    {
+                        "typeId": "6a51bbca-cb1a-470b-be22-92fb0f1e2d96",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_has_owning_[Business_Area]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_has_owning_[Business_Area]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_has_owning_[Business_Area]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_has_owning_[Business_Area]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "019653e2-c4ed-7966-911d-c8a2ffb7dec2",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_contains_[Schema]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_contains_[Schema]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_contains_[Schema]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_contains_[Schema]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "0190263e-cf52-7b73-badb-84475d656828",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_related_to_GDM_[Data_Concept(s)]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_related_to_GDM_[Data_Concept(s)]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_related_to_GDM_[Data_Concept(s)]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_related_to_GDM_[Data_Concept(s)]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "5c178c78-23ba-4a89-a91d-27acfa44d5f0",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Has_Consuming_[Platform_Team(s)]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Has_Consuming_[Platform_Team(s)]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Has_Consuming_[Platform_Team(s)]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Has_Consuming_[Platform_Team(s)]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "b6ff010e-1723-4f2c-bb12-da122b360060",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Collaborating_Platform(s)_[Platform_Team]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Collaborating_Platform(s)_[Platform_Team]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Collaborating_Platform(s)_[Platform_Team]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Collaborating_Platform(s)_[Platform_Team]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "948ddf59-450e-4f0d-a31c-21a8a23b8780",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Sources_data_from_Application(s)_System_[Technology_Asset]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Sources_data_from_Application(s)_System_[Technology_Asset]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Sources_data_from_Application(s)_System_[Technology_Asset]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Sources_data_from_Application(s)_System_[Technology_Asset]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "b7a1c5ca-bb0b-4df4-b6e4-520279ff0ae3",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Sources_data_from_[Data_Product(s)]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Sources_data_from_[Data_Product(s)]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Sources_data_from_[Data_Product(s)]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Sources_data_from_[Data_Product(s)]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "0190efad-2c4c-74b6-b38a-096b79249bc0",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Has_Building_Platform_Team(s)_[Business_Area]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Has_Building_Platform_Team(s)_[Business_Area]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Has_Building_Platform_Team(s)_[Business_Area]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Has_Building_Platform_Team(s)_[Business_Area]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "018fcec0-cb65-76be-a836-1730ee3cfc69",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Implemented_in_Application_[Technology_Asset]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Implemented_in_Application_[Technology_Asset]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Implemented_in_Application_[Technology_Asset]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Implemented_in_Application_[Technology_Asset]_Target_Id"
+                            }
+                        }
+                    },
+                    {
+                        "typeId": "74ee53af-e98c-4087-8ef4-792095d31a08",
+                        "type": "SOURCE",
+                        "displayLength": 2147483648,
+                        "Id": {
+                            "name": "[Data_Product]_Contains_[Personal_Data_Category]_Id"
+                        },
+                        "Target": {
+                            "DisplayName": {
+                                "name": "[Data_Product]_Contains_[Personal_Data_Category]_Target_DisplayName"
+                            },
+                            "Signifier": {
+                                "name": "[Data_Product]_Contains_[Personal_Data_Category]_Target_FullName"
+                            },
+                            "Id": {
+                                "name": "[Data_Product]_Contains_[Personal_Data_Category]_Target_Id"
+                            }
+                        }
+                    }
+                ],
+                "MultiValueListAttribute": [
+                    {
+                        "labelId": "0191329d-3749-79df-85cb-f6ed63f3f8cf",
+                        "Values": {
+                            "name": "Consumption_Interface_Type_Values"
+                        },
+                        "Id": {
+                            "name": "Consumption_Interface_Type_Id"
+                        }
+                    }
+                ],
+                "DateAttribute": [
+                    {
+                        "labelId": "0194180a-2731-70cd-a255-69cb966a366b",
+                        "Date": {
+                            "name": "Expected_Build_Start_Date_Value"
+                        },
+                        "Id": {
+                            "name": "Expected_Build_Start_Date_Id"
+                        }
+                    },
+                    {
+                        "labelId": "01944bfb-bf5f-7cb1-bb92-3fa88ce0d074",
+                        "Date": {
+                            "name": "Expected_Release_Date_Value"
+                        },
+                        "Id": {
+                            "name": "Expected_Release_Date_Id"
+                        }
+                    },
+                    {
+                        "labelId": "01915538-cbc9-7dd1-a481-9b72d3cedfe3",
+                        "Date": {
+                            "name": "Data_Product_Chapter_Approval_Date_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Chapter_Approval_Date_Id"
+                        }
+                    }
+                ],
+                "BooleanAttribute": [
+                    {
+                        "labelId": "00000000-0000-0000-0001-000500000029",
+                        "BooleanValue": {
+                            "name": "Personal_Data_Indicator_Value"
+                        },
+                        "Id": {
+                            "name": "Personal_Data_Indicator_Id"
+                        }
+                    },
+                    {
+                        "labelId": "019653d5-057e-7db8-93d4-9cac23d60960",
+                        "BooleanValue": {
+                            "name": "Data_Product_Technical_Debt_Indicator_Value"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Technical_Debt_Indicator_Id"
+                        }
+                    }
+                ],
+                "Responsibility": [
+                    {
+                        "roleId": "5db4f014-0680-45d8-b27c-11580aaf0ca6",
+                        "includeInherited": true,
+                        "ResponsibilitySource": {
+                            "name": "Data_Product_Owner_ResponsibilitySource"
+                        },
+                        "Inherited": {
+                            "name": "Data_Product_Owner_Inherited"
+                        },
+                        "Id": {
+                            "name": "Data_Product_Owner_Id"
+                        },
+                        "User": {
+                            "UserName": {
+                                "name": "Data_Product_Owner_User_UserName"
+                            },
+                            "FirstName": {
+                                "name": "Data_Product_Owner_User_FirstName"
+                            },
+                            "LastName": {
+                                "name": "Data_Product_Owner_User_LastName"
+                            },
+                            "Id": {
+                                "name": "Data_Product_Owner_User_Id"
+                            },
+                            "EmailAddress": {
+                                "name": "Data_Product_Owner_User_Email"
+                            }
+                        },
+                        "Group": {
+                            "GroupName": {
+                                "name": "Data_Product_Owner_UserGroup_Name"
+                            },
+                            "Id": {
+                                "name": "Data_Product_Owner_UserGroup_Id"
+                            }
+                        }
+                    }
+                ],
+                "Tag": [
+                    {
+                        "Name": {
+                            "name": "Tag_Name"
+                        }
+                    }
+                ],
+                "Filter": {
+                    "AND": [
+                        {
+                            "Field": {
+                                "name": "Status_Id",
+                                "operator": "NOT_IN",
+                                "values": [
+                                    "00000000-0000-0000-0000-000000005011"
+                                ]
+                            }
+                        },
+                        {
+                            "Field": {
+                                "name": "AssetType_Id",
+                                "operator": "IN",
+                                "values": [
+                                    "2ff4c744-28a0-4cf2-8b0d-dd99e8111b47"
+                                ]
+                            }
+                        },
+                        {
+                            "Field": {
+                                "name": "Parent_Community_Id",
+                                "operator": "IN",
+                                "values": [
+                                    "ab0149b4-9020-4e4f-b249-031578320cfa"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
